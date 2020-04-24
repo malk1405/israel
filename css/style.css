@@ -463,6 +463,27 @@ template {
   margin: 0;
   padding: 0; }
 
+.button {
+  background-color: transparent;
+  border: none;
+  font-variant: small-caps;
+  font-weight: 600;
+  padding: 0;
+  text-transform: lowercase; }
+  .button:hover {
+    cursor: pointer; }
+
+.link {
+  color: inherit;
+  text-decoration: none; }
+  .link:not(.active-link):hover {
+    cursor: pointer; }
+  .link:not(.active-link):hover, .link:not(.active-link):focus {
+    text-decoration: underline; }
+
+:root {
+  font-size: 62.5%; }
+
 .body {
   background-color: white;
   display: -webkit-box;
@@ -473,6 +494,8 @@ template {
       -ms-flex-direction: column;
           flex-direction: column;
   font-family: "Fira Sans", Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+  font-size: 1.7rem;
+  line-height: 1.7;
   height: 100vh;
   max-width: 1366px;
   margin: 0 auto;
@@ -489,6 +512,8 @@ template {
 
 .header {
   height: 48px;
+  font-size: 1.5rem;
+  font-weight: 500;
   left: 0;
   position: absolute;
   top: 32px;
@@ -511,6 +536,45 @@ template {
           justify-content: space-between;
   width: 100%; }
 
+.header__button {
+  font-size: inherit;
+  letter-spacing: 0.1em;
+  position: relative; }
+  .header__button::after {
+    border-bottom: 2px #484848 solid;
+    -o-border-image: repeating-linear-gradient(90deg, #484848, #484848 2px, transparent 2px, transparent 6px, #484848 6px, #484848 8px) 1;
+       border-image: repeating-linear-gradient(90deg, #484848, #484848 2px, transparent 2px, transparent 6px, #484848 6px, #484848 8px) 1;
+    bottom: -3px;
+    content: "";
+    display: block;
+    left: 0;
+    position: absolute;
+    width: 100%; }
+
+.header__phone:hover,
+.header__button:hover {
+  opacity: 0.75; }
+
 @media screen and (max-width: 767px) {
   .header-container {
-    padding-right: 7px; } }
+    padding-right: 7px; }
+  .header {
+    top: 20px;
+    font-size: 1.4rem; }
+  .header__logo {
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    position: static;
+    -webkit-transform: none;
+            transform: none; }
+  .header__contacts {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    margin-top: -3px; }
+  .header__button {
+    margin-right: 2px; } }
