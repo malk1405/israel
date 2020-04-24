@@ -10,6 +10,10 @@
     background: rgba(209, 10, 66, 0.11) !important;
   }
 
+  & picture {
+    opacity: 0.4;
+  }
+
   &-bg {
     position: relative;
     height: 0;
