@@ -1,0 +1,26 @@
+.button {
+  background-color: transparent;
+  border: none;
+  font-variant: small-caps;
+  font-weight: 600;
+  padding: 0;
+  text-transform: lowercase;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.link {
+  color: inherit;
+  text-decoration: none;
+
+  &:not(.active-link):hover {
+    cursor: pointer;
+  }
+
+  &:not(.active-link):hover,
+  &:not(.active-link):focus {
+    text-decoration: underline;
+  }
+}
