@@ -371,6 +371,93 @@ template {
   display: -ms-flexbox;
   display: flex; }
 
+.sprite {
+  position: relative;
+  background-image: url("../img/sprite/sprite@1x.png");
+  background-repeat: no-repeat;
+  background-size: 341px 183px;
+  display: block; }
+  .sprite--logo-header {
+    width: 137px;
+    height: 48px;
+    background-position: -5px -130px; }
+  .sprite--logo-footer {
+    width: 85px;
+    height: 27px;
+    background-position: -5px -89px; }
+  .sprite--bag {
+    width: 32px;
+    height: 25px;
+    background-position: -5px -5px; }
+  .sprite--hand {
+    width: 32px;
+    height: 29px;
+    background-position: -131px -5px; }
+  .sprite--hat {
+    width: 36px;
+    height: 35px;
+    background-position: -47px -44px; }
+  .sprite--relig {
+    width: 23px;
+    height: 25px;
+    background-position: -209px -57px; }
+  .sprite--star {
+    width: 28px;
+    height: 33px;
+    background-position: -308px -57px; }
+
+.sprite-container:hover .sprite--bag {
+  background-position: -89px -5px; }
+
+.sprite-container:hover .sprite--hand {
+  background-position: -5px -44px; }
+
+.sprite-container:hover .sprite--hat {
+  background-position: -139px -44px; }
+
+.sprite-container:hover .sprite--relig {
+  background-position: -275px -57px; }
+
+.sprite-container:hover .sprite--star {
+  background-position: -247px -100px; }
+
+.sprite-container:active .sprite--bag {
+  background-position: -47px -5px; }
+
+.sprite-container:active .sprite--hand {
+  background-position: -173px -5px; }
+
+.sprite-container:active .sprite--hat {
+  background-position: -93px -44px; }
+
+.sprite-container:active .sprite--relig {
+  background-position: -242px -57px; }
+
+.sprite-container:active .sprite--star {
+  background-position: -209px -100px; }
+
+.sprite picture,
+.sprite img {
+  height: 0;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 0; }
+
+@media screen and (max-width: 767px) {
+  .sprite--logo-header {
+    width: 120px;
+    height: 42px;
+    background-position: -215px -5px; }
+  .sprite--logo-footer {
+    width: 99px;
+    height: 31px;
+    background-position: -100px -89px; } }
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  .sprite {
+    background-image: url("../img/sprite/sprite@2x.png"); } }
+
 .list {
   list-style: none;
   margin: 0;
@@ -407,13 +494,11 @@ template {
   width: 100%; }
 
 .header__logo {
-  height: 48px;
   left: 50%;
   position: absolute;
   top: 0;
   -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  width: 137px; }
+          transform: translateX(-50%); }
 
 .header__contacts {
   -webkit-box-align: center;
