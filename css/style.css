@@ -477,6 +477,7 @@ template {
   max-width: 1366px;
   margin: 0 auto;
   min-width: 320px;
+  position: relative;
   width: 100%; }
 
 .body > * {
