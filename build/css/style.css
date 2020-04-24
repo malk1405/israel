@@ -3,7 +3,7 @@
   font-family: "Raleway";
   font-style: normal;
   font-weight: 800;
-  src: url("raleway-800.woff2") format("woff2"), url("raleway-800.woff") format("woff"); }
+  src: url("../fonts/raleway-800.woff2") format("woff2"), url("../fonts/raleway-800.woff") format("woff"); }
 
 @font-face {
   font-display: swap;
@@ -17,21 +17,21 @@
   font-family: "Fira Sans";
   font-style: normal;
   font-weight: 400;
-  src: url("firasans-400.woff2") format("woff2"), url("firasans-400.woff") format("woff"); }
+  src: url("../fonts/firasans-400.woff2") format("woff2"), url("../fonts/firasans-400.woff") format("woff"); }
 
 @font-face {
   font-display: swap;
   font-family: "Fira Sans";
   font-style: normal;
   font-weight: 500;
-  src: url("firasans-500.woff2") format("woff2"), url("firasans-500.woff") format("woff"); }
+  src: url("../fonts/firasans-500.woff2") format("woff2"), url("../fonts/firasans-500.woff") format("woff"); }
 
 @font-face {
   font-display: swap;
   font-family: "Fira Sans";
   font-style: normal;
   font-weight: 700;
-  src: url("firasans-700.woff2") format("woff2"), url("firasans-700.woff") format("woff"); }
+  src: url("../fonts/firasans-700.woff2") format("woff2"), url("../fonts/firasans-700.woff") format("woff"); }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -385,7 +385,7 @@ template {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+  font-family: "Fira Sans", Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
   height: 100vh;
   max-width: 1366px;
   margin: 0 auto;

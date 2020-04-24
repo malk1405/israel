@@ -3,8 +3,8 @@
   font-family: "Raleway";
   font-style: normal;
   font-weight: 800;
-  src: url("raleway-800.woff2") format("woff2"),
-    url("raleway-800.woff") format("woff");
+  src: url("../fonts/raleway-800.woff2") format("woff2"),
+    url("../fonts/raleway-800.woff") format("woff");
 }
 
 @font-face {
@@ -21,8 +21,8 @@
   font-family: "Fira Sans";
   font-style: normal;
   font-weight: 400;
-  src: url("firasans-400.woff2") format("woff2"),
-    url("firasans-400.woff") format("woff");
+  src: url("../fonts/firasans-400.woff2") format("woff2"),
+    url("../fonts/firasans-400.woff") format("woff");
 }
 
 @font-face {
@@ -30,8 +30,8 @@
   font-family: "Fira Sans";
   font-style: normal;
   font-weight: 500;
-  src: url("firasans-500.woff2") format("woff2"),
-    url("firasans-500.woff") format("woff");
+  src: url("../fonts/firasans-500.woff2") format("woff2"),
+    url("../fonts/firasans-500.woff") format("woff");
 }
 
 @font-face {
@@ -39,6 +39,6 @@
   font-family: "Fira Sans";
   font-style: normal;
   font-weight: 700;
-  src: url("firasans-700.woff2") format("woff2"),
-    url("firasans-700.woff") format("woff");
+  src: url("../fonts/firasans-700.woff2") format("woff2"),
+    url("../fonts/firasans-700.woff") format("woff");
 }
