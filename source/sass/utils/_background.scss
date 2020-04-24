@@ -17,10 +17,6 @@
     width: 1366px;
     max-width: 100%;
 
-    @media (max-width: 1365px) {
-      width: 768px;
-    }
-
     @include mq(phone) {
       width: 320px;
     }
@@ -39,17 +35,11 @@
       z-index: -1;
 
       background-image: url("../img/temp/desktop.png") !important;
-      height: 4115px;
-
-      @media (max-width: 1365px) {
-        background-image: url("../img/temp/tablet.png") !important;
-        height: 5062px;
-      }
+      height: 7942px;
 
       @include mq(phone) {
-        // background-image: url("../img/temp/menu.png");
         background-image: url("../img/temp/phone.png") !important;
-        height: 7369px;
+        height: 8423px;
       }
     }
   }

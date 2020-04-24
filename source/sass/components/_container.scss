@@ -1,0 +1,9 @@
+.container {
+  padding: 0 110px;
+}
+
+@include mq(phone) {
+  .container {
+    padding: 0 16px;
+  }
+}

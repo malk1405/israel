@@ -1,0 +1,33 @@
+.header-container {
+  padding-right: 114px;
+}
+
+.header {
+  height: 48px;
+  left: 0;
+  position: absolute;
+  top: 32px;
+  width: 100%;
+}
+
+.header__logo {
+  height: 48px;
+  left: 50%;
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  width: 137px;
+}
+
+.header__contacts {
+  align-items: center;
+  height: 100%;
+  justify-content: space-between;
+  width: 100%;
+}
+
+@include mq(phone) {
+  .header-container {
+    padding-right: 7px;
+  }
+}

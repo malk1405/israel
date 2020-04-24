@@ -5,11 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="site for portfolio on github">
-    <title>Программа "Масса"</title>
+    <title>Программа "Маса"</title>
+    <link rel="preload" href="fonts/raleway-800.woff" as="font" type="font/woff" crossorigin="">
+    <link rel="preload" href="fonts/raleway-800.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="fonts/firasans-400.woff" as="font" type="font/woff" crossorigin="">
+    <link rel="preload" href="fonts/firasans-400.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="fonts/firasans-500.woff" as="font" type="font/woff" crossorigin="">
+    <link rel="preload" href="fonts/firasans-500.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="fonts/firasans-700.woff" as="font" type="font/woff" crossorigin="">
+    <link rel="preload" href="fonts/firasans-700.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="fonts/montserrat-700.woff" as="font" type="font/woff" crossorigin="">
+    <link rel="preload" href="fonts/montserrat-700.woff2" as="font" type="font/woff2" crossorigin="">
     <link rel="stylesheet" href="css/style.min.css">
   </head>
   <body class="body">
-    Израиль
+    <!-- Для отладки -->
+    <!-- <div class="body-bg"></div> -->
+    <!-- Для отладки. Конец -->
+
+    <!-- Шапка -->
+    <header class="header container header-container d-flex">
+      <a class="header__logo sprite sprite--logo-header"><span class="visually-hidden">"Маса"</span><picture><img src="img/sprite/sprite--lg.png" alt="Лого" width="0" height="0"></picture></a>
+      <ul class="header__contacts list d-flex">
+        <li class="header__contact">
+          <a href="tel:+97226216581">+ (972) 2 – 621 – 6581</a>
+        </li>
+        <li class="header__contact">
+          <button type="button">Заказать звонок</button>
+        </li>
+      </ul>
+    </header>
+    <!-- Шапка. Конец -->
+
+    <!-- Главный экран -->
+    <main class="main">
+      <h1 class="visually-hidden">Программа "Маса"</h1>
+      <p>Учёба, путешествие и карьера для еврейской молодёжи</p>
+      <svg width="76" height="76" class="main__scroll-button"></svg>
+    </main>
+    <!-- Главный экран. Конец -->
+
     <script async="" src="js/main.js"></script>
     <script async="" src="js/vendor.js"></script>
   </body>

@@ -1,35 +1,44 @@
-// @font-face {
-//   font-family: "Montserrat";
-//   font-style: normal;
-//   font-weight: 400;
-//   src: url("../fonts/montserrat-regular.woff2") format("woff2"),
-//     url("../fonts/montserrat-regular.woff") format("woff");
-//   font-display: swap;
-// }
+@font-face {
+  font-display: swap;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 800;
+  src: url("raleway-800.woff2") format("woff2"),
+    url("raleway-800.woff") format("woff");
+}
 
-// @font-face {
-//   font-family: "Montserrat";
-//   font-style: normal;
-//   font-weight: 500;
-//   src: url("../fonts/montserrat-500.woff2") format("woff2"),
-//     url("../fonts/montserrat-500.woff") format("woff");
-//   font-display: swap;
-// }
+@font-face {
+  font-display: swap;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/montserrat-700.woff2") format("woff2"),
+    url("../fonts/montserrat-700.woff") format("woff");
+}
 
-// @font-face {
-//   font-family: "Montserrat";
-//   font-style: normal;
-//   font-weight: 600;
-//   src: url("../fonts/montserrat-600.woff2") format("woff2"),
-//     url("../fonts/montserrat-600.woff") format("woff");
-//   font-display: swap;
-// }
+@font-face {
+  font-display: swap;
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("firasans-400.woff2") format("woff2"),
+    url("firasans-400.woff") format("woff");
+}
 
-// @font-face {
-//   font-family: "Montserrat";
-//   font-style: normal;
-//   font-weight: 700;
-//   src: url("../fonts/montserrat-700.woff2") format("woff2"),
-//     url("../fonts/montserrat-700.woff") format("woff");
-//   font-display: swap;
-// }
+@font-face {
+  font-display: swap;
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 500;
+  src: url("firasans-500.woff2") format("woff2"),
+    url("firasans-500.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("firasans-700.woff2") format("woff2"),
+    url("firasans-700.woff") format("woff");
+}
