@@ -2,6 +2,8 @@
 
 Реализация проекта Израиль от [HTML Academy](https://htmlacademy.ru/)
 
+**Статус: в разработке**
+
 [Результат](https://malk1405.github.io/israel/)
 
 ## Установка и запуск
