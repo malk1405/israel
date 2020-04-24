@@ -517,7 +517,8 @@ template {
   left: 0;
   position: absolute;
   top: 32px;
-  width: 100%; }
+  width: 100%;
+  z-index: 1; }
 
 .header__logo {
   left: 50%;
@@ -588,7 +589,7 @@ template {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  overflow-x: hidden;
+  overflow: hidden;
   position: relative;
   width: 100%; }
 
