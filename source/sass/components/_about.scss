@@ -103,8 +103,8 @@
     margin-top: 0;
     padding-bottom: 0;
     background-image: url("../img/about/about-bg@1x--sm.jpg");
-    background-position: top 58% right 0;
-    background-size: 320px 186px;
+    background-position: bottom 131px right 0;
+    background-size: contain;
 
     @include mret() {
       background-image: url("../img/about/about-bg@2x--sm.jpg");
