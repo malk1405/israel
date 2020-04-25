@@ -700,8 +700,8 @@ template {
   background-color: rgba(236, 218, 61, 0.849);
   display: block;
   height: auto;
-  -webkit-mask: url("../../img/about/video-mask.png");
-          mask: url("../../img/about/video-mask.png");
+  -webkit-mask: url("../img/about/video-mask.png");
+          mask: url("../img/about/video-mask.png");
   -webkit-mask-position: center;
           mask-position: center;
   -webkit-mask-repeat: no-repeat;
