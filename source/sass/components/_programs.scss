@@ -69,47 +69,33 @@
 
 .programs__tab-radio:checked + .programs__tab-label {
   color: white;
+  background: linear-gradient(138.15deg, #ffc341 20.46%, #ffd701 65.31%);
 
-  &::before,
   &::after {
+    box-shadow: 0 0 0 100px white;
     content: "";
     display: block;
+    right: 0;
+    height: 1000px;
     position: absolute;
     top: 0;
-  }
-
-  &::after {
-    background-color: transparent;
-    right: 0;
-    box-shadow: 0 0 0 100px white;
-    height: 1000px;
     transform: translateY(3.4rem) rotate(45deg);
     transform-origin: top right;
     width: 1000px;
   }
-
-  // чтоб была видна иконка
-  &::before {
-    background: linear-gradient(138.15deg, #ffc341 20.46%, #ffd701 65.31%);
-    height: 100%;
-    left: 0;
-    width: 100%;
-    z-index: -1;
-  }
 }
 
 .programs__tab-label.programs__tab-label:hover {
+  background: transparent;
+  background: -webkit-linear-gradient(
+    132.19deg,
+    #ffc341 20.46%,
+    #ffd701 65.31%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   color: #ffc341;
   opacity: 0.87;
-
-  &::after {
-    display: none;
-  }
-
-  &::before {
-    background-color: transparent;
-    display: none;
-  }
 }
 
 .programs__list {
