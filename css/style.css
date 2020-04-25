@@ -756,8 +756,8 @@ template {
     margin-top: 0;
     padding-bottom: 0;
     background-image: url("../img/about/about-bg@1x--sm.jpg");
-    background-position: top 58% right 0;
-    background-size: 320px 186px; } }
+    background-position: bottom 131px right 0;
+    background-size: contain; } }
   @media screen and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5), screen and (max-width: 767px) and (min-resolution: 144dpi), screen and (max-width: 767px) and (min-resolution: 1.5dppx) {
     .about {
       background-image: url("../img/about/about-bg@2x--sm.jpg"); } }
