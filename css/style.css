@@ -848,38 +848,31 @@ template {
   z-index: 1; }
 
 .programs__tab-radio:checked + .programs__tab-label {
-  color: white; }
-  .programs__tab-radio:checked + .programs__tab-label::before, .programs__tab-radio:checked + .programs__tab-label::after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0; }
+  color: white;
+  background: linear-gradient(138.15deg, #ffc341 20.46%, #ffd701 65.31%); }
   .programs__tab-radio:checked + .programs__tab-label::after {
-    background-color: transparent;
-    right: 0;
     -webkit-box-shadow: 0 0 0 100px white;
             box-shadow: 0 0 0 100px white;
+    content: "";
+    display: block;
+    right: 0;
     height: 1000px;
+    position: absolute;
+    top: 0;
     -webkit-transform: translateY(3.4rem) rotate(45deg);
             transform: translateY(3.4rem) rotate(45deg);
     -webkit-transform-origin: top right;
             transform-origin: top right;
     width: 1000px; }
-  .programs__tab-radio:checked + .programs__tab-label::before {
-    background: linear-gradient(138.15deg, #ffc341 20.46%, #ffd701 65.31%);
-    height: 100%;
-    left: 0;
-    width: 100%;
-    z-index: -1; }
 
 .programs__tab-label.programs__tab-label:hover {
+  background: transparent;
+  background: -webkit-linear-gradient(132.19deg, #ffc341 20.46%, #ffd701 65.31%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
   color: #ffc341;
   opacity: 0.87; }
-  .programs__tab-label.programs__tab-label:hover::after {
-    display: none; }
-  .programs__tab-label.programs__tab-label:hover::before {
-    background-color: transparent;
-    display: none; }
 
 .programs__list {
   max-width: 550px; }
