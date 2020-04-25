@@ -2,6 +2,18 @@
   align-items: center;
   flex-direction: column;
   margin-top: -11px;
+  padding-bottom: 96px;
+
+  background: {
+    image: url("../img/about/about-bg@1x--lg.jpg");
+    position: bottom;
+    size: 1366px 604px;
+    repeat: no-repeat;
+  }
+
+  @include mret() {
+    background-image: url("../img/about/about-bg@2x--lg.jpg");
+  }
 }
 
 .about__info {
@@ -19,24 +31,34 @@
 }
 
 .about__video-container {
+  height: 100%;
   margin-top: 47px;
   max-width: 100%;
   position: relative;
 }
 
 .about video {
+  background-color: rgba(236, 218, 61, 0.849);
   display: block;
   height: auto;
-  max-width: 870px;
+
+  mask: url("../../img/about/video-mask.png");
+  mask-position: center;
+
+  mask-repeat: no-repeat;
+  mask-size: 870px 100%;
+  //ломает FF
+  // mask-size: cover;
+
+  max-width: 100%;
   min-height: 224px;
   object-fit: cover;
-  width: 100%;
+  width: 870px;
 }
 
 .about__video-button {
   border: none;
   border-radius: 100%;
-  background-color: transparent;
   cursor: pointer;
   left: 50%;
   padding: 0;
@@ -44,6 +66,7 @@
   overflow: hidden;
   top: 50%;
   transform: translate(-50%, -50%);
+  z-index: 5;
 }
 
 .about__video-button,
@@ -78,6 +101,14 @@
 @include mq(phone) {
   .about {
     margin-top: 0;
+    padding-bottom: 0;
+    background-image: url("../img/about/about-bg@1x--sm.jpg");
+    background-position: top 58% right 0;
+    background-size: 320px 186px;
+
+    @include mret() {
+      background-image: url("../img/about/about-bg@2x--sm.jpg");
+    }
   }
 
   .about__info p {
