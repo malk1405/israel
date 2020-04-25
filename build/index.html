@@ -41,6 +41,7 @@
 
     <!-- Главный экран -->
     <main>
+      <!-- Баннер -->
       <section class="banner d-flex">
         <h1 class="visually-hidden">Программа "Маса"</h1>
         <p>Учёба, путешествие и карьера для еврейской молодёжи</p>
@@ -66,6 +67,44 @@
           <!-- 1x - 1366px; 2x - 2732px -->
           <img src="img/banner/banner@1x--lg.jpg" srcset="img/banner/banner@2x--lg.jpg 2x" alt="Девушка смотрит на панораму Израиля" width="1366" height="906"></picture>
       </section>
+      <!-- Баннер. Конец -->
+
+      <!-- О программе -->
+      <section class="about section d-flex">
+        <div class="about__info container">
+          <h2>О программе</h2>
+          <p>
+            «Маса» — совместный проект правительства Израиля и Еврейского
+            агентства Сохнут. Более 250 учебных программ (60 на русском) и
+            возможность стажировки в Израиле. В течение освоения программ
+            предусмотрен грант от 4200 до 8400$.
+          </p>
+        </div>
+        <div class="about__video-container">
+          <video height="460" width="870" poster="img/about/poster.jpg">
+            <source src="#">
+          </video>
+          <button class="about__video-button">
+            <svg width="96" height="96" viewBox="0 0 96 96">
+              <defs>
+                <filter id="about__filter0" x="11" y="13" width="74" height="74" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                  <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+                  <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"></feColorMatrix>
+                  <feOffset dy="1"></feOffset>
+                  <feGaussianBlur stdDeviation="2"></feGaussianBlur>
+                  <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0"></feColorMatrix>
+                  <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"></feBlend>
+                  <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"></feBlend>
+                </filter>
+              </defs>
+              <circle opacity="0.32" cx="48" cy="48" r="48" fill="white"></circle>
+              <circle cx="48" cy="48" r="32" class="inner" fill="white"></circle>
+              <path d="M58 47.5L43 57V38L58 47.5Z" class="play"></path>
+            </svg>
+          </button>
+        </div>
+      </section>
+      <!-- О программе.Конец -->
     </main>
     <!-- Главный экран. Конец -->
 

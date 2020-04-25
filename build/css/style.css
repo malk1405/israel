@@ -481,6 +481,31 @@ template {
   .link:not(.active-link):hover, .link:not(.active-link):focus {
     text-decoration: underline; }
 
+.section {
+  max-width: 100%; }
+
+.section h2 {
+  color: #1fc0fc;
+  font-family: "Montserrat", Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+  font-size: 4rem;
+  letter-spacing: -0.02em;
+  line-height: 4.9rem;
+  margin: 0;
+  margin-bottom: 25px;
+  text-transform: uppercase; }
+
+.section p {
+  font-size: 1.7rem;
+  line-height: 2.9rem; }
+
+@media screen and (max-width: 767px) {
+  .section h2 {
+    font-size: 3.2rem;
+    line-height: 3.9rem; }
+  .section p {
+    font-size: 1.6rem;
+    line-height: 2.6rem; } }
+
 :root {
   font-size: 62.5%; }
 
@@ -635,3 +660,85 @@ template {
   .banner__scroll-button {
     margin-top: 12px;
     margin-bottom: 85px; } }
+
+.about {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: -11px; }
+
+.about__info {
+  max-width: 100%; }
+
+.about__info h2,
+.about__info p {
+  text-align: center; }
+
+.about__info p {
+  margin: 0 auto;
+  max-width: 69rem; }
+
+.about__video-container {
+  margin-top: 47px;
+  max-width: 100%;
+  position: relative; }
+
+.about video {
+  display: block;
+  height: auto;
+  max-width: 870px;
+  min-height: 224px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%; }
+
+.about__video-button {
+  border: none;
+  border-radius: 100%;
+  background-color: transparent;
+  cursor: pointer;
+  left: 50%;
+  padding: 0;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }
+
+.about__video-button,
+.about__video-button svg {
+  display: block;
+  height: 96px;
+  width: 96px; }
+
+.about__video-button svg {
+  left: 0;
+  position: absolute;
+  top: 0; }
+
+.about__video-button .play {
+  fill: #1fc0fc; }
+
+.about__video-button:hover .play {
+  fill: #63d3fd; }
+
+.about__video-button:hover .inner {
+  -webkit-filter: url(#about__filter0);
+          filter: url(#about__filter0); }
+
+.about__video-button:active .inner {
+  fill: #f4f4f4; }
+
+@media screen and (max-width: 767px) {
+  .about {
+    margin-top: 0; }
+  .about__info p {
+    text-align: left; }
+  .about__video-button,
+  .about__video-button svg {
+    height: 80px;
+    width: 80px; } }

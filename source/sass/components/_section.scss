@@ -1,0 +1,31 @@
+.section {
+  max-width: 100%;
+}
+
+.section h2 {
+  color: $text-header-color;
+  font-family: $montserrat;
+  font-size: 4rem;
+  letter-spacing: -0.02em;
+  line-height: 4.9rem;
+  margin: 0;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
+
+.section p {
+  font-size: 1.7rem;
+  line-height: 2.9rem;
+}
+
+@include mq(phone) {
+  .section h2 {
+    font-size: 3.2rem;
+    line-height: 3.9rem;
+  }
+
+  .section p {
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+  }
+}
