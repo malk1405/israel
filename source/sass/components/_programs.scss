@@ -1,0 +1,122 @@
+.programs {
+  font-size: 1.5rem;
+  line-height: 2.6rem;
+  padding-top: 104px;
+
+  background: {
+    image: url("../img/programs/city-bg@1x--lg.jpg");
+    position: top 56px right 0;
+    size: 680px 426px;
+    repeat: no-repeat;
+  }
+
+  @include mret() {
+    background-image: url("../img/programs/city-bg@2x--lg.jpg");
+  }
+}
+
+.programs h2,
+.programs__tabs {
+  margin-left: 100px;
+}
+
+.programs h2 {
+  margin-bottom: 67px;
+}
+
+.programs__tabs {
+  flex-shrink: 0;
+  margin-right: 64px;
+  width: 228px;
+}
+
+.programs__tab {
+  align-items: center;
+  height: 6.8rem;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: 0;
+  }
+}
+
+.programs__tab + .programs__tab {
+  margin-top: 4px;
+}
+
+.programs__tab-icon {
+  left: 31px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 3.4rem;
+}
+
+.programs__tab-label {
+  cursor: pointer;
+  display: block;
+  line-height: 6.8rem;
+  padding-left: 72px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  z-index: 1;
+}
+
+.programs__tab-radio:checked + .programs__tab-label {
+  color: white;
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+  }
+
+  &::after {
+    background-color: transparent;
+    right: 0;
+    box-shadow: 0 0 0 100px white;
+    height: 1000px;
+    transform: translateY(3.4rem) rotate(45deg);
+    transform-origin: top right;
+    width: 1000px;
+  }
+
+  // чтоб была видна иконка
+  &::before {
+    background: linear-gradient(138.15deg, #ffc341 20.46%, #ffd701 65.31%);
+    height: 100%;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+  }
+}
+
+.programs__tab-label.programs__tab-label:hover {
+  color: #ffc341;
+  opacity: 0.87;
+
+  &::after {
+    display: none;
+  }
+
+  &::before {
+    background-color: transparent;
+    display: none;
+  }
+}
+
+.programs__list {
+  max-width: 550px;
+}
+
+.programs__list h3 {
+  margin-bottom: 25px;
+  margin-top: 16px;
+}

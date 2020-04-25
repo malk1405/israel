@@ -48,47 +48,47 @@
   }
 }
 
-.sprite-container:hover {
-  .sprite--bag {
-    background-position: -89px -5px;
-  }
-
-  .sprite--hand {
-    background-position: -5px -44px;
-  }
-
-  .sprite--hat {
-    background-position: -139px -44px;
-  }
-
-  .sprite--relig {
-    background-position: -275px -57px;
-  }
-
-  .sprite--star {
-    background-position: -247px -100px;
-  }
-}
-
-.sprite-container:active {
-  .sprite--bag {
+.programs__tab-radio:checked + label > .sprite {
+  &--bag {
     background-position: -47px -5px;
   }
 
-  .sprite--hand {
+  &--hand {
     background-position: -173px -5px;
   }
 
-  .sprite--hat {
+  &--hat {
     background-position: -93px -44px;
   }
 
-  .sprite--relig {
+  &--relig {
     background-position: -242px -57px;
   }
 
-  .sprite--star {
+  &--star {
     background-position: -209px -100px;
+  }
+}
+
+.sprite-container.sprite-container:hover .sprite {
+  &--bag {
+    background-position: -89px -5px;
+  }
+
+  &--hand {
+    background-position: -5px -44px;
+  }
+
+  &--hat {
+    background-position: -139px -44px;
+  }
+
+  &--relig {
+    background-position: -275px -57px;
+  }
+
+  &--star {
+    background-position: -247px -100px;
   }
 }
 
