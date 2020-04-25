@@ -669,7 +669,15 @@ template {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-top: -11px; }
+  margin-top: -11px;
+  padding-bottom: 96px;
+  background-image: url("../img/about/about-bg@1x--lg.jpg");
+  background-position: bottom;
+  background-size: 1366px 604px;
+  background-repeat: no-repeat; }
+  @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    .about {
+      background-image: url("../img/about/about-bg@2x--lg.jpg"); } }
 
 .about__info {
   max-width: 100%; }
@@ -683,23 +691,32 @@ template {
   max-width: 69rem; }
 
 .about__video-container {
+  height: 100%;
   margin-top: 47px;
   max-width: 100%;
   position: relative; }
 
 .about video {
+  background-color: rgba(236, 218, 61, 0.849);
   display: block;
   height: auto;
-  max-width: 870px;
+  -webkit-mask: url("../../img/about/video-mask.png");
+          mask: url("../../img/about/video-mask.png");
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: 870px 100%;
+          mask-size: 870px 100%;
+  max-width: 100%;
   min-height: 224px;
   -o-object-fit: cover;
      object-fit: cover;
-  width: 100%; }
+  width: 870px; }
 
 .about__video-button {
   border: none;
   border-radius: 100%;
-  background-color: transparent;
   cursor: pointer;
   left: 50%;
   padding: 0;
@@ -707,7 +724,8 @@ template {
   overflow: hidden;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%); }
+          transform: translate(-50%, -50%);
+  z-index: 5; }
 
 .about__video-button,
 .about__video-button svg {
@@ -735,7 +753,16 @@ template {
 
 @media screen and (max-width: 767px) {
   .about {
-    margin-top: 0; }
+    margin-top: 0;
+    padding-bottom: 0;
+    background-image: url("../img/about/about-bg@1x--sm.jpg");
+    background-position: top 58% right 0;
+    background-size: 320px 186px; } }
+  @media screen and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5), screen and (max-width: 767px) and (min-resolution: 144dpi), screen and (max-width: 767px) and (min-resolution: 1.5dppx) {
+    .about {
+      background-image: url("../img/about/about-bg@2x--sm.jpg"); } }
+
+@media screen and (max-width: 767px) {
   .about__info p {
     text-align: left; }
   .about__video-button,
