@@ -50,7 +50,7 @@
 }
 
 .programs__tab-icon {
-  left: 31px;
+  left: 38px;
   position: absolute;
   transform: translate(-50%, -50%);
   top: 3.4rem;
@@ -72,16 +72,16 @@
   background: linear-gradient(138.15deg, #ffc341 20.46%, #ffd701 65.31%);
 
   &::after {
-    box-shadow: 0 0 0 100px white;
+    box-shadow: 3em -3em 0 3em $body-bg-color;
     content: "";
     display: block;
-    right: 0;
-    height: 1000px;
+    height: 100%;
     position: absolute;
-    top: 0;
-    transform: translateY(3.4rem) rotate(45deg);
+    right: 0;
+    top: 50%;
+    transform: rotate(45deg);
     transform-origin: top right;
-    width: 1000px;
+    width: 100%;
   }
 }
 

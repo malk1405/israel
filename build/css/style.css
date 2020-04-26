@@ -831,7 +831,7 @@ template {
   margin-top: 4px; }
 
 .programs__tab-icon {
-  left: 31px;
+  left: 38px;
   position: absolute;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -851,19 +851,19 @@ template {
   color: white;
   background: linear-gradient(138.15deg, #ffc341 20.46%, #ffd701 65.31%); }
   .programs__tab-radio:checked + .programs__tab-label::after {
-    -webkit-box-shadow: 0 0 0 100px white;
-            box-shadow: 0 0 0 100px white;
+    -webkit-box-shadow: 3em -3em 0 3em white;
+            box-shadow: 3em -3em 0 3em white;
     content: "";
     display: block;
-    right: 0;
-    height: 1000px;
+    height: 100%;
     position: absolute;
-    top: 0;
-    -webkit-transform: translateY(3.4rem) rotate(45deg);
-            transform: translateY(3.4rem) rotate(45deg);
+    right: 0;
+    top: 50%;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
     -webkit-transform-origin: top right;
             transform-origin: top right;
-    width: 1000px; }
+    width: 100%; }
 
 .programs__tab-label.programs__tab-label:hover {
   background: transparent;
