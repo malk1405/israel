@@ -479,6 +479,9 @@ template {
   .button:hover {
     cursor: pointer; }
 
+.input-container {
+  position: relative; }
+
 .input,
 .button--main,
 .input-label::after {
@@ -1096,3 +1099,32 @@ template {
       top: -150px; }
   .want-container {
     margin-left: 0; } }
+
+@media screen and (max-width: 767px) {
+  .want {
+    background-position: top 18px left 0;
+    background-size: 103px auto;
+    padding-top: 66px;
+    padding-bottom: 0; }
+    .want::after {
+      background: url("../img/want/want-bg@1x--sm.jpg") center/auto 308px no-repeat;
+      height: 308px;
+      margin: 0 -16px;
+      max-width: unset;
+      min-width: 320px;
+      position: static;
+      width: auto; }
+  .want-container {
+    margin: 0 auto;
+    max-width: 550px; }
+    .want-container--form {
+      margin-top: 23px;
+      max-width: 287px; }
+  .want h2 {
+    text-align: center; }
+  .want__form-button {
+    margin: 8px auto 0; }
+  .want__form-button {
+    position: static;
+    display: block;
+    width: 264px; } }
