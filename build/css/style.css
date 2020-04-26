@@ -537,7 +537,7 @@ template {
 
 .body {
   background-color: white;
-  color: #484848;
+  color: #474747de;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -594,9 +594,9 @@ template {
   letter-spacing: 0.1em;
   position: relative; }
   .header__button::after {
-    border-bottom: 2px #484848 solid;
-    -o-border-image: repeating-linear-gradient(90deg, #484848, #484848 2px, transparent 2px, transparent 6px, #484848 6px, #484848 8px) 1;
-       border-image: repeating-linear-gradient(90deg, #484848, #484848 2px, transparent 2px, transparent 6px, #484848 6px, #484848 8px) 1;
+    border-bottom: 2px #474747de solid;
+    -o-border-image: repeating-linear-gradient(90deg, #474747de, #474747de 2px, transparent 2px, transparent 6px, #474747de 6px, #474747de 8px) 1;
+       border-image: repeating-linear-gradient(90deg, #474747de, #474747de 2px, transparent 2px, transparent 6px, #474747de 6px, #474747de 8px) 1;
     bottom: -3px;
     content: "";
     display: block;
@@ -692,6 +692,7 @@ template {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: #484848;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -857,7 +858,7 @@ template {
   z-index: 1; }
   .programs__tab-label::before {
     content: attr(data-text);
-    color: #484848;
+    color: #474747de;
     display: block;
     position: absolute;
     text-transform: capitalize; }
@@ -898,7 +899,6 @@ template {
     color: #ffc341;
     font-size: inherit;
     letter-spacing: inherit;
-    opacity: 0.87;
     text-transform: capitalize; }
 
 .programs__list {
