@@ -891,7 +891,7 @@ template {
   background: transparent; }
   .programs__tab-label.programs__tab-label:hover::before {
     background: transparent;
-    background: -webkit-linear-gradient(132.19deg, #ffc341 20.46%, #ffd701 65.31%);
+    background: -webkit-linear-gradient(312.19deg, #ffc341 20.46%, #ffd701 65.31%);
     -webkit-background-clip: text;
             background-clip: text;
     -webkit-text-fill-color: transparent;
