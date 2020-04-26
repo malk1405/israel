@@ -1,0 +1,34 @@
+.want {
+  padding-top: 224px;
+
+  background: url("../img/want/want-bg@1x--lg.jpg") top 15px right 0 / 818px
+      594px no-repeat,
+    url("../img/want/bag-bg@1x--lg.jpg") top 150px left 0 / 147px 262px
+      no-repeat;
+
+  @include mret() {
+    background-image: url("../img/want/want-bg@2x--lg.jpg");
+  }
+}
+
+.want-container {
+  margin-left: 100px;
+  max-width: 400px;
+
+  &--form {
+    margin-top: 63px;
+    max-width: 477px;
+    position: relative;
+    z-index: 0;
+  }
+}
+
+.want__form-input {
+  width: 100%;
+}
+
+.want__form-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+}

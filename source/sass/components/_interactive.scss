@@ -5,6 +5,7 @@
   font-weight: inherit;
 }
 
+.input,
 .button {
   background-color: transparent;
   border: none;
@@ -14,6 +15,69 @@
   &:hover {
     cursor: pointer;
   }
+}
+
+.input,
+.button--main,
+.input-label::after {
+  border-radius: 1000px;
+  font-size: 1.4rem;
+  height: 5.9rem;
+  letter-spacing: 0.05em;
+  line-height: 5.9rem;
+  padding: 0 4rem;
+}
+
+.input {
+  background-color: white;
+  background-clip: padding-box;
+  border: 2px #e3e3e3 solid;
+  color: $text-main-color;
+  font-weight: 600;
+  line-height: 5.5rem;
+  position: relative;
+
+  &:-ms-input-placeholder {
+    color: $text-placeholder-color;
+  }
+
+  &::placeholder {
+    color: $text-placeholder-color;
+  }
+
+  &:focus {
+    border-color: transparent;
+    outline: none;
+  }
+}
+
+.input-label {
+  height: 0;
+  overflow: hidden;
+  width: 0;
+
+  &::after {
+    background: transparent;
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+  }
+}
+
+.input:focus + .input-label::after {
+  background: linear-gradient(to right, #ffc341, #ffd701);
+}
+
+.button--main {
+  background: linear-gradient(146.13deg, #ffc341 20.46%, #ffd701 65.31%);
+  color: $text-button-color;
+  font-weight: 500;
+  text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.12);
 }
 
 .link {
