@@ -5,6 +5,10 @@
   &--want {
     padding-left: 210px;
   }
+
+  &--how {
+    padding-left: 106px;
+  }
 }
 
 @include mq(tablet) {

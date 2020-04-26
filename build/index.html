@@ -49,22 +49,22 @@
           <use xlink:href="img/svg/sprite.svg#scroll"></use>
         </svg>
         <picture>
-          <!-- 1x - 769px; 2x - 1538px -->
+          <!-- 1x: 769px; 2x: 1538px -->
           <source media="(max-width: 767px)" srcset="
               img/banner/banner@1x--sm.webp,
               img/banner/banner@2x--sm.webp 2x
             " type="image/webp">
-          <!-- 1x - 1366px; 2x - 2732px -->
+          <!-- 1x: 1366px; 2x: 2732px -->
           <source srcset="
               img/banner/banner@1x--lg.webp,
               img/banner/banner@2x--lg.webp 2x
             " type="image/webp">
-          <!-- 1x - 769px; 2x - 1538px -->
+          <!-- 1x: 769px; 2x: 1538px -->
           <source media="(max-width: 767px)" srcset="
               img/banner/banner@1x--sm.jpg,
               img/banner/banner@2x--sm.jpg 2x
             ">
-          <!-- 1x - 1366px; 2x - 2732px -->
+          <!-- 1x: 1366px; 2x: 2732px -->
           <img src="img/banner/banner@1x--lg.jpg" srcset="img/banner/banner@2x--lg.jpg 2x" alt="Девушка смотрит на панораму Израиля" width="1366" height="906"></picture>
       </section>
       <!-- Баннер. Конец -->
@@ -193,7 +193,51 @@
     </main>
     <!-- Главный экран. Конец -->
 
-    <div class="bg-container"></div>
+    <div class="bg-container">
+      <!-- Как поехать -->
+      <section class="section how d-flex">
+        <div class="how__info container container--how">
+          <h2>Как поехать</h2>
+          <p>
+            Чтобы узнать подробнее о программе, свяжитесь с координатором в
+            вашем городе. Вы получите актуальные сведения о доступных программах
+            и городах, в которых можете пройти программу.
+          </p>
+          <p>
+            <strong>Чтобы иметь возможность получить грант на обучение от 4200 до
+              8400$, вы должны:</strong>
+          </p>
+          <ol class="list how__conditions">
+            <li class="how__condition">Быть в возрасте от 16 до 30 лет</li>
+            <li class="how__condition">Иметь оконченное среднее образование</li>
+            <li class="how__condition">
+              Иметь документально подтверждённые еврейские корни и пройти
+              консульскую проверку
+            </li>
+            <li class="how__condition">
+              За последние 2 года быть не больше 3х месяцев подряд непрерывно в
+              Израиле.
+            </li>
+          </ol>
+          <div class="how__note">
+            <p>
+              Если вы не подходите по этим правилам, вы всё равно можете принять
+              участие в программе «Маса», оплатив её полную стоимость.
+            </p>
+          </div>
+        </div>
+        <picture class="picture">
+          <!-- Пустая картинка для планшета -->
+          <!-- 1х: 1px; 2x: 1px -->
+          <source media="(max-width: 1023px)" srcset="img/blank.gif">
+          <!-- 1x: 581px; 2x: 1162px  -->
+          <source type="image/webp" srcset="img/how/how@1x--lg.webp, img/how/how@2x--lg.webp 2x">
+          <!-- 1x: 581px; 2x: 1162px  -->
+          <img src="img/how/how@1x--lg.jpg" srcset="img/how/how@2x--lg.jpg 2x" alt="Парень с девушкой смеются" width="581" height="707">
+        </picture>
+      </section>
+      <!-- Как поехать. Конец -->
+    </div>
 
     <script async="" src="js/main.js"></script>
     <script async="" src="js/vendor.js"></script>

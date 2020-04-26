@@ -1,3 +1,9 @@
 .bg-container {
   background: url("../img/bg/bg@1x--lg.jpg") top / cover;
 }
+
+@include mq(phone) {
+  .bg-container {
+    background: none;
+  }
+}
