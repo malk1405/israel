@@ -463,18 +463,21 @@ template {
   margin: 0;
   padding: 0; }
 
+.button,
+.link {
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit; }
+
 .button {
   background-color: transparent;
   border: none;
-  font-variant: small-caps;
-  font-weight: 600;
   padding: 0;
-  text-transform: lowercase; }
+  text-transform: uppercase; }
   .button:hover {
     cursor: pointer; }
 
 .link {
-  color: inherit;
   text-decoration: none; }
   .link:not(.active-link):hover {
     cursor: pointer; }
@@ -537,7 +540,7 @@ template {
 
 .body {
   background-color: white;
-  color: #474747de;
+  color: rgba(71, 71, 71, 0.871);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -565,7 +568,7 @@ template {
 .header {
   height: 48px;
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: 600;
   left: 0;
   position: absolute;
   top: 32px;
@@ -590,17 +593,18 @@ template {
   width: 100%; }
 
 .header__button {
-  font-size: inherit;
-  letter-spacing: 0.1em;
+  font-size: 1.2rem;
+  letter-spacing: 0.08em;
   position: relative; }
   .header__button::after {
-    border-bottom: 2px #474747de solid;
-    -o-border-image: repeating-linear-gradient(90deg, #474747de, #474747de 2px, transparent 2px, transparent 6px, #474747de 6px, #474747de 8px) 1;
-       border-image: repeating-linear-gradient(90deg, #474747de, #474747de 2px, transparent 2px, transparent 6px, #474747de 6px, #474747de 8px) 1;
+    border-bottom: 2px rgba(71, 71, 71, 0.871) solid;
+    -o-border-image: repeating-linear-gradient(90deg, rgba(71, 71, 71, 0.871), rgba(71, 71, 71, 0.871) 2px, transparent 2px, transparent 6px, rgba(71, 71, 71, 0.871) 6px, rgba(71, 71, 71, 0.871) 8px) 1;
+       border-image: repeating-linear-gradient(90deg, rgba(71, 71, 71, 0.871), rgba(71, 71, 71, 0.871) 2px, transparent 2px, transparent 6px, rgba(71, 71, 71, 0.871) 6px, rgba(71, 71, 71, 0.871) 8px) 1;
     bottom: -3px;
     content: "";
     display: block;
     left: 0;
+    opacity: 0.8;
     position: absolute;
     width: 100%; }
 
@@ -630,7 +634,8 @@ template {
             align-items: flex-end;
     margin-top: -3px; }
   .header__button {
-    margin-right: 2px; } }
+    font-size: 1.1rem;
+    margin-right: 3px; } }
 
 .banner {
   -webkit-box-align: center;
@@ -858,7 +863,7 @@ template {
   z-index: 1; }
   .programs__tab-label::before {
     content: attr(data-text);
-    color: #474747de;
+    color: rgba(71, 71, 71, 0.871);
     display: block;
     position: absolute;
     text-transform: capitalize; }
