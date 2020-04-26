@@ -363,6 +363,8 @@ template {
   padding: 0 110px; }
   .container--programs, .container--want {
     padding-left: 210px; }
+  .container--how {
+    padding-left: 106px; }
 
 @media screen and (max-width: 1023px) {
   .container {
@@ -376,6 +378,10 @@ template {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
+
+.picture,
+.picture img {
+  display: block; }
 
 .sprite {
   position: relative;
@@ -1134,38 +1140,46 @@ template {
 .bg-container {
   background: url("../img/bg/bg@1x--lg.jpg") top/cover; }
 
-.body {
-  position: relative; }
-  .body,
-  .body *,
-  .body *::after,
-  .body *::before {
-    background: rgba(209, 10, 66, 0.11) !important; }
-  .body picture {
-    opacity: 0.4; }
-  .body-bg {
-    position: relative;
-    height: 0;
-    margin: 0 auto;
-    width: 1366px;
-    max-width: 100%; }
-    @media screen and (max-width: 767px) {
-      .body-bg {
-        width: 320px; } }
-    .body-bg::after {
-      content: "";
-      display: block;
-      position: absolute;
-      background-position: left;
-      background-repeat: no-repeat;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: 100%;
-      z-index: -1;
-      background-image: url("../img/temp/desktop.png") !important;
-      height: 7942px; }
-      @media screen and (max-width: 767px) {
-        .body-bg::after {
-          background-image: url("../img/temp/phone.png") !important;
-          height: 8423px; } }
+@media screen and (max-width: 767px) {
+  .bg-container {
+    background: none; } }
+
+.how {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 160px; }
+
+.how__info {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  max-width: 600px; }
+
+.how picture {
+  -ms-flex-negative: 3;
+      flex-shrink: 3;
+  -webkit-mask: url("../img/how/how-mask.png");
+          mask: url("../img/how/how-mask.png");
+  -webkit-mask-position: right;
+          mask-position: right;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: 581px 100%;
+          mask-size: 581px 100%;
+  margin-left: 10px; }
+
+.how img {
+  height: auto;
+  width: 100%; }
+
+@media screen and (max-width: 1023px) {
+  .how__info {
+    margin-left: 30%;
+    max-width: 800px; }
+  .how picture {
+    display: none; } }
+
+@media screen and (max-width: 767px) {
+  .how__info {
+    margin-left: 0; } }
