@@ -507,9 +507,14 @@ template {
     color: rgba(71, 71, 71, 0.5); }
   .input::placeholder {
     color: rgba(71, 71, 71, 0.5); }
-  .input:focus {
-    border-color: transparent;
+  .input:focus, .input:invalid {
     outline: none; }
+  .input:focus {
+    border-color: transparent; }
+  .input--invalid {
+    border-color: red; }
+  .input--invalid {
+    border-color: rgba(71, 71, 71, 0.871); }
 
 .input-label {
   height: 0;
