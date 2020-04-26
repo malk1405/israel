@@ -50,6 +50,11 @@
     outline: none;
   }
 
+  &:invalid {
+    background-color: white;
+    box-shadow: none;
+  }
+
   &:focus {
     border-color: transparent;
   }

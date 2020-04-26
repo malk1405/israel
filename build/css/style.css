@@ -509,6 +509,10 @@ template {
     color: rgba(71, 71, 71, 0.5); }
   .input:focus, .input:invalid {
     outline: none; }
+  .input:invalid {
+    background-color: white;
+    -webkit-box-shadow: none;
+            box-shadow: none; }
   .input:focus {
     border-color: transparent; }
   .input--invalid {
@@ -897,12 +901,6 @@ template {
       -ms-flex-align: center;
           align-items: center;
   position: relative; }
-  .programs__tab::before, .programs__tab::after {
-    content: "";
-    display: block;
-    height: 100%;
-    position: absolute;
-    top: 0; }
 
 .programs__tab + .programs__tab {
   margin-top: 4px; }
@@ -983,7 +981,8 @@ template {
   .programs {
     background-image: url("../img/programs/city-bg@1x--sm.jpg");
     background-position: top 198px right 0;
-    background-size: 296px 201px; } }
+    background-size: 296px 201px;
+    padding-top: 50px; } }
   @media screen and (max-width: 1023px) and (-webkit-min-device-pixel-ratio: 1.5), screen and (max-width: 1023px) and (min-resolution: 144dpi), screen and (max-width: 1023px) and (min-resolution: 1.5dppx) {
     .programs {
       background-image: url("../img/programs/city-bg@2x--sm.jpg"); } }
@@ -1049,11 +1048,27 @@ template {
     margin-bottom: 1.7rem; } }
 
 .want {
+  padding-bottom: 131px;
   padding-top: 224px;
-  background: url("../img/want/want-bg@1x--lg.jpg") top 15px right 0/818px 594px no-repeat, url("../img/want/bag-bg@1x--lg.jpg") top 150px left 0/147px 262px no-repeat; }
+  position: relative;
+  background: url("../img/want/bag-bg@1x--lg.jpg") top 150px left 0/147px 262px no-repeat; }
   @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
     .want {
-      background-image: url("../img/want/want-bg@2x--lg.jpg"); } }
+      background-image: url("../img/want/bag-bg@2x--lg.jpg"); } }
+  .want::after {
+    background: url("../img/want/want-bg@1x--lg.jpg") bottom right/contain no-repeat;
+    content: "";
+    display: block;
+    height: 594px;
+    max-width: 818px;
+    position: absolute;
+    right: 0;
+    top: 15px;
+    width: 60%;
+    z-index: -1; }
+    @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+      .want::after {
+        background-image: url("../img/want/want-bg@2x--lg.jpg"); } }
 
 .want-container {
   margin-left: 100px;
@@ -1071,3 +1086,12 @@ template {
   position: absolute;
   right: 0;
   top: 0; }
+
+@media screen and (max-width: 1023px) {
+  .want {
+    padding-top: 124px; }
+    .want::after {
+      max-width: 50%;
+      top: -150px; }
+  .want-container {
+    margin-left: 0; } }

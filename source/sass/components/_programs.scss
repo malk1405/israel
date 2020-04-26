@@ -33,15 +33,6 @@
 .programs__tab {
   align-items: center;
   position: relative;
-
-  &::before,
-  &::after {
-    content: "";
-    display: block;
-    height: 100%;
-    position: absolute;
-    top: 0;
-  }
 }
 
 .programs__tab + .programs__tab {
@@ -144,6 +135,8 @@
       position: top 198px right 0;
       size: 296px 201px;
     }
+
+    padding-top: 50px;
 
     @include mret() {
       background-image: url("../img/programs/city-bg@2x--sm.jpg");
