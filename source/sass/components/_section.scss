@@ -35,6 +35,7 @@
 .section__small p {
   font-size: 1.5rem;
   line-height: 2.6rem;
+  opacity: 0.7;
 }
 
 .section__small--narrow p {
@@ -47,8 +48,19 @@
     line-height: 3.9rem;
   }
 
+  .section h3 {
+    font-size: 2.4rem;
+    line-height: 2.9rem;
+    letter-spacing: -0.02em;
+  }
+
   .section p {
     font-size: 1.6rem;
     line-height: 2.6rem;
+  }
+
+  .section__small p {
+    font-size: 1.4rem;
+    line-height: 2.2rem;
   }
 }
