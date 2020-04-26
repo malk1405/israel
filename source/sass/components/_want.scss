@@ -64,3 +64,48 @@
     margin-left: 0;
   }
 }
+
+@include mq(phone) {
+  .want {
+    background-position: top 18px left 0;
+    background-size: 103px auto;
+
+    padding-top: 66px;
+    padding-bottom: 0;
+
+    &::after {
+      background: url("../img/want/want-bg@1x--sm.jpg") center/ auto 308px
+        no-repeat;
+      height: 308px;
+      margin: 0 -16px;
+      max-width: unset;
+      min-width: 320px;
+      position: static;
+      width: auto;
+    }
+  }
+
+  .want-container {
+    margin: 0 auto;
+    max-width: 550px;
+
+    &--form {
+      margin-top: 23px;
+      max-width: 287px;
+    }
+  }
+
+  .want h2 {
+    text-align: center;
+  }
+
+  .want__form-button {
+    margin: 8px auto 0;
+  }
+
+  .want__form-button {
+    position: static;
+    display: block;
+    width: 264px;
+  }
+}
