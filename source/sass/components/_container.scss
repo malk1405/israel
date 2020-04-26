@@ -1,5 +1,16 @@
 .container {
   padding: 0 110px;
+
+  &--programs,
+  &--want {
+    padding-left: 210px;
+  }
+}
+
+@include mq(tablet) {
+  .container {
+    padding: 0 100px;
+  }
 }
 
 @include mq(phone) {

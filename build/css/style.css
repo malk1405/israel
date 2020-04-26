@@ -361,6 +361,12 @@ template {
 
 .container {
   padding: 0 110px; }
+  .container--programs, .container--want {
+    padding-left: 210px; }
+
+@media screen and (max-width: 1023px) {
+  .container {
+    padding: 0 100px; } }
 
 @media screen and (max-width: 767px) {
   .container {
@@ -601,7 +607,8 @@ template {
     letter-spacing: -0.02em; }
   .section p {
     font-size: 1.6rem;
-    line-height: 2.6rem; }
+    line-height: 2.6rem;
+    margin: 1.5rem 0; }
   .section__small p {
     font-size: 1.4rem;
     line-height: 2.2rem; } }
@@ -887,10 +894,6 @@ template {
     .programs {
       background-image: url("../img/programs/city-bg@2x--lg.jpg"); } }
 
-.programs h2,
-.programs__tabs {
-  margin-left: 100px; }
-
 .programs h2 {
   margin-bottom: 67px; }
 
@@ -1075,7 +1078,6 @@ template {
         background-image: url("../img/want/want-bg@2x--lg.jpg"); } }
 
 .want-container {
-  margin-left: 100px;
   max-width: 400px; }
   .want-container--form {
     margin-top: 63px;
@@ -1104,7 +1106,7 @@ template {
   .want {
     background-position: top 18px left 0;
     background-size: 103px auto;
-    padding-top: 66px;
+    padding-top: 64px;
     padding-bottom: 0; }
     .want::after {
       background: url("../img/want/want-bg@1x--sm.jpg") center/auto 308px no-repeat;
@@ -1128,3 +1130,42 @@ template {
     position: static;
     display: block;
     width: 264px; } }
+
+.bg-container {
+  background: url("../img/bg/bg@1x--lg.jpg") top/cover; }
+
+.body {
+  position: relative; }
+  .body,
+  .body *,
+  .body *::after,
+  .body *::before {
+    background: rgba(209, 10, 66, 0.11) !important; }
+  .body picture {
+    opacity: 0.4; }
+  .body-bg {
+    position: relative;
+    height: 0;
+    margin: 0 auto;
+    width: 1366px;
+    max-width: 100%; }
+    @media screen and (max-width: 767px) {
+      .body-bg {
+        width: 320px; } }
+    .body-bg::after {
+      content: "";
+      display: block;
+      position: absolute;
+      background-position: left;
+      background-repeat: no-repeat;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: -1;
+      background-image: url("../img/temp/desktop.png") !important;
+      height: 7942px; }
+      @media screen and (max-width: 767px) {
+        .body-bg::after {
+          background-image: url("../img/temp/phone.png") !important;
+          height: 8423px; } }
