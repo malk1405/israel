@@ -45,9 +45,21 @@
     color: $text-placeholder-color;
   }
 
+  &:focus,
+  &:invalid {
+    outline: none;
+  }
+
   &:focus {
     border-color: transparent;
-    outline: none;
+  }
+
+  &--invalid {
+    border-color: red;
+  }
+
+  &--invalid {
+    border-color: $text-main-color;
   }
 }
 
