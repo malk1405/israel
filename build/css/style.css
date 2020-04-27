@@ -1132,7 +1132,9 @@ template {
     width: 264px; } }
 
 .bg-container {
-  background: url("../img/bg/bg@1x--lg.jpg") top/cover; }
+  background: url("../img/bg/bg@1x--lg.jpg") top/cover;
+  position: relative;
+  z-index: -1000; }
 
 @media screen and (max-width: 767px) {
   .bg-container {
@@ -1396,7 +1398,8 @@ template {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   position: absolute;
-  width: auto; }
+  width: auto;
+  z-index: -1; }
 
 .life__picture--huge img {
   left: auto;

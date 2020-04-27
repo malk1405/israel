@@ -68,6 +68,7 @@
   transform: translateX(-50%);
   position: absolute;
   width: auto;
+  z-index: -1;
 }
 
 .life__picture--huge img {
