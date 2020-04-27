@@ -1285,14 +1285,8 @@ template {
 .how picture {
   -ms-flex-negative: 3;
       flex-shrink: 3;
-  -webkit-mask: url("../img/how/how-mask.png");
-          mask: url("../img/how/how-mask.png");
-  -webkit-mask-position: right;
-          mask-position: right;
-  -webkit-mask-repeat: no-repeat;
-          mask-repeat: no-repeat;
-  -webkit-mask-size: 581px 100%;
-          mask-size: 581px 100%;
+  -webkit-mask: radial-gradient(ellipse at center, black, black 50%, transparent 70%), url("../img/how/how-mask.png") right/581px 100% no-repeat;
+          mask: radial-gradient(ellipse at center, black, black 50%, transparent 70%), url("../img/how/how-mask.png") right/581px 100% no-repeat;
   margin-left: 10px; }
 
 .how img {
