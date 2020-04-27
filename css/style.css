@@ -1341,39 +1341,3 @@ template {
     padding-left: 8px; }
     .how__note::after {
       left: -6px; } }
-
-.body {
-  position: relative; }
-  .body,
-  .body *,
-  .body *::after,
-  .body *::before {
-    background: rgba(209, 10, 66, 0.11) !important; }
-  .body picture {
-    opacity: 0.4; }
-  .body-bg {
-    position: relative;
-    height: 0;
-    margin: 0 auto;
-    width: 1366px;
-    max-width: 100%; }
-    @media screen and (max-width: 767px) {
-      .body-bg {
-        width: 320px; } }
-    .body-bg::after {
-      content: "";
-      display: block;
-      position: absolute;
-      background-position: left;
-      background-repeat: no-repeat;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: 100%;
-      z-index: -1;
-      background-image: url("../img/temp/desktop.png") !important;
-      height: 7942px; }
-      @media screen and (max-width: 767px) {
-        .body-bg::after {
-          background-image: url("../img/temp/phone.png") !important;
-          height: 8423px; } }
