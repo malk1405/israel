@@ -91,7 +91,7 @@
 }
 
 .input:focus + .input-label::after {
-  background: linear-gradient(to right, $button-color-start, #ffd701);
+  background: $tab-gradient;
 }
 
 .button--main {

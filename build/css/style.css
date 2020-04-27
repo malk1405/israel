@@ -1193,7 +1193,7 @@ template {
   display: -ms-flexbox;
   display: flex;
   min-height: 7.6rem;
-  padding-left: 4.2rem;
+  padding: 1.5rem 0 1.5rem 4.2rem;
   position: relative;
   z-index: 0; }
   @media screen and (max-width: 767px) {
@@ -1209,6 +1209,9 @@ template {
         line-height: 2.6rem;
         margin: 1.5rem 0; } }
   .how__condition::after {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     background-color: white;
     border-radius: 1000px;
     -webkit-box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.1);
@@ -1220,11 +1223,11 @@ template {
     display: -ms-flexbox;
     display: flex;
     font-weight: bold;
+    height: 4rem;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
     left: 0;
-    line-height: 4rem;
     margin: 0;
     min-width: 4rem;
     position: absolute;
@@ -1248,10 +1251,6 @@ template {
     bottom: 0;
     top: auto; }
 
-.how__note {
-  margin-bottom: 0;
-  margin-right: -80px; }
-
 .how__note p {
   font-size: 1.5rem;
   line-height: 2.6rem;
@@ -1260,6 +1259,22 @@ template {
     .how__note p {
       font-size: 1.4rem;
       line-height: 2.2rem; } }
+
+.how__note {
+  margin-bottom: 0;
+  margin-right: -80px;
+  padding-left: 15px;
+  position: relative; }
+  .how__note::after {
+    background: -webkit-gradient(linear, left top, right top, from(#ffc341), to(#ffd701));
+    background: linear-gradient(to right, #ffc341, #ffd701);
+    content: "";
+    display: block;
+    height: 100%;
+    left: -3px;
+    position: absolute;
+    top: 0;
+    width: 4px; }
 
 .how picture {
   -ms-flex-negative: 3;
@@ -1279,19 +1294,42 @@ template {
   width: 100%; }
 
 @media screen and (max-width: 1023px) {
+  .how {
+    margin-top: 50px; }
   .how__info {
     margin-left: 30%;
-    max-width: 800px; }
+    max-width: 800px;
+    width: 100%; }
   .how picture {
     display: none; } }
 
 @media screen and (max-width: 767px) {
+  .how {
+    margin-top: 80px; }
   .how__info {
-    margin-left: 0; }
+    margin: 0 auto;
+    max-width: 500px; }
+  .how__info h2 {
+    text-align: center;
+    margin-bottom: 2.5rem; }
+  .how__conditions-description p {
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    margin-top: -0.8rem; }
+  .how__conditions {
+    margin-top: -1.8rem; }
   .how__condition {
-    padding-left: 4.4rem; }
+    margin-top: 0;
+    min-height: 9.2rem;
+    padding: 1rem 0 1rem 4.4rem; }
     .how__condition::after {
-      line-height: 3.6rem;
-      width: 3.6rem; }
+      height: 3.6rem;
+      min-width: 3.6rem; }
     .how__condition::after, .how__condition::before {
-      left: 8px; } }
+      left: 10px; }
+  .how__note {
+    margin-right: 0;
+    margin-top: -2.5rem;
+    padding-left: 8px; }
+    .how__note::after {
+      left: -6px; } }
