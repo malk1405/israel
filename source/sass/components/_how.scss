@@ -99,6 +99,14 @@
   }
 }
 
+// IE не может при не заданном height спозиционировать контент по центру
+.ie-fix {
+  display: block;
+  height: 4.6rem;
+  margin-right: -1px;
+  width: 1px;
+}
+
 .how__note p {
   @include font-sm-narrow();
 }
@@ -191,6 +199,10 @@
     &::before {
       left: 10px;
     }
+  }
+
+  .ie-fix {
+    height: 7.2rem;
   }
 
   .how__note {
