@@ -1,13 +1,18 @@
 //=== Colors ===/
 
 $body-bg-color: white;
+$button-color-start: #ffc341;
 
-$text-main-color: rgba(71, 71, 71, 0.871);
-$text-placeholder-color: rgba(71, 71, 71, 0.5);
+$text-base-color: #484848;
+
+$text-main-color: rgba($text-base-color, 0.87);
+$text-placeholder-color: rgba($text-base-color, 0.5);
 $text-button-color: white;
-$text-bright-color: #484848;
+$text-bright-color: rgba($text-base-color, 1);
 $text-photo-color: white;
 $text-header-color: #1fc0fc;
+
+$text-index-color: $button-color-start;
 
 //=== /Colors ===/
 

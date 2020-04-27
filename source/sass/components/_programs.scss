@@ -64,7 +64,11 @@
 }
 
 .programs__tab-radio:checked + .programs__tab-label {
-  background: linear-gradient(138.15deg, #ffc341 20.46%, #ffd701 65.31%);
+  background: linear-gradient(
+    138.15deg,
+    $button-color-start 20.46%,
+    #ffd701 65.31%
+  );
 
   &::before {
     color: white;
@@ -101,12 +105,12 @@
     background: transparent;
     background: -webkit-linear-gradient(
       312.19deg,
-      #ffc341 20.46%,
+      $button-color-start 20.46%,
       #ffd701 65.31%
     );
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    color: #ffc341;
+    color: $button-color-start;
     font-size: inherit;
     font-weight: inherit;
     letter-spacing: inherit;
@@ -116,6 +120,10 @@
 
 .programs__list {
   max-width: 550px;
+}
+
+.programs__list p {
+  @include font-sm();
 }
 
 .programs__list h3 {
