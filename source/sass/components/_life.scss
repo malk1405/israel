@@ -140,6 +140,13 @@
     right: 50%;
     transform: translateX(50%);
   }
+
+  .life__picture figcaption {
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-align: center;
+    padding: 1.5rem;
+  }
 }
 
 @include mq(phone) {
