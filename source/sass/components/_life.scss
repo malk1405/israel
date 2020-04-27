@@ -18,6 +18,7 @@
   margin-left: auto;
   margin-top: 4.5rem;
   max-width: 60%;
+  min-width: 482px;
   position: relative;
 }
 
@@ -100,6 +101,37 @@
 @include mq(tablet) {
   .life p {
     text-align: left;
+  }
+
+  .life__gallery {
+    justify-content: center;
+    margin-top: 0;
+    align-items: flex-end;
+    max-width: 100%;
+  }
+
+  .life__picture {
+    flex-basis: 30%;
+    margin: 0 1.5% 3rem;
+  }
+
+  .life__picture--big {
+    flex-basis: 45%;
+    flex-grow: 0;
+    max-width: 411px;
+    order: 2;
+  }
+
+  .life__picture--huge {
+    height: 350px;
+    position: static;
+  }
+
+  .life__picture--huge img {
+    height: 100%;
+    width: auto;
+    right: 50%;
+    transform: translateX(50%);
   }
 }
 
