@@ -1441,6 +1441,8 @@ template {
     -ms-flex-preferred-size: 30%;
         flex-basis: 30%;
     margin: 0 1.5% 3rem; }
+  .life__picture--small {
+    max-width: 211px; }
   .life__picture--big {
     -ms-flex-preferred-size: 45%;
         flex-basis: 45%;
@@ -1453,7 +1455,10 @@ template {
             order: 2; }
   .life__picture--huge {
     height: 350px;
-    position: static; }
+    position: relative;
+    top: 0;
+    bottom: 0;
+    right: 0; }
   .life__picture--huge img {
     height: 100%;
     width: auto;
