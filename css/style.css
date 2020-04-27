@@ -1464,7 +1464,12 @@ template {
     width: auto;
     right: 50%;
     -webkit-transform: translateX(50%);
-            transform: translateX(50%); } }
+            transform: translateX(50%); }
+  .life__picture figcaption {
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-align: center;
+    padding: 1.5rem; } }
 
 @media screen and (max-width: 767px) {
   .life {
