@@ -600,7 +600,8 @@ template {
 @media screen and (max-width: 767px) {
   .section h2 {
     font-size: 3.2rem;
-    line-height: 3.9rem; }
+    line-height: 3.9rem;
+    text-align: center; }
   .section h3 {
     font-size: 2.4rem;
     line-height: 2.9rem;
@@ -1123,8 +1124,6 @@ template {
     .want-container--form {
       margin-top: 23px;
       max-width: 287px; }
-  .want h2 {
-    text-align: center; }
   .want__form-button {
     margin: 8px auto 0; }
   .want__form-button {
@@ -1310,7 +1309,6 @@ template {
     margin: 0 auto;
     max-width: 500px; }
   .how__info h2 {
-    text-align: center;
     margin-bottom: 2.5rem; }
   .how__conditions-description p {
     font-size: 1.6rem;
@@ -1335,3 +1333,61 @@ template {
     padding-left: 8px; }
     .how__note::after {
       left: -6px; } }
+
+.life {
+  margin-top: 16rem; }
+
+.life h2 {
+  text-align: center; }
+
+.life p {
+  margin: 0 auto;
+  max-width: 720px;
+  padding-right: 11px;
+  text-align: right; }
+
+@media screen and (max-width: 1023px) {
+  .life p {
+    text-align: left; } }
+
+@media screen and (max-width: 767px) {
+  .life {
+    margin-top: 6.2rem; }
+  .life__first-word {
+    display: block; } }
+
+.body {
+  position: relative; }
+  .body,
+  .body *,
+  .body *::after,
+  .body *::before {
+    background: rgba(209, 10, 66, 0.11) !important; }
+  .body picture {
+    opacity: 0.4; }
+  .body-bg {
+    position: relative;
+    height: 0;
+    margin: 0 auto;
+    width: 1366px;
+    max-width: 100%; }
+    @media screen and (max-width: 767px) {
+      .body-bg {
+        width: 320px; } }
+    .body-bg::after {
+      content: "";
+      display: block;
+      position: absolute;
+      background-position: left;
+      background-repeat: no-repeat;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: -1;
+      background-image: url("../img/temp/desktop.png") !important;
+      height: 7942px; }
+      @media screen and (max-width: 767px) {
+        .body-bg::after {
+          background-image: url("../img/temp/phone.png") !important;
+          height: 8423px; } }

@@ -1,0 +1,30 @@
+.life {
+  margin-top: 16rem;
+}
+
+.life h2 {
+  text-align: center;
+}
+
+.life p {
+  margin: 0 auto;
+  max-width: 720px;
+  padding-right: 11px;
+  text-align: right;
+}
+
+@include mq(tablet) {
+  .life p {
+    text-align: left;
+  }
+}
+
+@include mq(phone) {
+  .life {
+    margin-top: 6.2rem;
+  }
+
+  .life__first-word {
+    display: block;
+  }
+}
