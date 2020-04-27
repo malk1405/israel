@@ -115,6 +115,10 @@
     margin: 0 1.5% 3rem;
   }
 
+  .life__picture--small {
+    max-width: 211px;
+  }
+
   .life__picture--big {
     flex-basis: 45%;
     flex-grow: 0;
@@ -124,7 +128,10 @@
 
   .life__picture--huge {
     height: 350px;
-    position: static;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    right: 0;
   }
 
   .life__picture--huge img {
