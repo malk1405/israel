@@ -1,13 +1,24 @@
 .meet {
-  background: rgba(146, 87, 151, 0.514) url("../../img/meet/meet-bg@1x--lg.jpg")
-    center/cover no-repeat;
-
+  margin-top: 13rem;
   padding-bottom: 19.6rem;
   padding-top: 12rem;
-  margin-top: 13rem;
+  position: relative;
 
-  @include mret() {
-    background-image: url("../../img/meet/meet-bg@2x--lg.jpg");
+  &::after {
+    background: rgba(146, 87, 151, 0.514)
+      url("../../img/meet/meet-bg@1x--lg.jpg") center/cover no-repeat;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 100%;
+    right: 0;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+
+    @include mret() {
+      background-image: url("../../img/meet/meet-bg@2x--lg.jpg");
+    }
   }
 }
 
@@ -27,4 +38,40 @@
 .meet__button svg {
   fill: $text-button-color;
   margin: 0 8px 0 2px;
+}
+
+@include mq(phone) {
+  .meet {
+    margin-top: 0;
+    padding-top: 8.5rem;
+    padding-bottom: 0;
+
+    &::after {
+      background-image: url("../../img/meet/meet-bg@1x--sm.jpg");
+      background-position: 22%;
+      bottom: 7.5rem;
+      height: 272px;
+
+      @include mret() {
+        background-image: url("../../img/meet/meet-bg@2x--sm.jpg");
+      }
+    }
+  }
+
+  .meet h2 {
+    font-size: 4rem;
+    margin-bottom: 10.1rem;
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+
+  .meet p {
+    margin: 0 auto;
+    max-width: 36rem;
+  }
+
+  .meet__button {
+    justify-content: center;
+    margin-top: 5.8rem;
+  }
 }
