@@ -72,6 +72,8 @@
 
   &::before {
     color: white;
+    background: transparent;
+    -webkit-text-fill-color: white;
     font-size: 1.2rem;
     font-weight: 500;
     letter-spacing: 0.13em;
@@ -98,7 +100,11 @@
   }
 }
 
-.programs__tab-label.programs__tab-label:hover {
+.programs__tab-radio:focus + .programs__tab-label {
+  box-shadow: $focus-shadow;
+}
+
+.programs__tab-label:hover {
   background: transparent;
 
   &::before {
@@ -111,11 +117,14 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: $button-color-start;
-    font-size: inherit;
-    font-weight: inherit;
-    letter-spacing: inherit;
-    text-transform: capitalize;
   }
+}
+
+.programs__tab-label.programs__tab-label:hover::before {
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  text-transform: capitalize;
 }
 
 .programs__list {
@@ -166,7 +175,9 @@
     font-weight: 500;
     letter-spacing: 0.03em;
     margin: 0;
-    margin-bottom: 15px;
+    margin-bottom: 14px;
+    margin-top: -1px;
+    padding: 1px 0;
 
     overflow: hidden;
     width: auto;

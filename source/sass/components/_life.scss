@@ -218,7 +218,7 @@
   }
 
   .life__gallery-radio:focus + label {
-    outline: 1px #a6d7f8 solid;
+    box-shadow: $focus-shadow;
   }
 
   .life__gallery-radio:checked + label {

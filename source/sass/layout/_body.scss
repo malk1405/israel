@@ -2,6 +2,15 @@
   font-size: 62.5%;
 }
 
+:focus {
+  outline: none;
+  box-shadow: $focus-shadow;
+}
+
+:focus:hover {
+  box-shadow: none;
+}
+
 .body {
   background-color: $body-bg-color;
   color: $text-main-color;
