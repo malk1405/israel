@@ -11,13 +11,17 @@
   }
 
   &--meet {
-    padding-left: 795px;
+    padding-left: 58.2%;
   }
 }
 
 @include mq(tablet) {
   .container {
     padding: 0 100px;
+
+    &--meet {
+      padding-left: 54%;
+    }
   }
 }
 

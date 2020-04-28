@@ -1,17 +1,29 @@
 .meet {
-  margin-top: 25rem;
+  background: rgba(146, 87, 151, 0.514) url("../../img/meet/meet-bg@1x--lg.jpg")
+    center/cover no-repeat;
+
+  padding-bottom: 19.6rem;
+  padding-top: 12rem;
+  margin-top: 13rem;
+
+  @include mret() {
+    background-image: url("../../img/meet/meet-bg@2x--lg.jpg");
+  }
 }
 
 .meet p {
-  font-weight: 500;
-
+  color: rgba($text-photo-color, 0.87);
+  margin-left: 4px;
   max-width: 39rem;
+  text-shadow: $text-shadow;
 }
 
 .meet__button {
   align-items: center;
   display: flex;
+  margin-top: 4.7rem;
 }
 
 .meet__button svg {
+  margin: 0 8px 0 2px;
 }

@@ -366,11 +366,13 @@ template {
   .container--how {
     padding-left: 109px; }
   .container--meet {
-    padding-left: 795px; }
+    padding-left: 58.2%; }
 
 @media screen and (max-width: 1023px) {
   .container {
-    padding: 0 100px; } }
+    padding: 0 100px; }
+    .container--meet {
+      padding-left: 54%; } }
 
 @media screen and (max-width: 767px) {
   .container {
@@ -1156,7 +1158,7 @@ template {
     position: static; } }
 
 .bg-container {
-  background: url("../img/bg/bg@1x--lg.jpg") top/cover;
+  background: url("../img/bg/bg@1x--lg.jpg") top/1366px;
   position: relative;
   z-index: -1000; }
 
@@ -1556,11 +1558,19 @@ template {
     background: linear-gradient(to right, #ffc341, #ffd701); } }
 
 .meet {
-  margin-top: 25rem; }
+  background: rgba(146, 87, 151, 0.514) url("../../img/meet/meet-bg@1x--lg.jpg") center/cover no-repeat;
+  padding-bottom: 19.6rem;
+  padding-top: 12rem;
+  margin-top: 13rem; }
+  @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    .meet {
+      background-image: url("../../img/meet/meet-bg@2x--lg.jpg"); } }
 
 .meet p {
-  font-weight: 500;
-  max-width: 39rem; }
+  color: rgba(255, 255, 255, 0.87);
+  margin-left: 4px;
+  max-width: 39rem;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12); }
 
 .meet__button {
   -webkit-box-align: center;
@@ -1568,4 +1578,8 @@ template {
           align-items: center;
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  margin-top: 4.7rem; }
+
+.meet__button svg {
+  margin: 0 8px 0 2px; }
