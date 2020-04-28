@@ -1,8 +1,41 @@
 //=== Colors ===/
 
 $body-bg-color: white;
-$button-color-start: #ffc341;
-$tab-gradient: linear-gradient(to right, $button-color-start, #ffd701);
+$gradient-color-start: #ffc341;
+$gradient-color-end: #ffd701;
+
+$tab-gradient: linear-gradient(
+  138.15deg,
+  $gradient-color-start 20.46%,
+  $gradient-color-end 65.31%
+);
+
+$text-gradient: -webkit-linear-gradient(
+  42.19deg,
+  $gradient-color-start 20.46%,
+  $gradient-color-end 65.31%
+);
+
+$text-gradient-faq: -webkit-linear-gradient(
+  5.15deg,
+  $gradient-color-start 20.46%,
+  $gradient-color-end 65.31%
+);
+
+$button-gradient: $tab-gradient;
+
+$button-gradient-hover: linear-gradient(
+  143.55deg,
+  $gradient-color-start -50.3%,
+  $gradient-color-end 63.1%
+);
+
+$button-gradient-active: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0) 30.67%,
+    rgba(3, 3, 3, 0.24) 100%
+  ),
+  #{$button-gradient-hover};
 
 $text-base-color: #484848;
 
@@ -13,7 +46,7 @@ $text-bright-color: rgba($text-base-color, 1);
 $text-photo-color: white;
 $text-header-color: #1fc0fc;
 
-$text-index-color: $button-color-start;
+$text-index-color: $gradient-color-start;
 
 $text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
 

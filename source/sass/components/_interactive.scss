@@ -95,14 +95,19 @@
 }
 
 .button--main {
-  background: linear-gradient(
-    146.13deg,
-    $button-color-start 20.46%,
-    #ffd701 65.31%
-  );
+  background: $button-gradient;
+  background: $button-gradient;
   color: $text-button-color;
   font-weight: 500;
   text-shadow: $text-shadow;
+
+  &:hover {
+    background: $button-gradient-hover;
+  }
+
+  &:active {
+    background: $button-gradient-active;
+  }
 }
 
 .link {

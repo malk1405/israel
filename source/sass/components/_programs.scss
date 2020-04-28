@@ -64,12 +64,7 @@
 }
 
 .programs__tab-radio:checked + .programs__tab-label {
-  background: linear-gradient(
-    138.15deg,
-    $button-color-start 20.46%,
-    #ffd701 65.31%
-  );
-
+  background: $tab-gradient;
   &::before {
     color: white;
     background: transparent;
@@ -109,14 +104,10 @@
 
   &::before {
     background: transparent;
-    background: -webkit-linear-gradient(
-      312.19deg,
-      $button-color-start 20.46%,
-      #ffd701 65.31%
-    );
+    background: $text-gradient;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    color: $button-color-start;
+    color: $gradient-color-start;
   }
 }
 
