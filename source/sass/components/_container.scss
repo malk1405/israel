@@ -9,6 +9,10 @@
   &--how {
     padding-left: 109px;
   }
+
+  &--meet {
+    padding-left: 795px;
+  }
 }
 
 @include mq(tablet) {

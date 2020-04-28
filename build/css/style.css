@@ -365,6 +365,8 @@ template {
     padding-left: 210px; }
   .container--how {
     padding-left: 109px; }
+  .container--meet {
+    padding-left: 795px; }
 
 @media screen and (max-width: 1023px) {
   .container {
@@ -558,7 +560,7 @@ template {
   background: linear-gradient(146.13deg, #ffc341 20.46%, #ffd701 65.31%);
   color: white;
   font-weight: 500;
-  text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.12); }
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12); }
 
 .link {
   text-decoration: none; }
@@ -566,6 +568,11 @@ template {
     cursor: pointer; }
   .link:not(.active-link):hover, .link:not(.active-link):focus {
     text-decoration: underline; }
+
+@media screen and (max-width: 767px) {
+  .button--main {
+    margin: 0 auto;
+    width: 264px; } }
 
 .section {
   max-width: 100%; }
@@ -1144,11 +1151,9 @@ template {
       margin-top: 23px;
       max-width: 287px; }
   .want__form-button {
-    margin: 8px auto 0; }
-  .want__form-button {
-    position: static;
     display: block;
-    width: 264px; } }
+    margin-top: 0.8rem;
+    position: static; } }
 
 .bg-container {
   background: url("../img/bg/bg@1x--lg.jpg") top/cover;
@@ -1437,7 +1442,7 @@ template {
   line-height: 2.5rem;
   padding: 0 2.4rem;
   position: absolute;
-  text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.12);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
   width: 100%; }
 
 .life__picture--huge figcaption {
@@ -1549,3 +1554,18 @@ template {
     border: 0;
     background: -webkit-gradient(linear, left top, right top, from(#ffc341), to(#ffd701));
     background: linear-gradient(to right, #ffc341, #ffd701); } }
+
+.meet {
+  margin-top: 25rem; }
+
+.meet p {
+  font-weight: 500;
+  max-width: 39rem; }
+
+.meet__button {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }

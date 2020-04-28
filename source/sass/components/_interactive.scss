@@ -102,7 +102,7 @@
   );
   color: $text-button-color;
   font-weight: 500;
-  text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.12);
+  text-shadow: $text-shadow;
 }
 
 .link {
@@ -115,5 +115,12 @@
   &:not(.active-link):hover,
   &:not(.active-link):focus {
     text-decoration: underline;
+  }
+}
+
+@include mq(phone) {
+  .button--main {
+    margin: 0 auto;
+    width: 264px;
   }
 }
