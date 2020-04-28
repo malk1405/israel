@@ -88,6 +88,7 @@
   line-height: 2.5rem;
   padding: 0 2.4rem;
   position: absolute;
+  width: 100%;
 }
 
 .life__picture--huge figcaption {
@@ -96,6 +97,10 @@
 
 .life__picture--big figcaption {
   padding: 0 2.5rem 0 3.2rem;
+}
+
+.life__gallery-controls {
+  display: none;
 }
 
 @include mq(tablet) {
@@ -156,5 +161,67 @@
 
   .life__first-word {
     display: block;
+  }
+
+  .life__gallery,
+  .life__picture {
+  }
+
+  .life__gallery {
+    display: block;
+    margin-top: 2.3rem;
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .life__picture {
+    display: none;
+    height: auto;
+    margin: 0 auto;
+    max-width: 400px;
+    width: 100%;
+
+    &--active {
+      display: block;
+    }
+  }
+
+  .life__picture img {
+    position: static;
+    transform: none;
+    width: 100%;
+  }
+
+  .life__gallery figcaption {
+    padding: 0 3.2rem;
+    bottom: 5%;
+    line-height: 2.2rem;
+  }
+
+  .life__gallery-controls {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 17px;
+  }
+
+  .life__gallery-controls label {
+    background-color: rgba($text-base-color, 0.2);
+    border: 1px transparent solid;
+    background-clip: padding-box;
+    border-radius: 100px;
+    margin: 0 3px;
+    display: block;
+    height: 8px;
+    width: 8px;
+  }
+
+  .life__gallery-radio:focus + label {
+    outline: 1px rgb(166, 215, 248) solid;
+  }
+
+  .life__gallery-radio:checked + label {
+    border: 0;
+    background: $tab-gradient;
   }
 }
