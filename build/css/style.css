@@ -1582,4 +1582,5 @@ template {
   margin-top: 4.7rem; }
 
 .meet__button svg {
+  fill: white;
   margin: 0 8px 0 2px; }
