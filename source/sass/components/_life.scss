@@ -88,6 +88,7 @@
   line-height: 2.5rem;
   padding: 0 2.4rem;
   position: absolute;
+  text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.12);
   width: 100%;
 }
 
@@ -171,7 +172,6 @@
     display: block;
     margin-top: 2.3rem;
     min-width: 100%;
-    max-width: 100%;
   }
 
   .life__picture {
@@ -210,6 +210,7 @@
     border: 1px transparent solid;
     background-clip: padding-box;
     border-radius: 100px;
+    cursor: pointer;
     margin: 0 3px;
     display: block;
     height: 8px;
@@ -217,7 +218,7 @@
   }
 
   .life__gallery-radio:focus + label {
-    outline: 1px rgb(166, 215, 248) solid;
+    outline: 1px #a6d7f8 solid;
   }
 
   .life__gallery-radio:checked + label {
