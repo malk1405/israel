@@ -433,19 +433,19 @@ template {
 .programs__tab-radio:checked + label > .sprite--star {
   background-position: -209px -100px; }
 
-.sprite-container.sprite-container:hover .sprite--bag {
+.sprite-container:hover .sprite--bag {
   background-position: -89px -5px; }
 
-.sprite-container.sprite-container:hover .sprite--hand {
+.sprite-container:hover .sprite--hand {
   background-position: -5px -44px; }
 
-.sprite-container.sprite-container:hover .sprite--hat {
+.sprite-container:hover .sprite--hat {
   background-position: -139px -44px; }
 
-.sprite-container.sprite-container:hover .sprite--relig {
+.sprite-container:hover .sprite--relig {
   background-position: -275px -57px; }
 
-.sprite-container.sprite-container:hover .sprite--star {
+.sprite-container:hover .sprite--star {
   background-position: -247px -100px; }
 
 .sprite picture,
@@ -609,6 +609,15 @@ template {
 
 :root {
   font-size: 62.5%; }
+
+:focus {
+  outline: none;
+  -webkit-box-shadow: 0 0 0 1px rgba(31, 192, 252, 0.4);
+          box-shadow: 0 0 0 1px rgba(31, 192, 252, 0.4); }
+
+:focus:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none; }
 
 .body {
   background-color: white;
@@ -935,6 +944,8 @@ template {
   background: linear-gradient(138.15deg, #ffc341 20.46%, #ffd701 65.31%); }
   .programs__tab-radio:checked + .programs__tab-label::before {
     color: white;
+    background: transparent;
+    -webkit-text-fill-color: white;
     font-size: 1.2rem;
     font-weight: 500;
     letter-spacing: 0.13em;
@@ -957,19 +968,25 @@ template {
     .programs__tab-radio:checked + .programs__tab-label::after {
       display: none; } }
 
-.programs__tab-label.programs__tab-label:hover {
+.programs__tab-radio:focus + .programs__tab-label {
+  -webkit-box-shadow: 0 0 0 1px rgba(31, 192, 252, 0.4);
+          box-shadow: 0 0 0 1px rgba(31, 192, 252, 0.4); }
+
+.programs__tab-label:hover {
   background: transparent; }
-  .programs__tab-label.programs__tab-label:hover::before {
+  .programs__tab-label:hover::before {
     background: transparent;
     background: -webkit-linear-gradient(312.19deg, #ffc341 20.46%, #ffd701 65.31%);
     -webkit-background-clip: text;
             background-clip: text;
     -webkit-text-fill-color: transparent;
-    color: #ffc341;
-    font-size: inherit;
-    font-weight: inherit;
-    letter-spacing: inherit;
-    text-transform: capitalize; }
+    color: #ffc341; }
+
+.programs__tab-label.programs__tab-label:hover::before {
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  text-transform: capitalize; }
 
 .programs__list {
   max-width: 550px; }
@@ -1016,7 +1033,9 @@ template {
     font-weight: 500;
     letter-spacing: 0.03em;
     margin: 0;
-    margin-bottom: 15px;
+    margin-bottom: 14px;
+    margin-top: -1px;
+    padding: 1px 0;
     overflow: hidden;
     width: auto; }
   .programs__tab {
@@ -1524,7 +1543,8 @@ template {
     height: 8px;
     width: 8px; }
   .life__gallery-radio:focus + label {
-    outline: 1px #a6d7f8 solid; }
+    -webkit-box-shadow: 0 0 0 1px rgba(31, 192, 252, 0.4);
+            box-shadow: 0 0 0 1px rgba(31, 192, 252, 0.4); }
   .life__gallery-radio:checked + label {
     border: 0;
     background: -webkit-gradient(linear, left top, right top, from(#ffc341), to(#ffd701));
