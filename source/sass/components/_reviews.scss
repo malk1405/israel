@@ -1,19 +1,33 @@
 .reviews {
+  margin-top: 12.8rem;
 }
 
 .reviews h2 {
   text-align: center;
+  margin-bottom: 1rem;
 }
 
 .reviews__item,
 .reviews__item dl,
+.reviews__picture-container,
 .reviews__footer,
 .reviews__social {
   display: flex;
 }
 
-.reviews__item picture {
+.reviews__picture-container {
+  align-items: center;
   margin-right: 40px;
+  margin-left: -11px;
+  max-width: 364px;
+  min-height: 100%;
+  width: 100%;
+}
+
+.reviews__picture-container picture,
+.reviews__picture-container img {
+  display: block;
+  height: auto;
   width: 100%;
 }
 
@@ -21,15 +35,56 @@
 .reviews__footer {
   flex-shrink: 0;
   margin-left: auto;
+  margin-right: 6.5%;
   max-width: 680px;
   width: 60%;
 }
 
+.reviews__info {
+  color: rgba($text-base-color, 0.74);
+  padding-bottom: 8rem;
+}
+
+.reviews__info h3 {
+  color: inherit;
+  font-family: $firasans;
+  font-size: 2.4rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 3.6rem;
+  margin-top: 3.8rem;
+}
+
+.reviews__info dl {
+  @include font-sm-narrow();
+
+  margin-top: 0.9rem;
+  margin-bottom: 3.1rem;
+}
+
+.reviews__info > a,
+.reviews__info dt {
+  color: $text-header-color;
+}
+
+.reviews__info dd {
+  margin-left: 1rem;
+}
+
+.reviews__info > a {
+  text-decoration: underline;
+}
+
 .reviews__footer {
   align-items: center;
+  padding-bottom: 0.3rem;
+  position: relative;
+  transform: translateY(-100%);
 }
 
 .reviews__footer p {
+  @include font-regular-narrow();
+
   margin: 0;
 }
 
@@ -40,11 +95,52 @@
 
 .reviews__button {
   line-height: 0;
-  height: 15px;
+  height: 2rem;
+  margin-left: 2.1rem;
+}
+
+.reviews__button svg {
+  height: 100%;
+  width: auto;
 }
 
 .reviews__button,
 .reviews__footer a,
 .reviews__footer svg {
   display: block;
+}
+
+.reviews__social-item {
+  margin-left: 2rem;
+}
+
+.reviews__footer a {
+  height: 2.4rem;
+}
+
+.reviews__social svg {
+  fill: rgba($text-base-color, 0.2);
+}
+
+@include mq(tablet) {
+  .reviews__item {
+    display: block;
+  }
+
+  .reviews__picture-container {
+    float: left;
+    width: 30%;
+    margin-left: 5%;
+  }
+  .reviews__info,
+  .reviews__footer {
+    flex-shrink: 0;
+    margin: 0 5%;
+    max-width: 680px;
+    width: 100%;
+  }
+
+  .reviews__info {
+    padding-bottom: 5rem;
+  }
 }
