@@ -632,6 +632,12 @@ template {
   -webkit-box-shadow: none;
           box-shadow: none; }
 
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: none; }
+
 .body {
   background-color: white;
   color: rgba(72, 72, 72, 0.87);
