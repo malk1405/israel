@@ -1823,3 +1823,49 @@ button:-moz-focusring,
     margin-top: 1.6rem; }
     .faq__item.faq__item p:last-child {
       margin-bottom: -0.1rem; } }
+
+.reviews h2 {
+  text-align: center; }
+
+.reviews__item,
+.reviews__item dl,
+.reviews__footer,
+.reviews__social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.reviews__item picture {
+  margin-right: 40px;
+  width: 100%; }
+
+.reviews__info,
+.reviews__footer {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  margin-left: auto;
+  max-width: 680px;
+  width: 60%; }
+
+.reviews__footer {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.reviews__footer p {
+  margin: 0; }
+
+.reviews__controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: auto; }
+
+.reviews__button {
+  line-height: 0;
+  height: 15px; }
+
+.reviews__button,
+.reviews__footer a,
+.reviews__footer svg {
+  display: block; }
