@@ -5,8 +5,8 @@
   position: relative;
 
   &::after {
-    background: rgba(146, 87, 151, 0.514)
-      url("../../img/meet/meet-bg@1x--lg.jpg") center/cover no-repeat;
+    background: rgba(146, 87, 151, 0.514) url("../img/meet/meet-bg@1x--lg.jpg")
+      center/cover no-repeat;
     bottom: 0;
     content: "";
     display: block;
@@ -17,7 +17,7 @@
     z-index: -1;
 
     @include mret() {
-      background-image: url("../../img/meet/meet-bg@2x--lg.jpg");
+      background-image: url("../img/meet/meet-bg@2x--lg.jpg");
     }
   }
 }
@@ -47,13 +47,13 @@
     padding-bottom: 0;
 
     &::after {
-      background-image: url("../../img/meet/meet-bg@1x--sm.jpg");
+      background-image: url("../img/meet/meet-bg@1x--sm.jpg");
       background-position: 22%;
       bottom: 7.5rem;
       height: 272px;
 
       @include mret() {
-        background-image: url("../../img/meet/meet-bg@2x--sm.jpg");
+        background-image: url("../img/meet/meet-bg@2x--sm.jpg");
       }
     }
   }

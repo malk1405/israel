@@ -1571,7 +1571,7 @@ button:-moz-focusring,
   padding-top: 12rem;
   position: relative; }
   .meet::after {
-    background: rgba(146, 87, 151, 0.514) url("../../img/meet/meet-bg@1x--lg.jpg") center/cover no-repeat;
+    background: rgba(146, 87, 151, 0.514) url("../img/meet/meet-bg@1x--lg.jpg") center/cover no-repeat;
     bottom: 0;
     content: "";
     display: block;
@@ -1582,7 +1582,7 @@ button:-moz-focusring,
     z-index: -1; }
     @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
       .meet::after {
-        background-image: url("../../img/meet/meet-bg@2x--lg.jpg"); } }
+        background-image: url("../img/meet/meet-bg@2x--lg.jpg"); } }
 
 .meet p {
   color: rgba(255, 255, 255, 0.87);
@@ -1609,13 +1609,13 @@ button:-moz-focusring,
     padding-top: 8.5rem;
     padding-bottom: 0; }
     .meet::after {
-      background-image: url("../../img/meet/meet-bg@1x--sm.jpg");
+      background-image: url("../img/meet/meet-bg@1x--sm.jpg");
       background-position: 22%;
       bottom: 7.5rem;
       height: 272px; } }
     @media screen and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5), screen and (max-width: 767px) and (min-resolution: 144dpi), screen and (max-width: 767px) and (min-resolution: 1.5dppx) {
       .meet::after {
-        background-image: url("../../img/meet/meet-bg@2x--sm.jpg"); } }
+        background-image: url("../img/meet/meet-bg@2x--sm.jpg"); } }
 
 @media screen and (max-width: 767px) {
   .meet h2 {
