@@ -65,12 +65,12 @@
   }
 
   &::before {
-    border-left: 1px dashed $text-bright-color;
+    border-left: 1px dashed $text-light-color;
     border-image: repeating-linear-gradient(
         transparent,
         transparent 2px,
-        $text-bright-color 2px,
-        $text-bright-color 6px,
+        $text-light-color 2px,
+        $text-light-color 6px,
         transparent 6px,
         transparent 8px
       )

@@ -39,10 +39,13 @@ $button-gradient-active: radial-gradient(
 
 $text-base-color: #484848;
 
+$text-medium-color: rgba($text-base-color, 0.5);
+$text-light-color: rgba($text-base-color, 0.2);
 $text-main-color: rgba($text-base-color, 0.87);
-$text-placeholder-color: rgba($text-base-color, 0.5);
-$text-button-color: white;
 $text-bright-color: rgba($text-base-color, 1);
+
+$text-placeholder-color: $text-medium-color;
+$text-button-color: white;
 $text-photo-color: white;
 $text-header-color: #1fc0fc;
 

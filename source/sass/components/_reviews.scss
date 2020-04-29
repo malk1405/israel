@@ -94,7 +94,7 @@
 }
 
 .reviews__footer p {
-  color: rgba($text-base-color, 0.5);
+  color: $text-medium-color;
   margin: 0;
 }
 
@@ -134,7 +134,7 @@
 }
 
 .reviews__social svg {
-  fill: rgba($text-base-color, 0.2);
+  fill: $text-light-color;
 }
 
 @include mq(tablet) {
