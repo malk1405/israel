@@ -812,10 +812,25 @@
             <li class="reviews__item">
               <div class="reviews__picture-container">
                 <picture>
+                  <!-- 1x: 240px; 2x: 480px -->
+                  <source
+                    media="(max-width: 767px)"
+                    srcset="
+                      img/reviews/1@1x--sm.webp,
+                      img/reviews/1@2x--sm.webp 2x
+                    "
+                    type="image/webp" />
+                  <source
+                    media="(max-width: 767px)"
+                    srcset="
+                      img/reviews/1@1x--sm.png,
+                      img/reviews/1@2x--sm.png 2x
+                    " />
+
                   <!-- 1x: 364px; 2x: 728px -->
                   <source
                     srcset="
-                      img/reviews/1@1x--lg.png,
+                      img/reviews/1@1x--lg.webp,
                       img/reviews/1@2x--lg.webp 2x
                     "
                     type="image/webp" />
@@ -851,41 +866,43 @@
           </ul>
         </div>
         <footer class="reviews__footer">
-          <p>
-            <span class="reviews__index">3</span> /
-            <span class="reviews__total">6</span>
-          </p>
-          <div class="reviews__controls">
-            <button
-              type="button"
-              class="button reviews__button reviews__button--prev"
-            >
-              <svg width="8" height="15">
-                <use xlink:href="img/svg/sprite.svg#prev"></use>
-              </svg>
-              <img
-                src="img/svg/sprite.svg"
-                height="0"
-                width="0"
-                alt="Иконка Предыдущий"
-              />
-              <span class="visually-hidden">Предыдущий отзыв</span>
-            </button>
-            <button
-              type="button"
-              class="button reviews__button reviews__button--next"
-            >
-              <svg width="8" height="15">
-                <use xlink:href="img/svg/sprite.svg#next"></use>
-              </svg>
-              <img
-                src="img/svg/sprite.svg"
-                height="0"
-                width="0"
-                alt="Иконка Следующий"
-              />
-              <span class="visually-hidden">Следующий отзыв</span>
-            </button>
+          <div class="reviews__controls-container">
+            <p>
+              <span class="reviews__index">3</span> /
+              <span class="reviews__total">6</span>
+            </p>
+            <div class="reviews__controls">
+              <button
+                type="button"
+                class="button reviews__button reviews__button--prev"
+              >
+                <svg width="8" height="15">
+                  <use xlink:href="img/svg/sprite.svg#prev"></use>
+                </svg>
+                <img
+                  src="img/svg/sprite.svg"
+                  height="0"
+                  width="0"
+                  alt="Иконка Предыдущий"
+                />
+                <span class="visually-hidden">Предыдущий отзыв</span>
+              </button>
+              <button
+                type="button"
+                class="button reviews__button reviews__button--next"
+              >
+                <svg width="8" height="15">
+                  <use xlink:href="img/svg/sprite.svg#next"></use>
+                </svg>
+                <img
+                  src="img/svg/sprite.svg"
+                  height="0"
+                  width="0"
+                  alt="Иконка Следующий"
+                />
+                <span class="visually-hidden">Следующий отзыв</span>
+              </button>
+            </div>
           </div>
           <ul class="reviews__social list">
             <li class="reviews__social-item">
