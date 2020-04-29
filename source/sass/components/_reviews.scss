@@ -1,0 +1,50 @@
+.reviews {
+}
+
+.reviews h2 {
+  text-align: center;
+}
+
+.reviews__item,
+.reviews__item dl,
+.reviews__footer,
+.reviews__social {
+  display: flex;
+}
+
+.reviews__item picture {
+  margin-right: 40px;
+  width: 100%;
+}
+
+.reviews__info,
+.reviews__footer {
+  flex-shrink: 0;
+  margin-left: auto;
+  max-width: 680px;
+  width: 60%;
+}
+
+.reviews__footer {
+  align-items: center;
+}
+
+.reviews__footer p {
+  margin: 0;
+}
+
+.reviews__controls {
+  display: flex;
+  margin-right: auto;
+}
+
+.reviews__button {
+  line-height: 0;
+  height: 15px;
+}
+
+.reviews__button,
+.reviews__footer a,
+.reviews__footer svg {
+  display: block;
+}
