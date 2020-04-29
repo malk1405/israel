@@ -1,0 +1,100 @@
+.contacts {
+  margin-top: 7.9rem;
+  position: relative;
+}
+
+.contacts h2 {
+  margin-bottom: 4.5rem;
+}
+
+.contacts__location,
+.contacts__tutor-info {
+  color: rgba($text-base-color, 0.74);
+}
+
+.contacts__location p {
+  @include font-sm();
+}
+
+.contacts__location button {
+  margin-left: 1.3rem;
+  margin-right: 0.5rem;
+}
+
+.contacts__location svg {
+  transform: translateY(3px);
+}
+
+.contacts__tutor {
+  margin-bottom: 13rem;
+  margin-top: 3.7rem;
+  max-width: 480px;
+  position: relative;
+  width: 42%;
+}
+
+.contacts__tutor-info {
+  margin-bottom: 2.4rem;
+  min-height: 112px;
+  padding-left: 136px;
+}
+
+.contacts__tutor-info picture {
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.contacts__tutor-info img {
+  border-radius: 100%;
+}
+
+.contacts__tutor-info p {
+  @include font-sm();
+}
+
+.contacts__tutor-label {
+  color: $text-header-color;
+  margin-right: 0.5rem;
+}
+
+.contacts__tutor-info address {
+  @include font-xs();
+
+  font-style: normal;
+  margin-top: -0.5rem;
+  width: 24rem;
+}
+
+.contacts__social {
+  margin-left: 0.3rem;
+  margin-top: 1.3rem;
+}
+
+.contacts__tutor-info svg {
+  fill: rgba($text-base-color, 0.2);
+  margin-right: 1.1rem;
+}
+
+.contacts__map-container {
+  height: 448px;
+  max-width: 702px;
+  position: absolute;
+  right: 0;
+  top: 5px;
+  width: 52%;
+}
+
+.contacts__map {
+  align-items: flex-end;
+  height: 100%;
+}
+
+.contacts__map picture,
+.contacts__map img {
+  display: block;
+}
+
+.contacts__map img {
+  width: 100%;
+}

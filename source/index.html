@@ -104,7 +104,7 @@
         <li class="header__contact">
           <button
             type="button"
-            class="button header__button"
+            class="button button--secondary header__button"
             title="Заказать звонок"
           >
             Заказать звонок
@@ -968,24 +968,50 @@
       <section class="contacts section container">
         <h2>Узнать подробности</h2>
         <div class="contacts__location">
-          <label for="contacts__location-city">Ваш город:</label>
-          <select>
-            <option selected>Новосибирск</option>
-            <option>Москва</option>
-            <option>Санкт-Петербург</option>
-            <option>Казань</option>
-          </select>
+          <p>
+            <svg class="contacts__location-marker" width="18" height="20">
+              <use xlink:href="img/svg/sprite.svg#marker"></use>
+            </svg>
+            Ваш город:
+            <button
+              type="button"
+              class="button button--secondary"
+              title="Выбрать другой город"
+            >
+              Новосибирск
+            </button>
+            <svg class="contacts__location-gps" width="16" height="15">
+              <use xlink:href="img/svg/sprite.svg#gps"></use>
+            </svg>
+          </p>
         </div>
         <div class="contacts__tutor">
           <div class="contacts__tutor-info">
             <picture>
-              <img src="" alt="Анна Горелик" srcset="" />
+              <!-- 1x: 112px; 2x:112px -->
+              <source
+                type="image/webp"
+                srcset="
+                  img/contacts/photo@1x--lg.webp,
+                  img/contacts/photo@2x--lg.webp 2x
+                "
+              />
+              <img
+                src="img/contacts/photo@1x--lg.jpg"
+                alt="Анна Горелик"
+                srcset="img/contacts/photo@2x--lg.jpg 2x"
+                height="112"
+                width="112"
+              />
             </picture>
-            <p><span>Ваш куратор:</span> Анна Горелик</p>
+            <p>
+              <span class="contacts__tutor-label">Ваш куратор:</span> Анна
+              Горелик
+            </p>
             <address>
               Новосибирск, ул. Щетинкина 68, культурный центр «Бейт Менахем»
             </address>
-            <ul class="contacts__social list">
+            <ul class="contacts__social list d-flex">
               <li class="contacts__social-item">
                 <a>
                   <svg
@@ -1011,33 +1037,33 @@
                     width="24"
                     height="24"
                   >
-                    <use xlink:href="img/svg/sprite.svg#tw"></use>
+                    <use xlink:href="img/svg/sprite.svg#wh"></use>
                   </svg>
                   <img
                     src="img/svg/sprite.svg"
                     height="0"
                     width="0"
-                    alt="Twitter logo"
+                    alt="Whatsapp logo"
                   />
-                  <span class="visually-hidden">Twitter</span></a
+                  <span class="visually-hidden">Whatsapp</span></a
                 >
               </li>
               <li class="contacts__social-item">
                 <a>
                   <svg
-                    class="contacts__social-logo contacts__social-logo--ig"
+                    class="contacts__social-logo contacts__social-logo--tg"
                     width="24"
                     height="24"
                   >
-                    <use xlink:href="img/svg/sprite.svg#insta"></use>
+                    <use xlink:href="img/svg/sprite.svg#tg"></use>
                   </svg>
                   <img
                     src="img/svg/sprite.svg"
                     height="0"
                     width="0"
-                    alt="Instagram logo"
+                    alt="Telegram logo"
                   />
-                  <span class="visually-hidden">Instagram</span></a
+                  <span class="visually-hidden">Telegram</span></a
                 >
               </li>
             </ul>
@@ -1048,10 +1074,39 @@
             программах и выберите свою !
           </p>
         </div>
-        <div class="contacts__map">
-          <picture>
-            <img src="" alt="Карта" srcset="" />
-          </picture>
+        <div class="contacts__map-container">
+          <div class="contacts__map d-flex">
+            <picture>
+              <source
+                type="image/webp"
+                media="(max-width: 1023px)"
+                srcset="
+                  img/contacts/map@1x--sm.webp,
+                  img/contacts/map@2x--sm.webp 2x
+                "
+              />
+              <source
+                media="(max-width: 1023px)"
+                srcset="
+                  img/contacts/map@1x--sm.png,
+                  img/contacts/map@2x--sm.png 2x
+                "
+              />
+              <!-- 1x: 702px; 2x: 1404px -->
+              <source
+                type="image/webp"
+                srcset="
+                  img/contacts/map@1x--lg.webp,
+                  img/contacts/map@2x--lg.webp 2x
+                "
+              />
+              <img
+                src="img/contacts/map@1x--lg.png"
+                alt="Карта"
+                srcset="img/contacts/map@2x--lg.png 2x"
+              />
+            </picture>
+          </div>
         </div>
         <div class="contacts__form">
           <p>
@@ -1074,6 +1129,30 @@
         </div>
       </section>
       <!-- Контакты. Конец -->
+    </div>
+
+    <div>
+      Icons made by
+      <a
+        class="link footer__flaticon-link"
+        href="https://www.flaticon.com/authors/freepik"
+        title="Freepik"
+        >Freepik</a
+      >
+      and
+      <a
+        class="link footer__flaticon-link"
+        href="https://www.flaticon.com/authors/becris"
+        title="Becris"
+        >Becris</a
+      >
+      from
+      <a
+        class="link footer__flaticon-link"
+        href="https://www.flaticon.com/"
+        title="Flaticon"
+        >www.flaticon.com</a
+      >
     </div>
 
     <script async src="js/main.js"></script>

@@ -49,3 +49,8 @@
   @include font-sm();
   line-height: 2.1rem;
 }
+
+@mixin font-xs {
+  font-size: 1.3rem;
+  line-height: 1.9rem;
+}

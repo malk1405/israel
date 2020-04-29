@@ -28,10 +28,6 @@
 }
 
 .header__button {
-  font-size: 1.2rem;
-  letter-spacing: 0.08em;
-  position: relative;
-
   &::after {
     border-bottom: 2px $text-main-color solid;
     border-image: repeating-linear-gradient(
@@ -82,7 +78,6 @@
   }
 
   .header__button {
-    font-size: 1.1rem;
     margin-right: 3px;
   }
 }

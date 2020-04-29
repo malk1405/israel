@@ -110,6 +110,13 @@
   }
 }
 
+.button--secondary {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  position: relative;
+}
+
 .link {
   text-decoration: none;
 
@@ -127,5 +134,9 @@
   .button--main {
     margin: 0 auto;
     width: 264px;
+  }
+
+  .button--secondary {
+    font-size: 1.1rem;
   }
 }
