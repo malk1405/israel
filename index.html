@@ -360,25 +360,25 @@
           </li>
         </ul>
         <ul class="life__gallery-controls list">
-          <li class="gallery__button gallery__button--acitve" title="Выбрать">
-            <input type="radio" class="visually-hidden life__gallery-radio" name="gallery__button" id="gallery__button-1" checked="">
-            <label for="gallery__button-1"><span class="visually-hidden">Выбрать</span></label>
+          <li class="life__gallery-button life__gallery-button--acitve" title="Выбрать">
+            <input type="radio" class="visually-hidden life__gallery-radio" name="life__gallery-button" id="life__gallery-button-1" checked="">
+            <label for="life__gallery-button-1"><span class="visually-hidden">Выбрать</span></label>
           </li>
-          <li class="gallery__button" title="Выбрать">
-            <input type="radio" class="visually-hidden life__gallery-radio" name="gallery__button" id="gallery__button-2">
-            <label for="gallery__button-2"><span class="visually-hidden">Выбрать</span></label>
+          <li class="life__gallery-button" title="Выбрать">
+            <input type="radio" class="visually-hidden life__gallery-radio" name="life__gallery-button" id="life__gallery-button-2">
+            <label for="life__gallery-button-2"><span class="visually-hidden">Выбрать</span></label>
           </li>
-          <li class="gallery__button" title="Выбрать">
-            <input type="radio" class="visually-hidden life__gallery-radio" name="gallery__button" id="gallery__button-3">
-            <label for="gallery__button-3"><span class="visually-hidden">Выбрать</span></label>
+          <li class="life__gallery-button" title="Выбрать">
+            <input type="radio" class="visually-hidden life__gallery-radio" name="life__gallery-button" id="life__gallery-button-3">
+            <label for="life__gallery-button-3"><span class="visually-hidden">Выбрать</span></label>
           </li>
-          <li class="gallery__button" title="Выбрать">
-            <input type="radio" class="visually-hidden life__gallery-radio" name="gallery__button" id="gallery__button-4">
-            <label for="gallery__button-4"><span class="visually-hidden">Выбрать</span></label>
+          <li class="life__gallery-button" title="Выбрать">
+            <input type="radio" class="visually-hidden life__gallery-radio" name="life__gallery-button" id="life__gallery-button-4">
+            <label for="life__gallery-button-4"><span class="visually-hidden">Выбрать</span></label>
           </li>
-          <li class="gallery__button" title="Выбрать">
-            <input type="radio" class="visually-hidden life__gallery-radio" name="gallery__button" id="gallery__button-5">
-            <label for="gallery__button-5"><span class="visually-hidden">Выбрать</span></label>
+          <li class="life__gallery-button" title="Выбрать">
+            <input type="radio" class="visually-hidden life__gallery-radio" name="life__gallery-button" id="life__gallery-button-5">
+            <label for="life__gallery-button-5"><span class="visually-hidden">Выбрать</span></label>
           </li>
         </ul>
       </section>
@@ -611,7 +611,7 @@
         <div class="contacts__tutor">
           <div class="contacts__tutor-info">
             <picture>
-              <!-- 1x: 112px; 2x:112px -->
+              <!-- 1x: 112px; 2x:224px -->
               <source type="image/webp" srcset="
                   img/contacts/photo@1x--lg.webp,
                   img/contacts/photo@2x--lg.webp 2x
@@ -661,6 +661,7 @@
         <div class="contacts__map-container">
           <div class="contacts__map d-flex">
             <picture>
+              <!-- 1x: 656px; 2x: 1312px -->
               <source type="image/webp" media="(max-width: 1023px)" srcset="
                   img/contacts/map@1x--sm.webp,
                   img/contacts/map@2x--sm.webp 2x
@@ -688,10 +689,10 @@
               безопасности и вам не придёт спам от нас!</span>
           </p>
           <form>
-            <input type="text" class="input" placeholder="Имя">
-            <label for="" class="visually-hidden"></label>
-            <input type="text" class="input" placeholder="Телефон">
-            <label for="" class="visually-hidden"></label>
+            <input type="text" id="contacts-form__input--name" class="input" placeholder="Имя">
+            <label for="contacts-form__input--name" class="visually-hidden"></label>
+            <input type="text" id="contacts-form__input--phone" class="input" placeholder="Телефон">
+            <label for="contacts-form__input--phone" class="visually-hidden"></label>
             <button class="button button--main">Перезвоните мне</button>
           </form>
         </div>
@@ -699,14 +700,16 @@
       <!-- Контакты. Конец -->
     </div>
 
-    <div>
-      Icons made by
-      <a class="link footer__flaticon-link" href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a>
-      and
-      <a class="link footer__flaticon-link" href="https://www.flaticon.com/authors/becris" title="Becris">Becris</a>
-      from
-      <a class="link footer__flaticon-link" href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
-    </div>
+    <footer class="footer">
+      <div>
+        Icons made by
+        <a class="link footer__flaticon-link" href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a>
+        and
+        <a class="link footer__flaticon-link" href="https://www.flaticon.com/authors/becris" title="Becris">Becris</a>
+        from
+        <a class="link footer__flaticon-link" href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+      </div>
+    </footer>
 
     <script async="" src="js/main.js"></script>
     <script async="" src="js/vendor.js"></script>
