@@ -701,7 +701,7 @@
       <!-- MASAISRAEL. Конец -->
 
       <!-- FAQ -->
-      <section class="faq section">
+      <section class="faq section d-flex">
         <div class="faq-container">
           <h2>Частые вопросы</h2>
           <ul class="faq__list list">
@@ -776,6 +776,24 @@
               </p>
             </li>
           </ul>
+        </div>
+        <div class="faq__picture-container">
+          <picture>
+            <!-- 1x: 1px; 2x: 1px; не для показа -->
+            <source media="(max-width: 1023px)" srcset="img/blank.gif" />
+            <!-- 1x: 645px; 2x: 1290px -->
+            <source
+              srcset="img/faq/faq-bg@1x--lg.webp, img/faq/faq-bg@2x--lg.webp 2x"
+              type="image/webp"
+            />
+            <img
+              src="img/faq/faq-bg@1x--lg.png"
+              srcset="img/faq/faq-bg@2x--lg.png"
+              alt="Смеющиеся студенты за столом перед ноутбуком"
+              width="645"
+              height="803"
+            />
+          </picture>
         </div>
       </section>
       <!-- FAQ. Конец -->

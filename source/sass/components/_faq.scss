@@ -1,11 +1,31 @@
 .faq {
-  margin-top: 12rem;
+  margin-top: 13.6rem;
+  position: relative;
+
+  &::after {
+    background: url("../img/faq/bag@1x--lg.png") center/cover;
+    bottom: -101px;
+    content: "";
+    display: block;
+    height: 177px;
+    left: 0;
+    position: absolute;
+    width: 153px;
+
+    @include mret() {
+      background-image: url("../img/faq/bag@2x--lg.png");
+    }
+  }
 }
 
 .faq-container {
   margin-left: 110px;
   width: 50%;
   max-width: 560px;
+}
+
+.faq-container h2 {
+  margin-bottom: 0.9rem;
 }
 
 .faq__list {
@@ -114,10 +134,37 @@
   position: absolute;
 }
 
+.faq__picture-container {
+  align-items: center;
+  display: flex;
+  min-height: 100%;
+}
+
+.faq__picture-container picture {
+  display: block;
+  margin-left: 51px;
+  max-width: 645px;
+}
+
+.faq__picture-container img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
 @include mq(tablet) {
+  .faq::after {
+    bottom: 63px;
+    left: -8px;
+  }
+
   .faq-container {
     margin: 0 auto;
     width: 60%;
+  }
+
+  .faq__picture-container {
+    display: none;
   }
 }
 
