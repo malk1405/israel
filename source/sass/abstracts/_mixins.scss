@@ -53,4 +53,8 @@
 @mixin font-xs {
   font-size: 1.3rem;
   line-height: 1.9rem;
+
+  @include mq(phone) {
+    line-height: 2rem;
+  }
 }

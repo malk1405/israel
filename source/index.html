@@ -345,7 +345,7 @@
             <div class="input-container">
               <input
                 type="tel"
-                class="input want__form-input"
+                class="input"
                 placeholder="Телефон"
                 id="want__form-phone"
                 pattern="(\+7 \([0-9]{3}\) [0-9]{3} [0-9]{2} [0-9]{2})"
@@ -1128,27 +1128,31 @@
             </div>
           </div>
           <form>
-            <div class="contacts__form">
-              <input
-                type="text"
-                id="contacts-form__input--name"
-                class="input"
-                placeholder="Имя"
-              />
-              <label
-                for="contacts-form__input--name"
-                class="visually-hidden"
-              ></label>
-              <input
-                type="text"
-                id="contacts-form__input--phone"
-                class="input"
-                placeholder="Телефон"
-              />
-              <label
-                for="contacts-form__input--phone"
-                class="visually-hidden"
-              ></label>
+            <div class="contacts__form d-flex">
+              <div class="input-container">
+                <input
+                  type="text"
+                  id="contacts-form__input--name"
+                  class="input"
+                  placeholder="Имя"
+                />
+                <label
+                  for="contacts-form__input--name"
+                  class="input-label"
+                ></label>
+              </div>
+              <div class="input-container">
+                <input
+                  type="text"
+                  id="contacts-form__input--phone"
+                  class="input"
+                  placeholder="Телефон"
+                />
+                <label
+                  for="contacts-form__input--phone"
+                  class="input-label"
+                ></label>
+              </div>
               <button class="button button--main">Перезвоните мне</button>
             </div>
           </form>

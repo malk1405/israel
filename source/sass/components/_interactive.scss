@@ -40,6 +40,7 @@
   font-weight: 600;
   line-height: 5.5rem;
   position: relative;
+  width: 100%;
 
   &:-ms-input-placeholder {
     color: $text-placeholder-color;
@@ -52,11 +53,11 @@
   &:focus,
   &:invalid {
     outline: none;
+    box-shadow: none;
   }
 
   &:invalid {
     background-color: white;
-    box-shadow: none;
   }
 
   &:focus {

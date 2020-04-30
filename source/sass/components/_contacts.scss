@@ -20,6 +20,28 @@
 .contacts__location button {
   margin-left: 1.3rem;
   margin-right: 0.5rem;
+
+  position: relative;
+  &::after {
+    border-bottom: 1px $text-header-color solid;
+    border-image: repeating-linear-gradient(
+        90deg,
+        $text-header-color,
+        $text-header-color 2px,
+        transparent 2px,
+        transparent 5px,
+        $text-header-color 5px,
+        $text-header-color 7px
+      )
+      2;
+    bottom: -4px;
+    content: "";
+    display: block;
+    left: 0;
+    opacity: 0.8;
+    position: absolute;
+    width: 100%;
+  }
 }
 
 .contacts__location svg {
@@ -131,12 +153,12 @@
   margin-right: -24px;
 }
 
-.contacts__form input,
+.contacts__form .input-container,
 .contacts__form button {
   margin-right: 24px;
 }
 
-.contacts__form input {
+.contacts__form .input-container {
   flex-grow: 1;
   margin-bottom: 2rem;
   max-width: 250px;
@@ -181,10 +203,10 @@
 
   .contacts__map-container img {
     height: 100%;
-    left: 60%;
+    left: 64%;
     position: absolute;
     top: 0;
-    transform: translateX(-60%);
+    transform: translateX(-64%);
     width: auto;
   }
 
@@ -202,9 +224,86 @@
   }
 
   .contacts__form,
-  .contacts__form input,
+  .contacts__form .input-container,
   .contacts__form button {
     margin-right: 12px;
     margin-left: 12px;
+  }
+}
+
+@include mq(phone) {
+  .contacts {
+    margin-top: 7.5rem;
+  }
+
+  .contacts__location,
+  .contacts__tutor {
+    max-width: 400px;
+  }
+
+  .contacts__location {
+    letter-spacing: 0.03em;
+    margin-top: -2.4rem;
+  }
+
+  .contacts__location button {
+    letter-spacing: 0.15em;
+  }
+
+  .contacts__tutor {
+    margin-bottom: 4rem;
+  }
+
+  .contacts__tutor-info {
+    padding: 0;
+  }
+
+  .contacts__tutor-info picture {
+    display: block;
+    margin-bottom: -0.5rem;
+    position: static;
+  }
+
+  .contacts__tutor-info p {
+    letter-spacing: 0.04em;
+  }
+
+  .contacts__tutor-info address {
+    margin-bottom: 1.5rem;
+  }
+  .contacts__tutor-label {
+    margin-right: 0.3rem;
+  }
+
+  .contacts__form-text {
+    max-width: 288px;
+  }
+
+  .contacts__form-questions p {
+    line-height: 2.4rem;
+    margin-bottom: -0.3rem;
+    margin-top: 2.3rem;
+  }
+
+  .contacts__form,
+  .contacts__form .input-container,
+  .contacts__form button {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .contacts__form {
+    align-items: center;
+    flex-direction: column;
+    margin-top: 0.4rem;
+  }
+
+  .contacts__form .input-container {
+    margin-bottom: 0.8rem;
+    max-width: 288px;
+    width: 100%;
+  }
+
+  .contacts__form button {
+    margin-top: 1.5rem;
   }
 }
