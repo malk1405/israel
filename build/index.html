@@ -679,26 +679,34 @@
             </picture>
           </div>
         </div>
-        <div class="contacts__form">
-          <p>
-            Оставьте ваши контакты, если у вас остались вопросы — мы на них
-            ответим!
-          </p>
-          <p>
-            <span class="contacts__warning">Мы не передаём данные третьим лицам. Ваши данные будут в
-              безопасности и вам не придёт спам от нас!</span>
-          </p>
+        <div class="contacts__form-container d-flex">
+          <div class="contacts__form-text">
+            <div class="contacts__form-questions">
+              <p>
+                Оставьте ваши контакты, если у вас остались вопросы — мы на них
+                ответим!
+              </p>
+            </div>
+            <div class="contacts__form-warning">
+              <p>
+                Мы не передаём данные третьим лицам. Ваши данные будут в
+                безопасности и вам не придёт спам от нас!
+              </p>
+            </div>
+          </div>
           <form>
-            <input type="text" id="contacts-form__input--name" class="input" placeholder="Имя">
-            <label for="contacts-form__input--name" class="visually-hidden"></label>
-            <input type="text" id="contacts-form__input--phone" class="input" placeholder="Телефон">
-            <label for="contacts-form__input--phone" class="visually-hidden"></label>
-            <button class="button button--main">Перезвоните мне</button>
-          </form>
-        </div>
-      </section>
+            <div class="contacts__form d-flex">
+              <input type="text" id="contacts-form__input--name" class="input" placeholder="Имя">
+              <label for="contacts-form__input--name" class="visually-hidden"></label>
+              <input type="text" id="contacts-form__input--phone" class="input" placeholder="Телефон">
+              <label for="contacts-form__input--phone" class="visually-hidden"></label>
+              <button class="button button--main">Перезвоните мне</button>
+            </div></form>
+          </div>
+        </section></div>
+      
       <!-- Контакты. Конец -->
-    </div>
+    
 
     <footer class="footer">
       <div>
