@@ -2065,7 +2065,7 @@ button:-moz-focusring,
           transform: translateY(3px); }
 
 .contacts__tutor {
-  margin-bottom: 13rem;
+  margin-bottom: 11.5rem;
   margin-top: 3.7rem;
   max-width: 480px;
   position: relative;
@@ -2096,9 +2096,12 @@ button:-moz-focusring,
   color: #1fc0fc;
   margin-right: 0.5rem; }
 
-.contacts__tutor-info address {
+.contacts__tutor-info address,
+.contacts__form-warning p {
   font-size: 1.3rem;
-  line-height: 1.9rem;
+  line-height: 1.9rem; }
+
+.contacts__tutor-info address {
   font-style: normal;
   margin-top: -0.5rem;
   width: 24rem; }
@@ -2131,3 +2134,43 @@ button:-moz-focusring,
 
 .contacts__map img {
   width: 100%; }
+
+.contacts__form-text {
+  max-width: 364px;
+  min-width: 300px; }
+
+.contacts__form-questions p {
+  font-weight: 500;
+  line-height: 2.6rem;
+  margin-bottom: 0;
+  width: 90%; }
+
+.contacts__form-container form {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  margin-left: 0.7rem;
+  margin-top: 1.3rem; }
+
+.contacts__form {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-right: -24px; }
+
+.contacts__form input,
+.contacts__form button {
+  margin-right: 24px; }
+
+.contacts__form input {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  margin-bottom: 2rem;
+  max-width: 250px;
+  width: 215px; }
+
+.contacts__form button {
+  min-width: 216px; }
