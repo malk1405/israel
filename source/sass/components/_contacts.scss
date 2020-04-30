@@ -1,6 +1,7 @@
 .contacts {
   margin-top: 7.9rem;
   position: relative;
+  overflow: hidden;
 }
 
 .contacts h2 {
@@ -25,12 +26,16 @@
   transform: translateY(3px);
 }
 
+.contacts__location,
+.contacts__tutor {
+  max-width: 480px;
+  width: 42%;
+}
+
 .contacts__tutor {
   margin-bottom: 11.5rem;
   margin-top: 3.7rem;
-  max-width: 480px;
   position: relative;
-  width: 42%;
 }
 
 .contacts__tutor-info {
@@ -143,7 +148,63 @@
 }
 
 @include mq(tablet) {
+  .contacts h2 {
+    text-align: center;
+  }
+
+  .contacts__location,
+  .contacts__tutor {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 550px;
+    width: 100%;
+  }
+
+  .contacts__tutor {
+    margin-bottom: 5.5rem;
+  }
+
   .contacts__map-container {
-    display: static;
+    height: 420px;
+    margin: 0 -16px;
+    max-width: auto;
+    overflow: hidden;
+    position: static;
+    width: auto;
+  }
+
+  .contacts__map-container picture {
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+
+  .contacts__map-container img {
+    height: 100%;
+    left: 60%;
+    position: absolute;
+    top: 0;
+    transform: translateX(-60%);
+    width: auto;
+  }
+
+  .contacts__form-container {
+    flex-direction: column;
+  }
+
+  .contacts__form-container form {
+    margin-left: 0;
+  }
+
+  .contacts__form-text {
+    margin: 0 auto;
+    max-width: 450px;
+  }
+
+  .contacts__form,
+  .contacts__form input,
+  .contacts__form button {
+    margin-right: 12px;
+    margin-left: 12px;
   }
 }
