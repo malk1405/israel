@@ -172,8 +172,8 @@
   .reviews {
     margin-top: 8rem;
 
-    background: url("../img/reviews/city@1x--sm.jpg") top 525px left
-      calc(32px + 100vw - 320px) / 439px no-repeat;
+    background: url("../img/reviews/city@1x--sm.jpg") top 525px right
+      calc((100vw - 320px) / 2 - 151px) / 439px no-repeat;
   }
 
   .reviews h2 {
