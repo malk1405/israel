@@ -1136,10 +1136,9 @@
                   class="input"
                   placeholder="Имя"
                 />
-                <label
-                  for="contacts-form__input--name"
-                  class="input-label"
-                ></label>
+                <label for="contacts-form__input--name" class="input-label"
+                  ><span class="visually-hidden">Имя</span></label
+                >
               </div>
               <div class="input-container">
                 <input
@@ -1148,10 +1147,9 @@
                   class="input"
                   placeholder="Телефон"
                 />
-                <label
-                  for="contacts-form__input--phone"
-                  class="input-label"
-                ></label>
+                <label for="contacts-form__input--phone" class="input-label"
+                  ><span class="visually-hidden">Телефон</span></label
+                >
               </div>
               <button class="button button--main">Перезвоните мне</button>
             </div>
@@ -1161,29 +1159,101 @@
       <!-- Контакты. Конец -->
     </div>
 
-    <footer class="footer">
-      <div>
-        Icons made by
-        <a
-          class="link footer__flaticon-link"
-          href="https://www.flaticon.com/authors/freepik"
-          title="Freepik"
-          >Freepik</a
-        >
-        and
-        <a
-          class="link footer__flaticon-link"
-          href="https://www.flaticon.com/authors/becris"
-          title="Becris"
-          >Becris</a
-        >
-        from
-        <a
-          class="link footer__flaticon-link"
-          href="https://www.flaticon.com/"
-          title="Flaticon"
-          >www.flaticon.com</a
-        >
+    <footer class="footer d-flex container">
+      <div class="footer__logo">
+        <a class="sprite sprite--logo-footer"
+          ><span class="visually-hidden">"Маса"</span
+          ><picture
+            ><img
+              src="img/sprite/sprite@1x.png"
+              srcset="img/sprite/sprite@2x.png 2x"
+              alt="Лого"
+              width="0"
+              height="0" /></picture
+        ></a>
+      </div>
+      <div class="footer__copyright">
+        <p>Copyright someDesignCompany ©2019</p>
+        <!-- <p>
+          Icons made by
+          <a
+            class="link footer__flaticon-link"
+            href="https://www.flaticon.com/authors/freepik"
+            title="Freepik"
+            >Freepik</a
+          >
+          and
+          <a
+            class="link footer__flaticon-link"
+            href="https://www.flaticon.com/authors/becris"
+            title="Becris"
+            >Becris</a
+          >
+          from
+          <a
+            class="link footer__flaticon-link"
+            href="https://www.flaticon.com/"
+            title="Flaticon"
+            >www.flaticon.com</a
+          >
+        </p> -->
+      </div>
+        <ul class="footer__social list d-flex">
+          <li class="footer__social-item">
+            <a href="#" class="link">
+              <svg
+                class="footer__social-logo footer__social-logo--fb"
+                width="24"
+                height="24"
+              >
+                <use xlink:href="img/svg/sprite.svg#fb"></use>
+              </svg>
+              <img
+                src="img/svg/sprite.svg"
+                height="0"
+                width="0"
+                alt="Facebook logo"
+              />
+              <span class="visually-hidden">Facebook</span></a
+            >
+          </li>
+          <li class="footer__social-item">
+            <a href="#" class="link">
+              <svg
+                class="footer__social-logo footer__social-logo--tw"
+                width="24"
+                height="24"
+              >
+                <use xlink:href="img/svg/sprite.svg#tw"></use>
+              </svg>
+              <img
+                src="img/svg/sprite.svg"
+                height="0"
+                width="0"
+                alt="Twitter logo"
+              />
+              <span class="visually-hidden">Twitter</span></a
+            >
+          </li>
+          <li class="footer__social-item">
+            <a href="#" class="link">
+              <svg
+                class="footer__social-logo footer__social-logo--ig"
+                width="24"
+                height="24"
+              >
+                <use xlink:href="img/svg/sprite.svg#insta"></use>
+              </svg>
+              <img
+                src="img/svg/sprite.svg"
+                height="0"
+                width="0"
+                alt="Instagram logo"
+              />
+              <span class="visually-hidden">Instagram</span></a
+            >
+          </li>
+        </ul>
       </div>
     </footer>
 
