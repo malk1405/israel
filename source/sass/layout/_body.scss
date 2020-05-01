@@ -2,20 +2,20 @@
   font-size: 62.5%;
 }
 
-:focus {
-  outline: none;
-  box-shadow: $focus-shadow;
-}
-
-:focus:hover {
-  box-shadow: none;
-}
-
 button:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
 [type="submit"]:-moz-focusring {
   outline: none;
+}
+
+a,
+input,
+button {
+  &:focus {
+    border-color: transparent;
+    outline: 0;
+  }
 }
 
 .body {
