@@ -33,14 +33,17 @@
   margin-right: 4px;
 }
 
-.footer__social svg {
-  fill: $text-light-color;
-  margin-left: 2rem;
-}
-
 .footer__social a,
 .footer__social svg {
   display: flex;
+}
+
+.footer__social a {
+  margin-left: 2rem;
+}
+
+.footer__social svg {
+  fill: $text-light-color;
 }
 
 @include mq(phone) {
@@ -62,12 +65,15 @@
 
   .footer__social {
     justify-content: center;
+    margin-top: 2.8rem;
+  }
+
+  .footer__social a {
+    margin: 0 1rem;
   }
 
   .footer__social svg {
     height: 3rem;
-    margin: 0 1rem;
-    margin-top: 2.8rem;
     width: 3rem;
   }
 }

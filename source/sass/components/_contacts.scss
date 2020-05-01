@@ -1,6 +1,6 @@
 .contacts {
   margin-top: 7.9rem;
-  padding-bottom: 5.8rem;
+  padding-bottom: 8.4rem;
   position: relative;
   overflow: hidden;
 }
@@ -100,11 +100,18 @@
 .contacts__social {
   margin-left: 0.3rem;
   margin-top: 1.3rem;
+  margin-bottom: 2.8rem;
+}
+
+.contacts__social a {
+  display: block;
+  line-height: 0;
+  margin-right: 1.5rem;
 }
 
 .contacts__tutor-info svg {
+  display: block;
   fill: $text-light-color;
-  margin-right: 1.1rem;
 }
 
 .contacts__map-container {
@@ -131,8 +138,10 @@
 }
 
 .contacts__form-text {
+  margin-right: auto;
   max-width: 364px;
   min-width: 300px;
+  width: 100%;
 }
 
 .contacts__form-questions p {
