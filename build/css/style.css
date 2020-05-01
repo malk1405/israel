@@ -1895,8 +1895,12 @@ button:-moz-focusring,
       margin-bottom: -0.1rem; } }
 
 .reviews {
+  background: url("../img/reviews/city@1x--lg.jpg") top 60px right 0/523px no-repeat;
   margin-top: 12.8rem;
   position: relative; }
+  @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    .reviews {
+      background-image: url("../img/reviews/city@2x--lg.jpg"); } }
 
 .reviews h2 {
   text-align: center;
@@ -2051,7 +2055,8 @@ button:-moz-focusring,
 
 @media screen and (max-width: 767px) {
   .reviews {
-    margin-top: 8rem; }
+    margin-top: 8rem;
+    background: url("../img/reviews/city@1x--sm.jpg") top 525px left calc(32px + 100vw - 320px)/439px no-repeat; }
   .reviews h2 {
     margin-bottom: 2.5rem; }
   .reviews__info,

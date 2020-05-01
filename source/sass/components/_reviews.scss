@@ -1,6 +1,13 @@
 .reviews {
+  background: url("../img/reviews/city@1x--lg.jpg") top 60px right 0 / 523px
+    no-repeat;
+
   margin-top: 12.8rem;
   position: relative;
+
+  @include mret() {
+    background-image: url("../img/reviews/city@2x--lg.jpg");
+  }
 }
 
 .reviews h2 {
@@ -164,6 +171,9 @@
 @include mq(phone) {
   .reviews {
     margin-top: 8rem;
+
+    background: url("../img/reviews/city@1x--sm.jpg") top 525px left
+      calc(32px + 100vw - 320px) / 439px no-repeat;
   }
 
   .reviews h2 {
