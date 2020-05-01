@@ -1,5 +1,6 @@
 .contacts {
   margin-top: 7.9rem;
+  padding-bottom: 5.8rem;
   position: relative;
   overflow: hidden;
 }
@@ -238,6 +239,7 @@
 @include mq(phone) {
   .contacts {
     margin-top: 7.5rem;
+    padding-bottom: 0;
   }
 
   .contacts__location,
