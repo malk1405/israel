@@ -6,5 +6,5 @@ import IMask from "imask";
   svg4everybody();
   picturefill();
 
-  window.IMask = IMask;
+  window.iMask = IMask;
 })();
