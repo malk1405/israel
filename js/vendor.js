@@ -6654,7 +6654,7 @@ __webpack_require__.r(__webpack_exports__);
 (function vendors() {
   svg4everybody__WEBPACK_IMPORTED_MODULE_1___default()();
   picturefill__WEBPACK_IMPORTED_MODULE_0___default()();
-  window.IMask = imask__WEBPACK_IMPORTED_MODULE_2__["default"];
+  window.iMask = imask__WEBPACK_IMPORTED_MODULE_2__["default"];
 })();
 
 /***/ })

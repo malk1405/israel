@@ -86,14 +86,58 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./source/js/components/want.js":
+/*!**************************************!*\
+  !*** ./source/js/components/want.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var activateWant = function activateWant() {
+  var form = document.querySelector(".want__form-container form");
+
+  if (!form) {
+    return;
+  }
+
+  var phoneField = form.querySelector("#want__form-phone");
+  var maskOptions = {
+    mask: "+{7} (000) 000 00 00"
+  };
+  var mask = window.iMask(phoneField, maskOptions);
+  phoneField.addEventListener("focus", function () {
+    phoneField.classList.remove("input--valid");
+    phoneField.classList.remove("input--invalid");
+  });
+  phoneField.addEventListener("blur", function () {
+    phoneField.classList.add("input--".concat(mask.unmaskedValue.length < 11 ? "in" : "", "valid"));
+  });
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (activateWant);
+
+/***/ }),
+
 /***/ "./source/js/main.js":
 /*!***************************!*\
   !*** ./source/js/main.js ***!
   \***************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-(function activate() {})();
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_want__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/want */ "./source/js/components/want.js");
+
+
+(function activate() {
+  Object(_components_want__WEBPACK_IMPORTED_MODULE_0__["default"])();
+})();
 
 /***/ })
 
