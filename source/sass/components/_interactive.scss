@@ -70,12 +70,16 @@
     background-color: white;
   }
 
-  &:invalid:not(.input--not-touched) {
+  &:invalid {
     border-color: red;
   }
 
   &:valid {
     border-color: $text-main-color;
+  }
+
+  &--not-touched:not(:focus) {
+    border-color: #e3e3e3;
   }
 
   &:focus {
