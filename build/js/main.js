@@ -95,6 +95,9 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _utils_activatePhoneField__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/activatePhoneField */ "./source/js/utils/activatePhoneField.js");
+
+
 var activateWant = function activateWant() {
   var form = document.querySelector(".want__form-container form");
 
@@ -102,20 +105,10 @@ var activateWant = function activateWant() {
     return;
   }
 
-  var phoneField = form.querySelector("#want__form-phone");
-  var maskOptions = {
-    mask: "+{7} (000) 000 00 00"
-  };
-  var mask = window.iMask(phoneField, maskOptions);
-  phoneField.addEventListener("focus", function () {
-    phoneField.classList.remove("input--valid");
-    phoneField.classList.remove("input--invalid");
-  });
-  phoneField.addEventListener("blur", function () {
-    phoneField.classList.add("input--".concat(mask.unmaskedValue.length < 11 ? "in" : "", "valid"));
-  });
+  Object(_utils_activatePhoneField__WEBPACK_IMPORTED_MODULE_0__["default"])(form);
   form.addEventListener("submit", function (e) {
     e.preventDefault();
+    form.reset();
   });
 };
 
@@ -138,6 +131,43 @@ __webpack_require__.r(__webpack_exports__);
 (function activate() {
   Object(_components_want__WEBPACK_IMPORTED_MODULE_0__["default"])();
 })();
+
+/***/ }),
+
+/***/ "./source/js/utils/activatePhoneField.js":
+/*!***********************************************!*\
+  !*** ./source/js/utils/activatePhoneField.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var activatePhoneField = function activatePhoneField(form) {
+  var phoneField = form.querySelector("[type=\"tel\"]");
+
+  if (!phoneField) {
+    return function () {};
+  }
+
+  var maskOptions = {
+    mask: "+{7} (000) 000 00 00"
+  };
+  var mask = window.iMask(phoneField, maskOptions);
+  phoneField.addEventListener("focus", function () {
+    phoneField.classList.remove("input--valid");
+    phoneField.classList.remove("input--invalid");
+  });
+  phoneField.addEventListener("blur", function () {
+    phoneField.classList.add("input--".concat(mask.unmaskedValue.length < 11 ? "in" : "", "valid"));
+  });
+  return function () {
+    phoneField.removeEventListener("focus");
+    phoneField.removeEventListener("blur");
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (activatePhoneField);
 
 /***/ })
 
