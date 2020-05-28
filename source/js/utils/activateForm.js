@@ -1,4 +1,3 @@
-
 import iMask from 'imask/esm/imask';
 import 'imask/esm/masked/number';
 
@@ -20,15 +19,15 @@ const activateForm = (form) => {
 function activateInputs(form) {
   const inputs = form.querySelectorAll(`.input`);
 
-  for (let i = 0; i < inputs.length; i++) {
+  inputs.forEach((input) => {
     const className = `input--not-touched`;
-    inputs[i].classList.add(className);
+    input.classList.add(className);
 
-    inputs[i].addEventListener(`focus`, function onFocus() {
-      inputs[i].classList.remove(className);
-      inputs[i].removeEventListener(`focus`, onFocus);
+    input.addEventListener(`focus`, function onFocus() {
+      input.classList.remove(className);
+      input.removeEventListener(`focus`, onFocus);
     });
-  }
+  });
 }
 
 function activatePhoneField(form) {
