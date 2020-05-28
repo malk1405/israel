@@ -1,3 +1,7 @@
+
+import iMask from 'imask/esm/imask';
+import 'imask/esm/masked/number';
+
 const activateForm = (form) => {
   if (!form) {
     return;
@@ -34,7 +38,7 @@ function activatePhoneField(form) {
     return;
   }
 
-  window.iMask(phoneField, {
+  iMask(phoneField, {
     mask: `+{7} (000) 000 00 00`,
   });
 }

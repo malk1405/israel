@@ -1,5 +1,3 @@
-
-
 let gulp = require(`gulp`);
 let plumber = require(`gulp-plumber`);
 let sourcemap = require(`gulp-sourcemaps`);
@@ -51,7 +49,7 @@ gulp.task(`server`, function () {
 });
 
 gulp.task(`js`, () => {
-  const entry = [`main`, `vendor`].reduce((acc, el) => {
+  const entry = [`main`].reduce((acc, el) => {
     acc[el] = `./source/js/${el}.js`;
     return acc;
   }, {});
@@ -64,6 +62,12 @@ gulp.task(`js`, () => {
             mode: `development`,
             output: {
               filename: `[name].js`,
+              chunkFilename: `vendor.js`
+            },
+            optimization: {
+              splitChunks: {
+                chunks: `all`,
+              },
             },
             watch: false,
             devtool: `source-map`,
