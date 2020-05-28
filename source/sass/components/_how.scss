@@ -130,11 +130,14 @@
 }
 
 .how picture {
+  flex-grow: 1;
   flex-shrink: 3;
+
   mask: radial-gradient(ellipse at center, black, black 50%, transparent 70%),
     url("../img/how/how-mask.png") right/ 581px 100% no-repeat;
 
   margin-left: 10px;
+  max-width: 581px;
 }
 
 .how img {
