@@ -86,10 +86,10 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./source/js/components/want.js":
-/*!**************************************!*\
-  !*** ./source/js/components/want.js ***!
-  \**************************************/
+/***/ "./source/js/components/forms.js":
+/*!***************************************!*\
+  !*** ./source/js/components/forms.js ***!
+  \***************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -98,11 +98,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils_activateForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/activateForm */ "./source/js/utils/activateForm.js");
 
 
-var activateWant = function activateWant() {
-  Object(_utils_activateForm__WEBPACK_IMPORTED_MODULE_0__["default"])(document.querySelector(".want__form-container form"));
+var activateForms = function activateForms() {
+  var forms = document.forms;
+
+  for (var i = 0; i < forms.length; i++) {
+    Object(_utils_activateForm__WEBPACK_IMPORTED_MODULE_0__["default"])(forms[i]);
+  }
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (activateWant);
+/* harmony default export */ __webpack_exports__["default"] = (activateForms);
 
 /***/ }),
 
@@ -115,11 +119,11 @@ var activateWant = function activateWant() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_want__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/want */ "./source/js/components/want.js");
+/* harmony import */ var _components_forms__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/forms */ "./source/js/components/forms.js");
 
 
 (function activate() {
-  Object(_components_want__WEBPACK_IMPORTED_MODULE_0__["default"])();
+  Object(_components_forms__WEBPACK_IMPORTED_MODULE_0__["default"])();
 })();
 
 /***/ }),
