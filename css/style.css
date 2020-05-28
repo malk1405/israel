@@ -516,7 +516,6 @@ template {
   padding: 0 4rem; }
 
 .input {
-  background-color: white;
   background-clip: padding-box;
   border: 2px #e3e3e3 solid;
   color: rgba(72, 72, 72, 0.87);
@@ -539,14 +538,16 @@ template {
     outline: none;
     -webkit-box-shadow: none;
             box-shadow: none; }
-  .input:invalid {
+  .input, .input:invalid {
     background-color: white; }
+  .input:invalid {
+    border-color: red; }
+  .input:valid {
+    border-color: rgba(72, 72, 72, 0.87); }
+  .input--not-touched {
+    border-color: #e3e3e3; }
   .input:focus {
     border-color: transparent; }
-  .input--invalid {
-    border-color: red; }
-  .input--valid {
-    border-color: rgba(72, 72, 72, 0.87); }
 
 .input-label {
   height: 0;
