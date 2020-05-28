@@ -1396,11 +1396,15 @@ button:focus {
     width: 4px; }
 
 .how picture {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   -ms-flex-negative: 3;
       flex-shrink: 3;
   -webkit-mask: radial-gradient(ellipse at center, black, black 50%, transparent 70%), url("../img/how/how-mask.png") right/581px 100% no-repeat;
           mask: radial-gradient(ellipse at center, black, black 50%, transparent 70%), url("../img/how/how-mask.png") right/581px 100% no-repeat;
-  margin-left: 10px; }
+  margin-left: 10px;
+  max-width: 581px; }
 
 .how img {
   height: auto;
