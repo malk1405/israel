@@ -957,8 +957,8 @@ button:focus {
   fill: #63d3fd; }
 
 .about__video-button:hover .inner {
-  -webkit-filter: url(#about__filter0);
-          filter: url(#about__filter0); }
+  -webkit-filter: url("#about__filter0");
+          filter: url("#about__filter0"); }
 
 .about__video-button:active .inner {
   fill: #f4f4f4; }

@@ -65,6 +65,7 @@
 
 .programs__tab-radio:checked + .programs__tab-label {
   background: $tab-gradient;
+
   &::before {
     color: white;
     background: transparent;
