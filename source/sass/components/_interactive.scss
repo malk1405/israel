@@ -70,16 +70,12 @@
     background-color: white;
   }
 
-  &:invalid {
+  &:invalid:not(.input--not-touched) {
     border-color: red;
   }
 
   &:valid {
     border-color: $text-main-color;
-  }
-
-  &--not-touched {
-    border-color: #e3e3e3;
   }
 
   &:focus {
@@ -110,7 +106,6 @@
 }
 
 .button--main {
-  background: $button-gradient;
   background: $button-gradient;
   color: $text-button-color;
   font-weight: 500;

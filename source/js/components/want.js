@@ -1,19 +1,7 @@
-import activatePhoneField from "../utils/activatePhoneField";
+import activateForm from '../utils/activateForm';
 
 const activateWant = () => {
-  const form = document.querySelector(`.want__form-container form`);
-
-  if (!form) {
-    return;
-  }
-
-
-  activatePhoneField(form);
-
-  form.addEventListener(`submit`, (e) => {
-    e.preventDefault();
-    form.reset();
-  });
+  activateForm(document.querySelector(`.want__form-container form`));
 };
 
 export default activateWant;

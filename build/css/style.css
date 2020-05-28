@@ -540,12 +540,10 @@ template {
             box-shadow: none; }
   .input, .input:invalid {
     background-color: white; }
-  .input:invalid {
+  .input:invalid:not(.input--not-touched) {
     border-color: red; }
   .input:valid {
     border-color: rgba(72, 72, 72, 0.87); }
-  .input--not-touched {
-    border-color: #e3e3e3; }
   .input:focus {
     border-color: transparent; }
 
@@ -568,7 +566,6 @@ template {
   background: linear-gradient(138.15deg, #ffc341 20.46%, #ffd701 65.31%); }
 
 .button--main {
-  background: linear-gradient(138.15deg, #ffc341 20.46%, #ffd701 65.31%);
   background: linear-gradient(138.15deg, #ffc341 20.46%, #ffd701 65.31%);
   color: white;
   font-weight: 500;
