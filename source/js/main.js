@@ -1,6 +1,7 @@
-import activateWant from "./components/want";
+
+import activateForms from "./components/forms";
 
 
 (function activate() {
-  activateWant();
+  activateForms();
 })();
