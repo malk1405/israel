@@ -95,21 +95,11 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _utils_activatePhoneField__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/activatePhoneField */ "./source/js/utils/activatePhoneField.js");
+/* harmony import */ var _utils_activateForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/activateForm */ "./source/js/utils/activateForm.js");
 
 
 var activateWant = function activateWant() {
-  var form = document.querySelector(".want__form-container form");
-
-  if (!form) {
-    return;
-  }
-
-  Object(_utils_activatePhoneField__WEBPACK_IMPORTED_MODULE_0__["default"])(form);
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    form.reset();
-  });
+  Object(_utils_activateForm__WEBPACK_IMPORTED_MODULE_0__["default"])(document.querySelector(".want__form-container form"));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (activateWant);
@@ -134,40 +124,58 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./source/js/utils/activatePhoneField.js":
-/*!***********************************************!*\
-  !*** ./source/js/utils/activatePhoneField.js ***!
-  \***********************************************/
+/***/ "./source/js/utils/activateForm.js":
+/*!*****************************************!*\
+  !*** ./source/js/utils/activateForm.js ***!
+  \*****************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-var activatePhoneField = function activatePhoneField(form) {
+var activateForm = function activateForm(form) {
+  if (!form) {
+    return;
+  }
+
+  activateInputs(form);
+  activatePhoneField(form);
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    form.reset();
+  });
+};
+
+function activateInputs(form) {
+  var inputs = form.querySelectorAll(".input");
+
+  var _loop = function _loop(i) {
+    var className = "input--not-touched";
+    inputs[i].classList.add(className);
+    inputs[i].addEventListener("focus", function onFocus() {
+      inputs[i].classList.remove(className);
+      inputs[i].removeEventListener("blur", onFocus);
+    });
+  };
+
+  for (var i = 0; i < inputs.length; i++) {
+    _loop(i);
+  }
+}
+
+function activatePhoneField(form) {
   var phoneField = form.querySelector("[type=\"tel\"]");
 
   if (!phoneField) {
-    return function () {};
+    return;
   }
 
-  var maskOptions = {
+  window.iMask(phoneField, {
     mask: "+{7} (000) 000 00 00"
-  };
-  var mask = window.iMask(phoneField, maskOptions);
-  phoneField.addEventListener("focus", function () {
-    phoneField.classList.remove("input--valid");
-    phoneField.classList.remove("input--invalid");
   });
-  phoneField.addEventListener("blur", function () {
-    phoneField.classList.add("input--".concat(mask.unmaskedValue.length < 11 ? "in" : "", "valid"));
-  });
-  return function () {
-    phoneField.removeEventListener("focus");
-    phoneField.removeEventListener("blur");
-  };
-};
+}
 
-/* harmony default export */ __webpack_exports__["default"] = (activatePhoneField);
+/* harmony default export */ __webpack_exports__["default"] = (activateForm);
 
 /***/ })
 
