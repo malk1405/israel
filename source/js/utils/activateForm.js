@@ -9,6 +9,7 @@ const activateForm = (form) => {
   form.addEventListener(`submit`, (e) => {
     e.preventDefault();
     form.reset();
+    activateInputs(form);
   });
 };
 
@@ -21,7 +22,7 @@ function activateInputs(form) {
 
     inputs[i].addEventListener(`focus`, function onFocus() {
       inputs[i].classList.remove(className);
-      inputs[i].removeEventListener(`blur`, onFocus);
+      inputs[i].removeEventListener(`focus`, onFocus);
     });
   }
 }
