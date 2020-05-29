@@ -847,6 +847,7 @@ button:focus {
 
 .banner picture,
 .banner img {
+  background-color: #cdbeb5;
   left: 0;
   min-height: 100%;
   min-width: 100%;
@@ -855,7 +856,6 @@ button:focus {
   z-index: -1; }
 
 .banner img {
-  background-color: rgba(243, 166, 51, 0.555);
   height: auto;
   left: 50%;
   -webkit-transform: translateX(-50%);
