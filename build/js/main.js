@@ -164,19 +164,15 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var core_js_modules_es_array_for_each__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.for-each */ "./node_modules/core-js/modules/es.array.for-each.js");
-/* harmony import */ var core_js_modules_es_array_for_each__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_for_each__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
-/* harmony import */ var core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _utils_activateForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils/activateForm */ "./source/js/utils/activateForm.js");
-
-
+/* harmony import */ var _utils_activateForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/activateForm */ "./source/js/utils/activateForm.js");
 
 
 var activateForms = function activateForms() {
-  document.forms.forEach(function (form) {
-    Object(_utils_activateForm__WEBPACK_IMPORTED_MODULE_2__["default"])(form);
-  });
+  var forms = document.forms;
+
+  for (var i = 0; i < forms.length; i++) {
+    Object(_utils_activateForm__WEBPACK_IMPORTED_MODULE_0__["default"])(forms[i]);
+  }
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (activateForms);
@@ -221,17 +217,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var core_js_modules_es_array_for_each__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.for-each */ "./node_modules/core-js/modules/es.array.for-each.js");
-/* harmony import */ var core_js_modules_es_array_for_each__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_for_each__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
-/* harmony import */ var core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var imask_esm_imask__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! imask/esm/imask */ "./node_modules/imask/esm/imask.js");
-/* harmony import */ var imask_esm_masked_number__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! imask/esm/masked/number */ "./node_modules/imask/esm/masked/number.js");
-
-
-
-
-
+// import iMask from "imask/esm/imask";
+// import "imask/esm/masked/number";
 var activateForm = function activateForm(form) {
   if (!form) {
     return;
@@ -247,7 +234,10 @@ var activateForm = function activateForm(form) {
 
 function activateInputs(form) {
   var inputs = form.querySelectorAll(".input");
-  inputs.forEach(function (input) {
+
+  var _loop = function _loop(i) {
+    var input = inputs[i];
+
     if (input.type === "tel") {
       activatePhoneField(input);
     }
@@ -258,13 +248,16 @@ function activateInputs(form) {
       input.classList.remove(className);
       input.removeEventListener("focus", onFocus);
     });
-  });
+  };
+
+  for (var i = 0; i < inputs.length; i++) {
+    _loop(i);
+  }
 }
 
-function activatePhoneField(phoneField) {
-  Object(imask_esm_imask__WEBPACK_IMPORTED_MODULE_2__["default"])(phoneField, {
-    mask: "+{7} (000) 000 00 00"
-  });
+function activatePhoneField(phoneField) {// iMask(phoneField, {
+  //   mask: `+{7} (000) 000 00 00`
+  // });
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (activateForm);

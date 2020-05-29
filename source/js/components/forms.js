@@ -1,9 +1,11 @@
 import activateForm from "../utils/activateForm";
 
 const activateForms = () => {
-  document.forms.forEach((form) => {
-    activateForm(form);
-  });
+  const forms = document.forms;
+
+  for (let i = 0; i < forms.length; i++) {
+    activateForm(forms[i]);
+  }
 };
 
 export default activateForms;
