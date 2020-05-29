@@ -1,6 +1,5 @@
-
-import picturefill from 'picturefill';
-import svg4everybody from 'svg4everybody';
+import picturefill from "picturefill";
+import svg4everybody from "svg4everybody";
 
 import activateForms from "./components/forms";
 
@@ -8,7 +7,6 @@ import activateForms from "./components/forms";
   svg4everybody();
   picturefill();
 })();
-
 
 (function activate() {
   activateForms();

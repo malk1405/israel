@@ -238,7 +238,6 @@ var activateForm = function activateForm(form) {
   }
 
   activateInputs(form);
-  activatePhoneField(form);
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     form.reset();
@@ -249,6 +248,10 @@ var activateForm = function activateForm(form) {
 function activateInputs(form) {
   var inputs = form.querySelectorAll(".input");
   inputs.forEach(function (input) {
+    if (input.type === "tel") {
+      activatePhoneField(input);
+    }
+
     var className = "input--not-touched";
     input.classList.add(className);
     input.addEventListener("focus", function onFocus() {
@@ -258,13 +261,7 @@ function activateInputs(form) {
   });
 }
 
-function activatePhoneField(form) {
-  var phoneField = form.querySelector("[type=\"tel\"]");
-
-  if (!phoneField) {
-    return;
-  }
-
+function activatePhoneField(phoneField) {
   Object(imask_esm_imask__WEBPACK_IMPORTED_MODULE_2__["default"])(phoneField, {
     mask: "+{7} (000) 000 00 00"
   });
