@@ -217,8 +217,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-// import iMask from "imask/esm/imask";
-// import "imask/esm/masked/number";
 var activateForm = function activateForm(form) {
   if (!form) {
     return;
@@ -234,30 +232,33 @@ var activateForm = function activateForm(form) {
 
 function activateInputs(form) {
   var inputs = form.querySelectorAll(".input");
+  var className = "input--not-touched";
+  var events = ["focus", "invalid"];
 
-  var _loop = function _loop(i) {
-    var input = inputs[i];
+  for (var i = 0; i < inputs.length; i++) {
+    activateInput(inputs[i]);
+  }
 
+  function activateInput(input) {
     if (input.type === "tel") {
       activatePhoneField(input);
     }
 
-    var className = "input--not-touched";
     input.classList.add(className);
-    input.addEventListener("focus", function onFocus() {
-      input.classList.remove(className);
-      input.removeEventListener("focus", onFocus);
-    });
-  };
 
-  for (var i = 0; i < inputs.length; i++) {
-    _loop(i);
+    for (var _i = 0; _i < events.length; _i++) {
+      addListener(input, events[_i]);
+    }
   }
-}
 
-function activatePhoneField(phoneField) {// iMask(phoneField, {
-  //   mask: `+{7} (000) 000 00 00`
-  // });
+  function activatePhoneField(phoneField) {}
+
+  function addListener(el, event) {
+    el.addEventListener(event, function onEvent() {
+      el.classList.remove(className);
+      el.removeEventListener(event, onEvent);
+    });
+  }
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (activateForm);
