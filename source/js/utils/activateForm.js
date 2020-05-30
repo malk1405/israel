@@ -1,6 +1,3 @@
-// import iMask from "imask/esm/imask";
-// import "imask/esm/masked/number";
-
 const activateForm = (form) => {
   if (!form) {
     return;
@@ -18,26 +15,33 @@ const activateForm = (form) => {
 function activateInputs(form) {
   const inputs = form.querySelectorAll(`.input`);
 
+  const className = `input--not-touched`;
+  const events = [`focus`, `invalid`];
+
   for (let i = 0; i < inputs.length; i++) {
-    const input = inputs[i];
+    activateInput(inputs[i]);
+  }
+
+  function activateInput(input) {
     if (input.type === `tel`) {
       activatePhoneField(input);
     }
 
-    const className = `input--not-touched`;
     input.classList.add(className);
 
-    input.addEventListener(`focus`, function onFocus() {
-      input.classList.remove(className);
-      input.removeEventListener(`focus`, onFocus);
+    for (let i = 0; i < events.length; i++) {
+      addListener(input, events[i]);
+    }
+  }
+
+  function activatePhoneField(phoneField) {}
+
+  function addListener(el, event) {
+    el.addEventListener(event, function onEvent() {
+      el.classList.remove(className);
+      el.removeEventListener(event, onEvent);
     });
   }
-}
-
-function activatePhoneField(phoneField) {
-  // iMask(phoneField, {
-  //   mask: `+{7} (000) 000 00 00`
-  // });
 }
 
 export default activateForm;
