@@ -155,63 +155,10 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./source/js/components/forms.js":
-/*!***************************************!*\
-  !*** ./source/js/components/forms.js ***!
-  \***************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _utils_activateForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/activateForm */ "./source/js/utils/activateForm.js");
-
-
-var activateForms = function activateForms() {
-  var forms = document.forms;
-
-  for (var i = 0; i < forms.length; i++) {
-    Object(_utils_activateForm__WEBPACK_IMPORTED_MODULE_0__["default"])(forms[i]);
-  }
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (activateForms);
-
-/***/ }),
-
-/***/ "./source/js/main.js":
-/*!***************************!*\
-  !*** ./source/js/main.js ***!
-  \***************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var picturefill__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! picturefill */ "./node_modules/picturefill/dist/picturefill.js");
-/* harmony import */ var picturefill__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(picturefill__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var svg4everybody__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! svg4everybody */ "./node_modules/svg4everybody/dist/svg4everybody.js");
-/* harmony import */ var svg4everybody__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(svg4everybody__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/forms */ "./source/js/components/forms.js");
-
-
-
-
-(function vendors() {
-  svg4everybody__WEBPACK_IMPORTED_MODULE_1___default()();
-  picturefill__WEBPACK_IMPORTED_MODULE_0___default()();
-})();
-
-(function activate() {
-  Object(_components_forms__WEBPACK_IMPORTED_MODULE_2__["default"])();
-})();
-
-/***/ }),
-
-/***/ "./source/js/utils/activateForm.js":
-/*!*****************************************!*\
-  !*** ./source/js/utils/activateForm.js ***!
-  \*****************************************/
+/***/ "./source/js/components/form/form.js":
+/*!*******************************************!*\
+  !*** ./source/js/components/form/form.js ***!
+  \*******************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -273,6 +220,59 @@ function activatePhoneFields(inputs) {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (activateForm);
+
+/***/ }),
+
+/***/ "./source/js/components/forms.js":
+/*!***************************************!*\
+  !*** ./source/js/components/forms.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _form_form__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./form/form */ "./source/js/components/form/form.js");
+
+
+var activateForms = function activateForms() {
+  var forms = document.forms;
+
+  for (var i = 0; i < forms.length; i++) {
+    Object(_form_form__WEBPACK_IMPORTED_MODULE_0__["default"])(forms[i]);
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (activateForms);
+
+/***/ }),
+
+/***/ "./source/js/main.js":
+/*!***************************!*\
+  !*** ./source/js/main.js ***!
+  \***************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var picturefill__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! picturefill */ "./node_modules/picturefill/dist/picturefill.js");
+/* harmony import */ var picturefill__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(picturefill__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var svg4everybody__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! svg4everybody */ "./node_modules/svg4everybody/dist/svg4everybody.js");
+/* harmony import */ var svg4everybody__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(svg4everybody__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/forms */ "./source/js/components/forms.js");
+
+
+
+
+(function vendors() {
+  svg4everybody__WEBPACK_IMPORTED_MODULE_1___default()();
+  picturefill__WEBPACK_IMPORTED_MODULE_0___default()();
+})();
+
+(function activate() {
+  Object(_components_forms__WEBPACK_IMPORTED_MODULE_2__["default"])();
+})();
 
 /***/ })
 
