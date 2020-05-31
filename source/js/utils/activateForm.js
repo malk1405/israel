@@ -3,45 +3,56 @@ const activateForm = (form) => {
     return;
   }
 
-  activateInputs(form);
+  const resetInputs = activateInputs(form);
 
   form.addEventListener(`submit`, (e) => {
     e.preventDefault();
     form.reset();
-    activateInputs(form);
+    resetInputs();
   });
 };
 
 function activateInputs(form) {
   const inputs = form.querySelectorAll(`.input`);
 
-  const className = `input--not-touched`;
-  const events = [`focus`, `invalid`];
+  resetInputs();
+  activatePhoneFields(inputs);
 
-  for (let i = 0; i < inputs.length; i++) {
-    activateInput(inputs[i]);
+  function resetInputs() {
+    for (let i = 0; i < inputs.length; i++) {
+      resetInput(inputs[i]);
+    }
   }
 
-  function activateInput(input) {
-    if (input.type === `tel`) {
-      activatePhoneField(input);
-    }
+  function resetInput(el) {
+    const className = `input--not-touched`;
+    el.classList.add(className);
 
-    input.classList.add(className);
+    const events = [`focus`, `invalid`];
 
     for (let i = 0; i < events.length; i++) {
-      addListener(input, events[i]);
+      el.addEventListener(events[i], onEvent);
+    }
+
+    function onEvent() {
+      el.classList.remove(className);
+
+      for (let i = 0; i < events.length; i++) {
+        el.removeEventListener(events[i], onEvent);
+      }
     }
   }
 
-  function activatePhoneField(phoneField) {}
-
-  function addListener(el, event) {
-    el.addEventListener(event, function onEvent() {
-      el.classList.remove(className);
-      el.removeEventListener(event, onEvent);
-    });
-  }
+  return resetInputs;
 }
 
+function activatePhoneFields(inputs) {
+  for (let i = 0; i < inputs.length; i++) {
+    if (inputs[i].type === `tel`) {
+      activatePhoneField(inputs[i]);
+    }
+  }
+
+  function activatePhoneField(field) {}
+}
 export default activateForm;

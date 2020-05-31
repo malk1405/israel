@@ -222,43 +222,54 @@ var activateForm = function activateForm(form) {
     return;
   }
 
-  activateInputs(form);
+  var resetInputs = activateInputs(form);
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     form.reset();
-    activateInputs(form);
+    resetInputs();
   });
 };
 
 function activateInputs(form) {
   var inputs = form.querySelectorAll(".input");
-  var className = "input--not-touched";
-  var events = ["focus", "invalid"];
+  resetInputs();
+  activatePhoneFields(inputs);
 
-  for (var i = 0; i < inputs.length; i++) {
-    activateInput(inputs[i]);
-  }
-
-  function activateInput(input) {
-    if (input.type === "tel") {
-      activatePhoneField(input);
-    }
-
-    input.classList.add(className);
-
-    for (var _i = 0; _i < events.length; _i++) {
-      addListener(input, events[_i]);
+  function resetInputs() {
+    for (var i = 0; i < inputs.length; i++) {
+      resetInput(inputs[i]);
     }
   }
 
-  function activatePhoneField(phoneField) {}
+  function resetInput(el) {
+    var className = "input--not-touched";
+    el.classList.add(className);
+    var events = ["focus", "invalid"];
 
-  function addListener(el, event) {
-    el.addEventListener(event, function onEvent() {
+    for (var i = 0; i < events.length; i++) {
+      el.addEventListener(events[i], onEvent);
+    }
+
+    function onEvent() {
       el.classList.remove(className);
-      el.removeEventListener(event, onEvent);
-    });
+
+      for (var _i = 0; _i < events.length; _i++) {
+        el.removeEventListener(events[_i], onEvent);
+      }
+    }
   }
+
+  return resetInputs;
+}
+
+function activatePhoneFields(inputs) {
+  for (var i = 0; i < inputs.length; i++) {
+    if (inputs[i].type === "tel") {
+      activatePhoneField(inputs[i]);
+    }
+  }
+
+  function activatePhoneField(field) {}
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (activateForm);
