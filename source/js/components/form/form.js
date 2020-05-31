@@ -1,5 +1,6 @@
 import activatePhoneField from './phone';
 import activateInput from './input';
+import createModal from '../modal';
 
 const activateForm = (form) => {
   if (!form) {
@@ -15,6 +16,7 @@ const activateForm = (form) => {
     e.preventDefault();
     form.reset();
     process(activateInput);
+    createModal();
   });
 
   function process(fn) {

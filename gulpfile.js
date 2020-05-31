@@ -37,7 +37,7 @@ gulp.task(`server`, function () {
     notify: false,
     open: true,
     cors: true,
-    ui: false
+    ui: false,
   });
 
   gulp.watch(`source/sass/**/*.{scss,sass}`, gulp.series(`css`));
@@ -62,12 +62,12 @@ gulp.task(`js`, () => {
             mode: `development`,
             output: {
               filename: `[name].js`,
-              chunkFilename: `vendor.js`
+              chunkFilename: `vendor.js`,
             },
             optimization: {
               splitChunks: {
-                chunks: `all`
-              }
+                chunks: `all`,
+              },
             },
             watch: false,
             devtool: `source-map`,
@@ -85,19 +85,19 @@ gulp.task(`js`, () => {
                           {
                             debug: true,
                             corejs: 3,
-                            useBuiltIns: `usage`
-                          }
-                        ]
+                            useBuiltIns: `usage`,
+                          },
+                        ],
                       ],
                       plugins: [
                         `@babel/plugin-transform-runtime`,
-                        `@babel/plugin-transform-async-to-generator`
-                      ]
-                    }
-                  }
-                }
-              ]
-            }
+                        `@babel/plugin-transform-async-to-generator`,
+                      ],
+                    },
+                  },
+                },
+              ],
+            },
           })
       )
       .pipe(gulp.dest(`./build/js`));
@@ -144,10 +144,10 @@ gulp.task(`copy`, function () {
           [
             `source/fonts/**/*.{woff,woff2}`,
             `source/img/**/*.{webp,jpg,png,gif,svg}`,
-            `source//*.ico`
+            `source//*.ico`,
           ],
           {
-            base: `source`
+            base: `source`,
           }
       )
       .pipe(gulp.dest(`build`));
