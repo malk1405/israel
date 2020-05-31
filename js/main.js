@@ -164,62 +164,83 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _phone__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./phone */ "./source/js/components/form/phone.js");
+/* harmony import */ var _input__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./input */ "./source/js/components/form/input.js");
+
+
+
 var activateForm = function activateForm(form) {
   if (!form) {
     return;
   }
 
-  var resetInputs = activateInputs(form);
+  var inputs = form.querySelectorAll(".input");
+  process(_phone__WEBPACK_IMPORTED_MODULE_0__["default"]);
+  process(_input__WEBPACK_IMPORTED_MODULE_1__["default"]);
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     form.reset();
-    resetInputs();
+    process(_input__WEBPACK_IMPORTED_MODULE_1__["default"]);
   });
+
+  function process(fn) {
+    for (var i = 0; i < inputs.length; i++) {
+      fn(inputs[i]);
+    }
+  }
 };
 
-function activateInputs(form) {
-  var inputs = form.querySelectorAll(".input");
-  resetInputs();
-  activatePhoneFields(inputs);
-
-  function resetInputs() {
-    for (var i = 0; i < inputs.length; i++) {
-      resetInput(inputs[i]);
-    }
-  }
-
-  function resetInput(el) {
-    var className = "input--not-touched";
-    el.classList.add(className);
-    var events = ["focus", "invalid"];
-
-    for (var i = 0; i < events.length; i++) {
-      el.addEventListener(events[i], onEvent);
-    }
-
-    function onEvent() {
-      el.classList.remove(className);
-
-      for (var _i = 0; _i < events.length; _i++) {
-        el.removeEventListener(events[_i], onEvent);
-      }
-    }
-  }
-
-  return resetInputs;
-}
-
-function activatePhoneFields(inputs) {
-  for (var i = 0; i < inputs.length; i++) {
-    if (inputs[i].type === "tel") {
-      activatePhoneField(inputs[i]);
-    }
-  }
-
-  function activatePhoneField(field) {}
-}
-
 /* harmony default export */ __webpack_exports__["default"] = (activateForm);
+
+/***/ }),
+
+/***/ "./source/js/components/form/input.js":
+/*!********************************************!*\
+  !*** ./source/js/components/form/input.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function activateInput(input) {
+  var className = "input--not-touched";
+  input.classList.add(className);
+  var events = ["focus", "invalid"];
+  toggleListeners(true);
+
+  function onEvent() {
+    input.classList.remove(className);
+    toggleListeners(false);
+  }
+
+  function toggleListeners(condition) {
+    for (var i = 0; i < events.length; i++) {
+      input["".concat(condition ? "add" : "remove", "EventListener")](events[i], onEvent);
+    }
+  }
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (activateInput);
+
+/***/ }),
+
+/***/ "./source/js/components/form/phone.js":
+/*!********************************************!*\
+  !*** ./source/js/components/form/phone.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function activatePhoneField(input) {
+  if (input.type !== "tel") {
+    return;
+  }
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (activatePhoneField);
 
 /***/ }),
 
