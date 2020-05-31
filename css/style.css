@@ -2389,3 +2389,16 @@ button:focus {
     width: 100%; }
   .contacts__form button {
     margin-top: 1.5rem; } }
+
+.modal-overlay {
+  background-color: #ebebeb;
+  height: 100%;
+  opacity: 0.95;
+  position: fixed;
+  width: 100%;
+  z-index: 1000; }
+
+.modal {
+  background-color: white;
+  min-height: 521px;
+  width: 480px; }
