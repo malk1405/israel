@@ -1,4 +1,4 @@
-import activateForm from '../utils/activateForm';
+import activateForm from './form/form';
 
 const activateForms = () => {
   const forms = document.forms;
