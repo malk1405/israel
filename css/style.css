@@ -2402,3 +2402,7 @@ button:focus {
   background-color: white;
   min-height: 521px;
   width: 480px; }
+
+.modal__close-btn:focus {
+  -webkit-box-shadow: 0 0 0 1px rgba(31, 192, 252, 0.4);
+          box-shadow: 0 0 0 1px rgba(31, 192, 252, 0.4); }
