@@ -20,9 +20,7 @@ const activateForm = (form) => {
   });
 
   function process(fn) {
-    for (let i = 0; i < inputs.length; i++) {
-      fn(inputs[i]);
-    }
+    inputs.forEach(fn);
   }
 };
 
