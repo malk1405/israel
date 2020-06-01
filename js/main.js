@@ -295,10 +295,30 @@ function createModal(el) {
   var modalContainer = clone.querySelector(".modal-overlay");
   var modal = modalContainer.querySelector(".modal");
   var closeBtn = modal.querySelector(".modal__close-btn");
-  closeBtn.addEventListener("click", destroy);
+  modalContainer.addEventListener("click", onClick);
   document.body.appendChild(modalContainer);
+  document.addEventListener("keydown", onEscape);
+
+  function onClick(e) {
+    var targets = [modalContainer, closeBtn];
+
+    for (var i = 0; i < targets.length; i++) {
+      if (e.target === targets[i]) {
+        destroy();
+        return;
+      }
+    }
+  }
+
+  function onEscape(e) {
+    if (e.keyCode === 27) {
+      destroy();
+    }
+  }
 
   function destroy() {
+    document.removeEventListener("keydown", onEscape);
+    modalContainer.removeEventListener("click", onClick);
     document.body.removeChild(modalContainer);
   }
 }
