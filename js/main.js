@@ -206,21 +206,22 @@ var activateForm = function activateForm(form) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _utils_setListeners__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../utils/setListeners */ "./source/js/utils/setListeners.js");
+
+
 function activateInput(input) {
   var className = "input--not-touched";
+  var listener = Object(_utils_setListeners__WEBPACK_IMPORTED_MODULE_0__["default"])({
+    elements: [input],
+    events: ["focus", "invalid"],
+    fn: onEvent
+  });
   input.classList.add(className);
-  var events = ["focus", "invalid"];
-  toggleListeners(true);
+  listener.add();
 
   function onEvent() {
     input.classList.remove(className);
-    toggleListeners(false);
-  }
-
-  function toggleListeners(condition) {
-    for (var i = 0; i < events.length; i++) {
-      input["".concat(condition ? "add" : "remove", "EventListener")](events[i], onEvent);
-    }
+    listener.remove();
   }
 }
 
