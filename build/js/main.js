@@ -280,6 +280,9 @@ var activateForms = function activateForms() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _utils_setListeners__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/setListeners */ "./source/js/utils/setListeners.js");
+
+
 function createModal() {
   var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
       content = _ref.content,
@@ -296,34 +299,31 @@ function createModal() {
   }
 
   var clone = template.content.cloneNode(true);
-  var modalContainer = clone.querySelector(".modal-overlay");
-  var traps = modalContainer.querySelectorAll(".modal__focus-trap");
-  var modal = modalContainer.querySelector(".modal");
+  var container = clone.querySelector(".modal");
+  var modal = container.querySelector(".modal__body");
   var closeBtn = modal.querySelector(".modal__close-btn");
-
-  for (var i = 0; i < traps.length; i++) {
-    traps[i].addEventListener("focus", resetFocus);
-  }
-
-  modalContainer.addEventListener("click", onClick);
+  var backdrop = container.querySelector(".modal__backdrop");
 
   if (content) {
     modal.appendChild(content);
   }
 
-  document.body.appendChild(modalContainer);
-  document.addEventListener("keydown", onEscape);
+  document.body.appendChild(container);
+  var closeOnEsc = Object(_utils_setListeners__WEBPACK_IMPORTED_MODULE_0__["default"])([document], ["keydown"], onEscape);
+  closeOnEsc.add();
+  var closeOnClick = Object(_utils_setListeners__WEBPACK_IMPORTED_MODULE_0__["default"])([backdrop, closeBtn], ["click"], destroy);
+  closeOnClick.add();
+  var resetFocus = Object(_utils_setListeners__WEBPACK_IMPORTED_MODULE_0__["default"])([container, backdrop], ["focus"], function () {
+    closeBtn.focus();
+  });
+  resetFocus.add();
   setFocus();
 
-  function onClick(e) {
-    var targets = [modalContainer, closeBtn];
-
-    for (var _i = 0; _i < targets.length; _i++) {
-      if (e.target === targets[_i]) {
-        destroy();
-        return;
-      }
-    }
+  function destroy() {
+    closeOnEsc.remove();
+    closeOnClick.remove();
+    resetFocus.remove();
+    document.body.removeChild(container);
   }
 
   function setFocus() {
@@ -331,26 +331,10 @@ function createModal() {
     el.focus();
   }
 
-  function resetFocus() {
-    closeBtn.focus();
-  }
-
   function onEscape(e) {
     if (e.keyCode === 27) {
       destroy();
     }
-  }
-
-  function destroy() {
-    document.removeEventListener("keydown", onEscape);
-    modalContainer.removeEventListener("click", onClick);
-    modalContainer.removeEventListener("blur", setFocus);
-
-    for (var _i2 = 0; _i2 < traps.length; _i2++) {
-      traps[_i2].removeEventListener("focus", resetFocus);
-    }
-
-    document.body.removeChild(modalContainer);
   }
 }
 
@@ -384,6 +368,38 @@ __webpack_require__.r(__webpack_exports__);
 (function activate() {
   Object(_components_forms__WEBPACK_IMPORTED_MODULE_2__["default"])();
 })();
+
+/***/ }),
+
+/***/ "./source/js/utils/setListeners.js":
+/*!*****************************************!*\
+  !*** ./source/js/utils/setListeners.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function setListeners(elements, events, fn) {
+  return {
+    add: function add() {
+      set(true);
+    },
+    remove: function remove() {
+      set(false);
+    }
+  };
+
+  function set(condition) {
+    for (var i = 0; i < elements.length; i++) {
+      for (var j = 0; j < events.length; j++) {
+        elements[i]["".concat(condition ? "add" : "remove", "EventListener")](events[j], fn);
+      }
+    }
+  }
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (setListeners);
 
 /***/ })
 

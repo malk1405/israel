@@ -1258,14 +1258,22 @@
     </footer>
 
     <template id="modal-template">
-      <div class="modal-overlay">
-        <div class="modal__focus-trap" tabindex="0"></div>
-        <div class="modal">
-          <button type="button" title="Закрыть" class="modal__close-btn">
-            X
+      <div class="modal" tabindex="0">
+        <div class="modal__body">
+          <button type="button" title="Закрыть" class="button modal__close-btn">
+            <svg focusable="false" width="18" height="18">
+              <use xlink:href="img/svg/sprite.svg#close-modal"></use>
+            </svg>
+            <img
+              src="img/svg/sprite.svg"
+              height="0"
+              width="0"
+              alt="Иконка Закрыть"
+            />
+            <span class="visually-hidden">Закрыть</span>
           </button>
         </div>
-        <div class="modal__focus-trap" tabindex="0"></div>
+        <div class="modal__backdrop" tabindex="0"></div>
       </div>
     </template>
 

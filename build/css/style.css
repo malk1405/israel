@@ -2390,19 +2390,42 @@ button:focus {
   .contacts__form button {
     margin-top: 1.5rem; } }
 
-.modal-overlay {
-  background-color: #ebebeb;
+.modal,
+.modal__backdrop {
   height: 100%;
-  opacity: 0.95;
-  position: fixed;
-  width: 100%;
-  z-index: 1000; }
+  width: 100%; }
 
 .modal {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: fixed;
+  z-index: 1000; }
+
+.modal__backdrop {
+  background-color: #ebebeb;
+  content: "";
+  left: 0;
+  opacity: 0.95;
+  position: absolute;
+  top: 0;
+  z-index: -1; }
+
+.modal__body {
   background-color: white;
+  border-radius: 8px;
   min-height: 521px;
+  position: relative;
   width: 480px; }
 
-.modal__close-btn:focus {
-  -webkit-box-shadow: 0 0 0 1px rgba(31, 192, 252, 0.4);
-          box-shadow: 0 0 0 1px rgba(31, 192, 252, 0.4); }
+.modal__close-btn {
+  background-color: red;
+  position: absolute;
+  right: 32px;
+  top: 32px; }

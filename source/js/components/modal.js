@@ -1,3 +1,5 @@
+import setListeners from '../utils/setListeners';
+
 function createModal({content, focusedElement} = {}) {
   if (!(`content` in document.createElement(`template`))) {
     return;
@@ -11,35 +13,37 @@ function createModal({content, focusedElement} = {}) {
 
   const clone = template.content.cloneNode(true);
 
-  const modalContainer = clone.querySelector(`.modal-overlay`);
-  const traps = modalContainer.querySelectorAll(`.modal__focus-trap`);
-  const modal = modalContainer.querySelector(`.modal`);
+  const container = clone.querySelector(`.modal`);
+  const modal = container.querySelector(`.modal__body`);
   const closeBtn = modal.querySelector(`.modal__close-btn`);
-
-  for (let i = 0; i < traps.length; i++) {
-    traps[i].addEventListener(`focus`, resetFocus);
-  }
-
-  modalContainer.addEventListener(`click`, onClick);
+  const backdrop = container.querySelector(`.modal__backdrop`);
 
   if (content) {
     modal.appendChild(content);
   }
 
-  document.body.appendChild(modalContainer);
-  document.addEventListener(`keydown`, onEscape);
+  document.body.appendChild(container);
+
+  const closeOnEsc = setListeners([document], [`keydown`], onEscape);
+  closeOnEsc.add();
+
+  const closeOnClick = setListeners([backdrop, closeBtn], [`click`], destroy);
+  closeOnClick.add();
+
+  const resetFocus = setListeners([container, backdrop], [`focus`], function () {
+    closeBtn.focus();
+  });
+  resetFocus.add();
 
   setFocus();
 
-  function onClick(e) {
-    const targets = [modalContainer, closeBtn];
+  function destroy() {
 
-    for (let i = 0; i < targets.length; i++) {
-      if (e.target === targets[i]) {
-        destroy();
-        return;
-      }
-    }
+    closeOnEsc.remove();
+    closeOnClick.remove();
+    resetFocus.remove();
+
+    document.body.removeChild(container);
   }
 
   function setFocus() {
@@ -47,27 +51,12 @@ function createModal({content, focusedElement} = {}) {
     el.focus();
   }
 
-  function resetFocus() {
-    closeBtn.focus();
-  }
-
   function onEscape(e) {
     if (e.keyCode === 27) {
       destroy();
     }
   }
-
-  function destroy() {
-    document.removeEventListener(`keydown`, onEscape);
-    modalContainer.removeEventListener(`click`, onClick);
-    modalContainer.removeEventListener(`blur`, setFocus);
-
-    for (let i = 0; i < traps.length; i++) {
-      traps[i].removeEventListener(`focus`, resetFocus);
-    }
-
-    document.body.removeChild(modalContainer);
-  }
 }
+
 
 export default createModal;
