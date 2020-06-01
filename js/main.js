@@ -164,9 +164,15 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _phone__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./phone */ "./source/js/components/form/phone.js");
-/* harmony import */ var _input__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./input */ "./source/js/components/form/input.js");
-/* harmony import */ var _modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../modal */ "./source/js/components/modal.js");
+/* harmony import */ var core_js_modules_es_array_for_each__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.for-each */ "./node_modules/core-js/modules/es.array.for-each.js");
+/* harmony import */ var core_js_modules_es_array_for_each__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_for_each__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
+/* harmony import */ var core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _phone__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./phone */ "./source/js/components/form/phone.js");
+/* harmony import */ var _input__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./input */ "./source/js/components/form/input.js");
+/* harmony import */ var _modal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../modal */ "./source/js/components/modal.js");
+
+
 
 
 
@@ -177,19 +183,17 @@ var activateForm = function activateForm(form) {
   }
 
   var inputs = form.querySelectorAll(".input");
-  process(_phone__WEBPACK_IMPORTED_MODULE_0__["default"]);
-  process(_input__WEBPACK_IMPORTED_MODULE_1__["default"]);
+  process(_phone__WEBPACK_IMPORTED_MODULE_2__["default"]);
+  process(_input__WEBPACK_IMPORTED_MODULE_3__["default"]);
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     form.reset();
-    process(_input__WEBPACK_IMPORTED_MODULE_1__["default"]);
-    Object(_modal__WEBPACK_IMPORTED_MODULE_2__["default"])();
+    process(_input__WEBPACK_IMPORTED_MODULE_3__["default"]);
+    Object(_modal__WEBPACK_IMPORTED_MODULE_4__["default"])();
   });
 
   function process(fn) {
-    for (var i = 0; i < inputs.length; i++) {
-      fn(inputs[i]);
-    }
+    inputs.forEach(fn);
   }
 };
 
