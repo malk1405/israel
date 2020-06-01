@@ -401,6 +401,13 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var core_js_modules_es_array_for_each__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.for-each */ "./node_modules/core-js/modules/es.array.for-each.js");
+/* harmony import */ var core_js_modules_es_array_for_each__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_for_each__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
+/* harmony import */ var core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
 function setListeners(_ref) {
   var elements = _ref.elements,
       events = _ref.events,
@@ -415,11 +422,11 @@ function setListeners(_ref) {
   };
 
   function set(condition) {
-    for (var i = 0; i < elements.length; i++) {
-      for (var j = 0; j < events.length; j++) {
-        elements[i]["".concat(condition ? "add" : "remove", "EventListener")](events[j], fn);
-      }
-    }
+    elements.forEach(function (element) {
+      events.forEach(function (event) {
+        element["".concat(condition ? "add" : "remove", "EventListener")](event, fn);
+      });
+    });
   }
 }
 

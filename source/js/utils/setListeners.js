@@ -9,14 +9,14 @@ function setListeners({elements, events, fn}) {
   };
 
   function set(condition) {
-    for (let i = 0; i < elements.length; i++) {
-      for (let j = 0; j < events.length; j++) {
-        elements[i][`${condition ? `add` : `remove`}EventListener`](
-            events[j],
+    elements.forEach((element) => {
+      events.forEach((event) => {
+        element[`${condition ? `add` : `remove`}EventListener`](
+            event,
             fn
         );
-      }
-    }
+      });
+    });
   }
 }
 
