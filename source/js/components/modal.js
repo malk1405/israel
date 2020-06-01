@@ -24,24 +24,22 @@ function createModal({content, focusedElement} = {}) {
 
   document.body.appendChild(container);
 
-  const closeOnEsc = setListeners([document], [`keydown`], onEscape);
-  closeOnEsc.add();
+  const listeners = [
+    {elements: [document], events: [`keydown`], fn: onEscape},
+    {elements: [backdrop, closeBtn], events: [`click`], fn: destroy},
+    {elements: [container, backdrop], events: [`focus`], fn: resetFocus},
+  ].map(setListeners);
 
-  const closeOnClick = setListeners([backdrop, closeBtn], [`click`], destroy);
-  closeOnClick.add();
-
-  const resetFocus = setListeners([container, backdrop], [`focus`], function () {
-    closeBtn.focus();
+  listeners.forEach((el) => {
+    el.add();
   });
-  resetFocus.add();
 
   setFocus();
 
   function destroy() {
-
-    closeOnEsc.remove();
-    closeOnClick.remove();
-    resetFocus.remove();
+    listeners.forEach((el) => {
+      el.remove();
+    });
 
     document.body.removeChild(container);
   }
@@ -51,12 +49,15 @@ function createModal({content, focusedElement} = {}) {
     el.focus();
   }
 
+  function resetFocus() {
+    closeBtn.focus();
+  }
+
   function onEscape(e) {
     if (e.keyCode === 27) {
       destroy();
     }
   }
 }
-
 
 export default createModal;

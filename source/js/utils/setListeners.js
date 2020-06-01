@@ -1,4 +1,4 @@
-function setListeners(elements, events, fn) {
+function setListeners({elements, events, fn}) {
   return {
     add() {
       set(true);
