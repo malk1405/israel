@@ -280,7 +280,16 @@ var activateForms = function activateForms() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _utils_setListeners__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/setListeners */ "./source/js/utils/setListeners.js");
+/* harmony import */ var core_js_modules_es_array_for_each__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.for-each */ "./node_modules/core-js/modules/es.array.for-each.js");
+/* harmony import */ var core_js_modules_es_array_for_each__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_for_each__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_es_array_map__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.array.map */ "./node_modules/core-js/modules/es.array.map.js");
+/* harmony import */ var core_js_modules_es_array_map__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_map__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
+/* harmony import */ var core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _utils_setListeners__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/setListeners */ "./source/js/utils/setListeners.js");
+
+
+
 
 
 function createModal() {
@@ -309,26 +318,38 @@ function createModal() {
   }
 
   document.body.appendChild(container);
-  var closeOnEsc = Object(_utils_setListeners__WEBPACK_IMPORTED_MODULE_0__["default"])([document], ["keydown"], onEscape);
-  closeOnEsc.add();
-  var closeOnClick = Object(_utils_setListeners__WEBPACK_IMPORTED_MODULE_0__["default"])([backdrop, closeBtn], ["click"], destroy);
-  closeOnClick.add();
-  var resetFocus = Object(_utils_setListeners__WEBPACK_IMPORTED_MODULE_0__["default"])([container, backdrop], ["focus"], function () {
-    closeBtn.focus();
+  var listeners = [{
+    elements: [document],
+    events: ["keydown"],
+    fn: onEscape
+  }, {
+    elements: [backdrop, closeBtn],
+    events: ["click"],
+    fn: destroy
+  }, {
+    elements: [container, backdrop],
+    events: ["focus"],
+    fn: resetFocus
+  }].map(_utils_setListeners__WEBPACK_IMPORTED_MODULE_3__["default"]);
+  listeners.forEach(function (el) {
+    el.add();
   });
-  resetFocus.add();
   setFocus();
 
   function destroy() {
-    closeOnEsc.remove();
-    closeOnClick.remove();
-    resetFocus.remove();
+    listeners.forEach(function (el) {
+      el.remove();
+    });
     document.body.removeChild(container);
   }
 
   function setFocus() {
     var el = modal.querySelector(focusedElement) || closeBtn;
     el.focus();
+  }
+
+  function resetFocus() {
+    closeBtn.focus();
   }
 
   function onEscape(e) {
@@ -380,7 +401,10 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-function setListeners(elements, events, fn) {
+function setListeners(_ref) {
+  var elements = _ref.elements,
+      events = _ref.events,
+      fn = _ref.fn;
   return {
     add: function add() {
       set(true);
