@@ -12,3 +12,9 @@
   min-height: 521px;
   width: 480px;
 }
+
+.modal__close-btn {
+  &:focus {
+    box-shadow: $focus-shadow;
+  }
+}

@@ -280,7 +280,11 @@ var activateForms = function activateForms() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-function createModal(el) {
+function createModal() {
+  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      content = _ref.content,
+      focusedElement = _ref.focusedElement;
+
   if (!("content" in document.createElement("template"))) {
     return;
   }
@@ -293,21 +297,42 @@ function createModal(el) {
 
   var clone = template.content.cloneNode(true);
   var modalContainer = clone.querySelector(".modal-overlay");
+  var traps = modalContainer.querySelectorAll(".modal__focus-trap");
   var modal = modalContainer.querySelector(".modal");
   var closeBtn = modal.querySelector(".modal__close-btn");
+
+  for (var i = 0; i < traps.length; i++) {
+    traps[i].addEventListener("focus", resetFocus);
+  }
+
   modalContainer.addEventListener("click", onClick);
+
+  if (content) {
+    modal.appendChild(content);
+  }
+
   document.body.appendChild(modalContainer);
   document.addEventListener("keydown", onEscape);
+  setFocus();
 
   function onClick(e) {
     var targets = [modalContainer, closeBtn];
 
-    for (var i = 0; i < targets.length; i++) {
-      if (e.target === targets[i]) {
+    for (var _i = 0; _i < targets.length; _i++) {
+      if (e.target === targets[_i]) {
         destroy();
         return;
       }
     }
+  }
+
+  function setFocus() {
+    var el = modal.querySelector(focusedElement) || closeBtn;
+    el.focus();
+  }
+
+  function resetFocus() {
+    closeBtn.focus();
   }
 
   function onEscape(e) {
@@ -319,6 +344,12 @@ function createModal(el) {
   function destroy() {
     document.removeEventListener("keydown", onEscape);
     modalContainer.removeEventListener("click", onClick);
+    modalContainer.removeEventListener("blur", setFocus);
+
+    for (var _i2 = 0; _i2 < traps.length; _i2++) {
+      traps[_i2].removeEventListener("focus", resetFocus);
+    }
+
     document.body.removeChild(modalContainer);
   }
 }
