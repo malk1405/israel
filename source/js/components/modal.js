@@ -11,7 +11,6 @@ function createModal({content, focusedElement} = {}) {
   const clone = template.content.cloneNode(true);
 
   const container = clone.querySelector(`.modal`);
-  console.dir(container);
   const modal = container.querySelector(`.modal__body`);
   const closeBtn = modal.querySelector(`.modal__close-btn`);
   const backdrop = container.querySelector(`.modal__backdrop`);
