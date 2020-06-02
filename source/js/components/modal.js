@@ -1,19 +1,17 @@
 import setListeners from '../utils/setListeners';
 
 function createModal({content, focusedElement} = {}) {
-  if (!(`content` in document.createElement(`template`))) {
-    return;
-  }
-
   const template = document.querySelector(`#modal-template`);
 
   if (!template) {
     return;
   }
 
+
   const clone = template.content.cloneNode(true);
 
   const container = clone.querySelector(`.modal`);
+  console.dir(container);
   const modal = container.querySelector(`.modal__body`);
   const closeBtn = modal.querySelector(`.modal__close-btn`);
   const backdrop = container.querySelector(`.modal__backdrop`);

@@ -63,6 +63,7 @@
     "del": "^4.1.1",
     "express": "^4.17.1",
     "picturefill": "^3.0.3",
-    "svg4everybody": "^2.1.9"
+    "svg4everybody": "^2.1.9",
+    "template-polyfill": "^2.0.0"
   }
 }
