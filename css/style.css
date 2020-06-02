@@ -664,7 +664,10 @@ button:focus {
   min-width: 320px;
   position: relative; }
 
-.body-wrapper {
+.body__iefix {
+  height: 100vh; }
+
+.body__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -677,11 +680,6 @@ button:focus {
   position: relative;
   width: 100%;
   z-index: 1; }
-
-.body-iefix {
-  width: 1px;
-  margin-right: -1px;
-  height: 100vh; }
 
 .header-container {
   padding-right: 114px; }
@@ -1371,11 +1369,8 @@ button:focus {
     bottom: 0;
     top: auto; }
 
-.ie-fix {
-  display: block;
-  height: 4.6rem;
-  margin-right: -1px;
-  width: 1px; }
+.how__iefix {
+  height: 4.6rem; }
 
 .how__note p {
   font-size: 1.5rem;
@@ -1442,12 +1437,12 @@ button:focus {
     margin-top: 0;
     min-height: 9.2rem;
     padding: 1rem 0 1rem 4.4rem; }
+    .how__condition::after, .how__condition::before {
+      left: 10px; }
     .how__condition::after {
       height: 3.6rem;
       min-width: 3.6rem; }
-    .how__condition::after, .how__condition::before {
-      left: 10px; }
-  .ie-fix {
+  .how__iefix {
     height: 7.2rem; }
   .how__note {
     margin-right: 0;
