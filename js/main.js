@@ -304,10 +304,6 @@ function createModal() {
       content = _ref.content,
       focusedElement = _ref.focusedElement;
 
-  if (!("content" in document.createElement("template"))) {
-    return;
-  }
-
   var template = document.querySelector("#modal-template");
 
   if (!template) {
@@ -316,6 +312,7 @@ function createModal() {
 
   var clone = template.content.cloneNode(true);
   var container = clone.querySelector(".modal");
+  console.dir(container);
   var modal = container.querySelector(".modal__body");
   var closeBtn = modal.querySelector(".modal__close-btn");
   var backdrop = container.querySelector(".modal__backdrop");
@@ -383,7 +380,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var picturefill__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(picturefill__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var svg4everybody__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! svg4everybody */ "./node_modules/svg4everybody/dist/svg4everybody.js");
 /* harmony import */ var svg4everybody__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(svg4everybody__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/forms */ "./source/js/components/forms.js");
+/* harmony import */ var template_polyfill__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! template-polyfill */ "./node_modules/template-polyfill/index.js");
+/* harmony import */ var template_polyfill__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(template_polyfill__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/forms */ "./source/js/components/forms.js");
+
 
 
 
@@ -391,10 +391,11 @@ __webpack_require__.r(__webpack_exports__);
 (function vendors() {
   svg4everybody__WEBPACK_IMPORTED_MODULE_1___default()();
   picturefill__WEBPACK_IMPORTED_MODULE_0___default()();
+  template_polyfill__WEBPACK_IMPORTED_MODULE_2___default()();
 })();
 
 (function activate() {
-  Object(_components_forms__WEBPACK_IMPORTED_MODULE_2__["default"])();
+  Object(_components_forms__WEBPACK_IMPORTED_MODULE_3__["default"])();
 })();
 
 /***/ }),
