@@ -100,11 +100,8 @@
 }
 
 // IE не может при не заданном height спозиционировать контент по центру
-.ie-fix {
-  display: block;
+.how__iefix {
   height: 4.6rem;
-  margin-right: -1px;
-  width: 1px;
 }
 
 .how__note p {
@@ -187,18 +184,18 @@
     min-height: 9.2rem;
     padding: 1rem 0 1rem 4.4rem;
 
-    &::after {
-      height: 3.6rem;
-      min-width: 3.6rem;
-    }
-
     &::after,
     &::before {
       left: 10px;
     }
+
+    &::after {
+      height: 3.6rem;
+      min-width: 3.6rem;
+    }
   }
 
-  .ie-fix {
+  .how__iefix {
     height: 7.2rem;
   }
 
