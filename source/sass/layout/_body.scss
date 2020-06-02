@@ -22,18 +22,25 @@ button {
   background-color: $body-bg-color;
   color: $text-main-color;
   display: flex;
-  flex-direction: column;
   font-family: $firasans;
   font-size: 1.7rem;
   line-height: 1.7;
-  height: 100vh;
-  max-width: 1366px;
-  margin: 0 auto;
   min-width: 320px;
   position: relative;
-  width: 100%;
 }
 
-.body > * {
-  flex-shrink: 0;
+.body-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 1366px;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.body-iefix {
+  width: 1px;
+  margin-right: -1px;
+  height: 100vh;
 }
