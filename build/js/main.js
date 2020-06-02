@@ -166,11 +166,14 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var core_js_modules_es_array_for_each__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.for-each */ "./node_modules/core-js/modules/es.array.for-each.js");
 /* harmony import */ var core_js_modules_es_array_for_each__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_for_each__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
-/* harmony import */ var core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _phone__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./phone */ "./source/js/components/form/phone.js");
-/* harmony import */ var _input__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./input */ "./source/js/components/form/input.js");
-/* harmony import */ var _modal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../modal */ "./source/js/components/modal.js");
+/* harmony import */ var core_js_modules_es_function_name__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.function.name */ "./node_modules/core-js/modules/es.function.name.js");
+/* harmony import */ var core_js_modules_es_function_name__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_function_name__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
+/* harmony import */ var core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _phone__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./phone */ "./source/js/components/form/phone.js");
+/* harmony import */ var _input__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./input */ "./source/js/components/form/input.js");
+/* harmony import */ var _modal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../modal */ "./source/js/components/modal.js");
+
 
 
 
@@ -183,13 +186,21 @@ var activateForm = function activateForm(form) {
   }
 
   var inputs = form.querySelectorAll(".input");
-  process(_phone__WEBPACK_IMPORTED_MODULE_2__["default"]);
-  process(_input__WEBPACK_IMPORTED_MODULE_3__["default"]);
+  process(_phone__WEBPACK_IMPORTED_MODULE_3__["default"]);
+  process(_input__WEBPACK_IMPORTED_MODULE_4__["default"]);
   form.addEventListener("submit", function (e) {
     e.preventDefault();
+    process(_input__WEBPACK_IMPORTED_MODULE_4__["default"]);
+    var formData = {};
+    process(getData);
     form.reset();
-    process(_input__WEBPACK_IMPORTED_MODULE_3__["default"]);
-    Object(_modal__WEBPACK_IMPORTED_MODULE_4__["default"])();
+    Object(_modal__WEBPACK_IMPORTED_MODULE_5__["default"])();
+
+    function getData(input) {
+      if (input.name) {
+        formData[input.name] = input.dataset.maskedValue || input.value;
+      }
+    }
   });
 
   function process(fn) {
@@ -316,6 +327,7 @@ function activatePhoneField(input) {
     }
 
     maskedValue = newMaskedValue;
+    input.dataset.maskedValue = maskedValue;
     input.value = newValue;
     input.setSelectionRange(cursorPosition, cursorPosition);
   });

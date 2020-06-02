@@ -14,9 +14,19 @@ const activateForm = (form) => {
 
   form.addEventListener(`submit`, (e) => {
     e.preventDefault();
-    form.reset();
     process(activateInput);
+
+    const formData = {};
+    process(getData);
+
+    form.reset();
     createModal();
+
+    function getData(input) {
+      if (input.name) {
+        formData[input.name] = input.dataset.maskedValue || input.value;
+      }
+    }
   });
 
   function process(fn) {

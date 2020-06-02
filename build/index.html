@@ -175,7 +175,7 @@
           <div class="want__form-container want-container want-container--form">
             <form>
               <div class="input-container">
-                <input type="tel" class="input" placeholder="Телефон" id="want__form-phone" pattern="(\+7 \([0-9]{3}\) [0-9]{3} [0-9]{2} [0-9]{2})" value="" title="+7 (XXX) XXX XX XX" required="">
+                <input type="tel" class="input" placeholder="Телефон" id="want__form-phone" name="phone" pattern="(\+7 \([0-9]{3}\) [0-9]{3} [0-9]{2} [0-9]{2})" title="+7 (XXX) XXX XX XX" required="">
                 <label for="want__form-phone" class="input-label"><span class="visually-hidden">Телефон</span></label>
               </div>
               <button class="button button--main want__form-button" type="submit" title="Перезвоните мне">
@@ -720,11 +720,11 @@
             <form>
               <div class="contacts__form d-flex">
                 <div class="input-container">
-                  <input type="text" id="contacts__form-name" class="input" placeholder="Имя" required="">
+                  <input type="text" id="contacts__form-name" class="input" placeholder="Имя" name="name" required="">
                   <label for="contacts__form-name" class="input-label"><span class="visually-hidden">Имя</span></label>
                 </div>
                 <div class="input-container">
-                  <input type="tel" id="contacts__form-phone" class="input" placeholder="Телефон" pattern="(\+7 \([0-9]{3}\) [0-9]{3} [0-9]{2} [0-9]{2})" title="+7 (XXX) XXX XX XX" required="">
+                  <input type="tel" id="contacts__form-phone" class="input" placeholder="Телефон" name="phone" pattern="(\+7 \([0-9]{3}\) [0-9]{3} [0-9]{2} [0-9]{2})" title="+7 (XXX) XXX XX XX" required="">
                   <label for="contacts__form-phone" class="input-label"><span class="visually-hidden">Телефон</span></label>
                 </div>
                 <button class="button button--main">Перезвоните мне</button>

@@ -54,6 +54,7 @@ function activatePhoneField(input) {
     }
 
     maskedValue = newMaskedValue;
+    input.dataset.maskedValue = maskedValue;
 
     input.value = newValue;
     input.setSelectionRange(cursorPosition, cursorPosition);
