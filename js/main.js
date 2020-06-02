@@ -242,9 +242,115 @@ function activateInput(input) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var core_js_modules_es_array_join__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.join */ "./node_modules/core-js/modules/es.array.join.js");
+/* harmony import */ var core_js_modules_es_array_join__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_join__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_es_array_splice__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.array.splice */ "./node_modules/core-js/modules/es.array.splice.js");
+/* harmony import */ var core_js_modules_es_array_splice__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_splice__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var core_js_modules_es_regexp_exec__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.regexp.exec */ "./node_modules/core-js/modules/es.regexp.exec.js");
+/* harmony import */ var core_js_modules_es_regexp_exec__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_regexp_exec__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var core_js_modules_es_string_match__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/es.string.match */ "./node_modules/core-js/modules/es.string.match.js");
+/* harmony import */ var core_js_modules_es_string_match__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_match__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var core_js_modules_es_string_replace__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! core-js/modules/es.string.replace */ "./node_modules/core-js/modules/es.string.replace.js");
+/* harmony import */ var core_js_modules_es_string_replace__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_replace__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var core_js_modules_es_string_split__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! core-js/modules/es.string.split */ "./node_modules/core-js/modules/es.string.split.js");
+/* harmony import */ var core_js_modules_es_string_split__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_split__WEBPACK_IMPORTED_MODULE_5__);
+
+
+
+
+
+
+
 function activatePhoneField(input) {
   if (input.type !== "tel") {
     return;
+  }
+
+  var maskedValue = "";
+  var RE = /\D/g;
+  var phonePattern = input.title.replace(/[a-z]/gi, "1");
+  var maskedPhoneLength = phonePattern.replace(RE, "").length;
+  var matches = [];
+  var countryCode = /\d+/.exec(phonePattern)[0];
+  var match;
+  var parenthesesIndex = 0;
+
+  while ((match = RE.exec(phonePattern)) !== null) {
+    var _match = match,
+        value = _match[0],
+        index = _match.index;
+
+    if (!parenthesesIndex && value === "(") {
+      parenthesesIndex = index;
+    }
+
+    matches.push({
+      value: value,
+      index: index
+    });
+  }
+
+  var keyCode;
+  input.addEventListener("keydown", function (e) {
+    keyCode = e.keyCode;
+  });
+  input.addEventListener("input", function (e) {
+    var value = e.target.value;
+    var newMaskedValue = getMaskedValue(value);
+    var newValue = getFullValue(newMaskedValue);
+    var cursorPosition = event.target.selectionEnd;
+    var shortValue = value.substr(0, cursorPosition);
+    var shortMaskedValue = getMaskedValue(shortValue);
+    var newShortValue = getFullValue(shortMaskedValue);
+    cursorPosition = newShortValue.length;
+    var deleteCode = 46;
+
+    if (keyCode === deleteCode && cursorPosition < newValue.length) {
+      while (newValue[cursorPosition].match(RE)) {
+        cursorPosition++;
+      }
+    }
+
+    if (cursorPosition <= parenthesesIndex) {
+      cursorPosition = parenthesesIndex + 1;
+    }
+
+    maskedValue = newMaskedValue;
+    input.value = newValue;
+    input.setSelectionRange(cursorPosition, cursorPosition);
+  });
+  input.addEventListener("blur", function () {
+    if (maskedValue === countryCode) {
+      input.value = "";
+    }
+  });
+
+  function getMaskedValue(value) {
+    var res = value.replace(RE, "");
+
+    if (res.substr(0, countryCode.length) !== countryCode) {
+      res = countryCode + res;
+    }
+
+    return res.substr(0, maskedPhoneLength);
+  }
+
+  function getFullValue(str) {
+    var arr = str.split("");
+
+    for (var i = 0; i < matches.length; i++) {
+      var _matches$i = matches[i],
+          _index = _matches$i.index,
+          _value = _matches$i.value;
+
+      if (_index > parenthesesIndex && _index >= arr.length) {
+        break;
+      }
+
+      arr.splice(_index, 0, _value);
+    }
+
+    return arr.join("");
   }
 }
 
@@ -312,7 +418,6 @@ function createModal() {
 
   var clone = template.content.cloneNode(true);
   var container = clone.querySelector(".modal");
-  console.dir(container);
   var modal = container.querySelector(".modal__body");
   var closeBtn = modal.querySelector(".modal__close-btn");
   var backdrop = container.querySelector(".modal__backdrop");
