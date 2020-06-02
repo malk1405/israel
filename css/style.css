@@ -658,23 +658,30 @@ button:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  font-family: "Fira Sans", Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+  font-size: 1.7rem;
+  line-height: 1.7;
+  min-width: 320px;
+  position: relative; }
+
+.body-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  font-family: "Fira Sans", Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
-  font-size: 1.7rem;
-  line-height: 1.7;
-  height: 100vh;
-  max-width: 1366px;
   margin: 0 auto;
-  min-width: 320px;
+  max-width: 1366px;
   position: relative;
-  width: 100%; }
+  width: 100%;
+  z-index: 1; }
 
-.body > * {
-  -ms-flex-negative: 0;
-      flex-shrink: 0; }
+.body-iefix {
+  width: 1px;
+  margin-right: -1px;
+  height: 100vh; }
 
 .header-container {
   padding-right: 114px; }
@@ -751,7 +758,7 @@ button:focus {
       -ms-flex-align: center;
           align-items: center;
   border-top: 2px rgba(72, 72, 72, 0.2) solid;
-  margin-top: -2.6rem;
+  margin-top: auto;
   padding-bottom: 2rem;
   padding-top: 2.4rem; }
 
@@ -798,7 +805,6 @@ button:focus {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    margin-top: 6.4rem;
     padding-bottom: 3.2rem;
     padding-top: 3.2rem; }
   .footer__logo,
@@ -2119,6 +2125,7 @@ button:focus {
     margin-left: 1.7rem; } }
 
 .contacts {
+  margin-bottom: -2.6rem;
   margin-top: 7.9rem;
   padding-bottom: 8.4rem;
   position: relative;
@@ -2339,6 +2346,7 @@ button:focus {
 
 @media screen and (max-width: 767px) {
   .contacts {
+    margin-bottom: 6.4rem;
     margin-top: 7.5rem;
     padding-bottom: 0; }
   .contacts__location,
@@ -2405,7 +2413,9 @@ button:focus {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  left: 0;
   position: fixed;
+  top: 0;
   z-index: 1000; }
 
 .modal__backdrop {
