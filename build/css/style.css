@@ -637,6 +637,13 @@ template {
     line-height: 2.9rem;
     letter-spacing: -0.02em; } }
 
+.social__link,
+.social__logo {
+  display: block; }
+
+.social__logo {
+  fill: rgba(72, 72, 72, 0.2); }
+
 :root {
   font-size: 62.5%; }
 
@@ -793,9 +800,6 @@ button:focus {
 
 .footer__social a {
   margin-left: 2rem; }
-
-.footer__social svg {
-  fill: rgba(72, 72, 72, 0.2); }
 
 @media screen and (max-width: 767px) {
   .footer {
@@ -2030,9 +2034,7 @@ button:focus {
   height: 100%;
   width: auto; }
 
-.reviews__button,
-.reviews__footer a,
-.reviews__footer svg {
+.reviews__button {
   display: block; }
 
 .reviews__social-item {
@@ -2042,9 +2044,6 @@ button:focus {
 
 .reviews__footer a {
   height: 2.4rem; }
-
-.reviews__social svg {
-  fill: rgba(72, 72, 72, 0.2); }
 
 @media screen and (max-width: 1023px) {
   .reviews__item {
@@ -2216,12 +2215,8 @@ button:focus {
   margin-bottom: 2.8rem; }
 
 .contacts__social a {
-  display: block;
   line-height: 0;
   margin-right: 1.5rem; }
-
-.contacts__social-logo {
-  opacity: 0.16; }
 
 .contacts__tutor-info svg {
   display: block; }

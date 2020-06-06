@@ -42,10 +42,6 @@
   margin-left: 2rem;
 }
 
-.footer__social svg {
-  fill: $text-light-color;
-}
-
 @include mq(phone) {
   .footer {
     flex-direction: column;
