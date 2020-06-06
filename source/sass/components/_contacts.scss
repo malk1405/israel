@@ -110,9 +110,12 @@
   margin-right: 1.5rem;
 }
 
+.contacts__social-logo {
+  opacity: 0.16;
+}
+
 .contacts__tutor-info svg {
   display: block;
-  fill: $text-light-color;
 }
 
 .contacts__map-container {
