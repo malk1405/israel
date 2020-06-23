@@ -23,7 +23,7 @@
 }
 
 .meet p {
-  color: rgba($text-photo-color, 0.87);
+  color: rgba($text-photo-color, $main-opacity);
   margin-left: 4px;
   max-width: 39rem;
   text-shadow: $text-shadow;

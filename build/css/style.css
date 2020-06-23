@@ -639,10 +639,12 @@ template {
 
 .social__link,
 .social__logo {
-  display: block; }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
 
 .social__logo {
-  fill: rgba(72, 72, 72, 0.2); }
+  fill: #484848; }
 
 :root {
   font-size: 62.5%; }
@@ -791,12 +793,6 @@ button:focus {
       -ms-flex-pack: end;
           justify-content: flex-end;
   margin-right: 4px; }
-
-.footer__social a,
-.footer__social svg {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
 
 .footer__social a {
   margin-left: 2rem; }
@@ -1907,6 +1903,17 @@ button:focus {
     margin-top: 1.6rem; }
     .faq__item.faq__item p:last-child {
       margin-bottom: -0.1rem; } }
+
+.arrow {
+  stroke: #484848; }
+  .arrow--prev {
+    -webkit-transform: scaleX(-1);
+            transform: scaleX(-1); }
+
+.icon {
+  opacity: 0.2; }
+  .icon:hover {
+    opacity: 0.5; }
 
 .reviews {
   background: url("../img/reviews/city@1x--lg.jpg") top 60px right 0/523px no-repeat;

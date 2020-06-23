@@ -1,0 +1,14 @@
+.arrow {
+  stroke: $text-base-color;
+
+  &--prev {
+    transform: scaleX(-1);
+  }
+}
+
+.icon {
+  opacity: $light-opacity;
+  &:hover {
+    opacity: $medium-opacity;
+  }
+}

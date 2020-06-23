@@ -37,12 +37,16 @@ $button-gradient-active: radial-gradient(
   ),
   #{$button-gradient-hover};
 
+$light-opacity: 0.2;
+$medium-opacity: 0.5;
+$main-opacity: 0.87;
+
 $text-base-color: #484848;
 
-$text-medium-color: rgba($text-base-color, 0.5);
-$text-light-color: rgba($text-base-color, 0.2);
-$text-main-color: rgba($text-base-color, 0.87);
-$text-bright-color: rgba($text-base-color, 1);
+$text-light-color: rgba($text-base-color, $light-opacity);
+$text-medium-color: rgba($text-base-color, $medium-opacity);
+$text-main-color: rgba($text-base-color, $main-opacity);
+$text-bright-color: $text-base-color;
 
 $text-placeholder-color: $text-medium-color;
 $text-button-color: white;

@@ -25,17 +25,12 @@
 }
 
 .footer__copyright a {
-  color: rgba($text-header-color, 0.5);
+  color: rgba($text-header-color, $medium-opacity);
 }
 
 .footer__social {
   justify-content: flex-end;
   margin-right: 4px;
-}
-
-.footer__social a,
-.footer__social svg {
-  display: flex;
 }
 
 .footer__social a {

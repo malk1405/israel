@@ -1,8 +1,8 @@
 .social__link,
 .social__logo {
-  display: block;
+  display: flex;
 }
 
 .social__logo {
-  fill: $text-light-color;
+  fill: $text-base-color;
 }
