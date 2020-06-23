@@ -3,7 +3,9 @@
 <stop stop-color="#FFC341"/>
 <stop offset="0.963542" stop-color="#FFD701"/>
 </linearGradient>
-</defs><symbol id="close-modal" viewBox="0 0 18 17">
+</defs><symbol id="arrow" viewBox="0 0 11 18">
+<path d="M1 16.5L9 9L0.999999 1.5" stroke-width="2" fill="none"/>
+</symbol><symbol id="close-modal" viewBox="0 0 18 17">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M7.48467 8.5L0 1.50703L1.41767 2.46254e-07L9 7.08422L16.5823 0L18 1.50703L10.5153 8.5L18 15.493L16.5823 17L9 9.91578L1.41767 17L6.13436e-07 15.493L7.48467 8.5Z" fill="url(#paint0_linear)"/>
 
 </symbol><symbol id="fb" viewBox="6 0 12 24">
@@ -24,10 +26,6 @@ c1.561-0.043,3.002-0.842,3.868-2.143c0.321-0.486,32.637-49.287,64.517-108.976c43
 C346.693,59.825,286.846,0,213.285,0z M274.865,136.62c0,34.124-27.761,61.884-61.885,61.884
 c-34.123,0-61.884-27.761-61.884-61.884s27.761-61.884,61.884-61.884C247.104,74.736,274.865,102.497,274.865,136.62z" opacity="0.16" fill="#484848"/>
 
-</symbol><symbol id="next" viewBox="0 0 11 18">
-<path opacity="0.2" d="M1 16.5L9 9L0.999999 1.5" stroke="#484848" stroke-width="2" fill="none"/>
-</symbol><symbol id="prev" viewBox="0 0 11 18">
-<path opacity="0.2" d="M10 1.5L2 9L10 16.5" stroke="#484848" stroke-width="2" fill="none"/>
 </symbol><symbol id="scroll" viewBox="0 0 76 132">
 <path d="M38 76V131.5" stroke="white"/>
 <rect x="31" y="25" width="14" height="24" rx="7.5" ry="7.5" stroke="white" stroke-width="2" fill="none"/>
