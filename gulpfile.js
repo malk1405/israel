@@ -14,6 +14,8 @@ let posthtml = require(`gulp-posthtml`);
 let include = require(`posthtml-include`);
 let del = require(`del`);
 
+let inject = require(`gulp-inject`);
+
 let webpack = require(`webpack-stream`);
 
 gulp.task(`css`, function () {
@@ -41,11 +43,10 @@ gulp.task(`server`, function () {
   });
 
   gulp.watch(`source/sass/**/*.{scss,sass}`, gulp.series(`css`));
-  gulp.watch(`source/img/icon-*.svg`, gulp.series(`sprite`, `html`, `refresh`));
+  gulp.watch(`source/img/**/*.svg`, gulp.series(`html`, `refresh`));
   gulp.watch(`source/*.html`, gulp.series(`html`, `refresh`));
   gulp.watch(`source/js/**/*.js`, gulp.series(`js`, `refresh`));
-  gulp.watch(`source/img/**/*.{png,jpg,gif}`, gulp.series(`copy`, `refresh`));
-  gulp.watch(`source/img/**/*.svg`, gulp.series(`copy`, `sprite`));
+  gulp.watch(`source/img/**/*.{png,jpg,gif,webp}`, gulp.series(`copy`, `refresh`));
 });
 
 gulp.task(`js`, () => {
@@ -123,17 +124,18 @@ gulp.task(`webp`, function () {
       .pipe(gulp.dest(`source/img`));
 });
 
-gulp.task(`sprite`, function () {
-  return gulp
-      .src(`source/img/svg/*.svg`)
-      .pipe(svgstore({inlineSvg: true}))
-      .pipe(rename(`sprite.svg`))
-      .pipe(gulp.dest(`build/img/svg`));
-});
-
 gulp.task(`html`, function () {
+  let svgs = gulp
+      .src(`source/img/svg/*.svg`)
+      .pipe(svgstore({inlineSvg: true}));
+
+  function fileContents(filePath, file) {
+    return file.contents.toString();
+  }
+
   return gulp
       .src(`source/*.html`)
+      .pipe(inject(svgs, {transform: fileContents}))
       .pipe(posthtml([include()]))
       .pipe(gulp.dest(`build`));
 });
@@ -143,7 +145,7 @@ gulp.task(`copy`, function () {
       .src(
           [
             `source/fonts/**/*.{woff,woff2}`,
-            `source/img/**/*.{webp,jpg,png,gif,svg}`,
+            `source/img/**/*.{webp,jpg,png,gif}`,
             `source//*.ico`,
           ],
           {
@@ -157,5 +159,5 @@ gulp.task(`clean`, function () {
   return del(`build`);
 });
 
-gulp.task(`build`, gulp.series(`clean`, `copy`, `css`, `js`, `sprite`, `html`));
+gulp.task(`build`, gulp.series(`clean`, `copy`, `css`, `js`, `html`));
 gulp.task(`start`, gulp.series(`build`, `server`));
