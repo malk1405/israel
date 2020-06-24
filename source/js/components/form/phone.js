@@ -5,24 +5,31 @@ function activatePhoneField(input) {
 
   let maskedValue = ``;
 
-  const RE = /\D/g;
+  const phonePattern = input.title;
 
-  const phonePattern = input.title.replace(/[a-z]/gi, `1`);
-  const maskedPhoneLength = phonePattern.replace(RE, ``).length;
-  const matches = [];
+  const nonDigits = {length: 0};
 
-  const countryCode = /\d+/.exec(phonePattern)[0];
+  for (let i = 0; i < phonePattern.length; i++) {
+    const char = phonePattern.charAt(i);
+    if (!isDigit(char) && char !== `X`) {
+      nonDigits[i] = char;
+      nonDigits.length++;
 
-  let match;
-  let parenthesesIndex = 0;
-  while ((match = RE.exec(phonePattern)) !== null) {
-    const {0: value, index} = match;
-
-    if (!parenthesesIndex && value === `(`) {
-      parenthesesIndex = index;
+      if (!nonDigits.parenthesesIndex && char === `(`) {
+        nonDigits.parenthesesIndex = i;
+      }
     }
+  }
 
-    matches.push({value, index});
+  let countryCode = ``;
+  for (let i = 0; i < phonePattern.length; i++) {
+    const char = phonePattern.charAt(i);
+
+    if (isDigit(char)) {
+      countryCode += char;
+    } else if (countryCode) {
+      break;
+    }
   }
 
   let keyCode;
@@ -44,13 +51,13 @@ function activatePhoneField(input) {
     const deleteCode = 46;
 
     if (keyCode === deleteCode && cursorPosition < newValue.length) {
-      while (newValue[cursorPosition].match(RE)) {
+      while (!isDigit(newValue[cursorPosition])) {
         cursorPosition++;
       }
     }
 
-    if (cursorPosition <= parenthesesIndex) {
-      cursorPosition = parenthesesIndex + 1;
+    if (cursorPosition <= nonDigits.parenthesesIndex) {
+      cursorPosition = nonDigits.parenthesesIndex + 1;
     }
 
     maskedValue = newMaskedValue;
@@ -67,28 +74,43 @@ function activatePhoneField(input) {
   });
 
   function getMaskedValue(value) {
-    let res = value.replace(RE, ``);
+    let res = ``;
+
+    for (let i = 0; i < value.length; i++) {
+      const char = value.charAt(i);
+      if (isDigit(char)) {
+        res += char;
+      }
+    }
 
     if (res.substr(0, countryCode.length) !== countryCode) {
       res = countryCode + res;
     }
 
+    const maskedPhoneLength = phonePattern.length - nonDigits.length;
     return res.substr(0, maskedPhoneLength);
   }
 
   function getFullValue(str) {
-    const arr = str.split(``);
-    for (let i = 0; i < matches.length; i++) {
-      const {index, value} = matches[i];
+    let res = ``;
 
-      if (index > parenthesesIndex && index >= arr.length) {
-        break;
+    for (let i = 0; i < str.length; i++) {
+      while (nonDigits[res.length]) {
+        res += nonDigits[res.length];
       }
 
-      arr.splice(index, 0, value);
+      res += str[i];
     }
 
-    return arr.join(``);
+    while (res.length <= nonDigits.parenthesesIndex) {
+      res += nonDigits[res.length];
+    }
+
+    return res;
+  }
+
+  function isDigit(c) {
+    return !isNaN(parseInt(c, 10));
   }
 }
 

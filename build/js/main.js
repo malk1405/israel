@@ -253,52 +253,40 @@ function activateInput(input) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var core_js_modules_es_array_join__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.join */ "./node_modules/core-js/modules/es.array.join.js");
-/* harmony import */ var core_js_modules_es_array_join__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_join__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var core_js_modules_es_array_splice__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.array.splice */ "./node_modules/core-js/modules/es.array.splice.js");
-/* harmony import */ var core_js_modules_es_array_splice__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_splice__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var core_js_modules_es_regexp_exec__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.regexp.exec */ "./node_modules/core-js/modules/es.regexp.exec.js");
-/* harmony import */ var core_js_modules_es_regexp_exec__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_regexp_exec__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var core_js_modules_es_string_match__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/es.string.match */ "./node_modules/core-js/modules/es.string.match.js");
-/* harmony import */ var core_js_modules_es_string_match__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_match__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var core_js_modules_es_string_replace__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! core-js/modules/es.string.replace */ "./node_modules/core-js/modules/es.string.replace.js");
-/* harmony import */ var core_js_modules_es_string_replace__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_replace__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var core_js_modules_es_string_split__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! core-js/modules/es.string.split */ "./node_modules/core-js/modules/es.string.split.js");
-/* harmony import */ var core_js_modules_es_string_split__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_split__WEBPACK_IMPORTED_MODULE_5__);
-
-
-
-
-
-
-
 function activatePhoneField(input) {
   if (input.type !== "tel") {
     return;
   }
 
   var maskedValue = "";
-  var RE = /\D/g;
-  var phonePattern = input.title.replace(/[a-z]/gi, "1");
-  var maskedPhoneLength = phonePattern.replace(RE, "").length;
-  var matches = [];
-  var countryCode = /\d+/.exec(phonePattern)[0];
-  var match;
-  var parenthesesIndex = 0;
+  var phonePattern = input.title;
+  var nonDigits = {
+    length: 0
+  };
 
-  while ((match = RE.exec(phonePattern)) !== null) {
-    var _match = match,
-        value = _match[0],
-        index = _match.index;
+  for (var i = 0; i < phonePattern.length; i++) {
+    var char = phonePattern.charAt(i);
 
-    if (!parenthesesIndex && value === "(") {
-      parenthesesIndex = index;
+    if (!isDigit(char) && char !== "X") {
+      nonDigits[i] = char;
+      nonDigits.length++;
+
+      if (!nonDigits.parenthesesIndex && char === "(") {
+        nonDigits.parenthesesIndex = i;
+      }
     }
+  }
 
-    matches.push({
-      value: value,
-      index: index
-    });
+  var countryCode = "";
+
+  for (var _i = 0; _i < phonePattern.length; _i++) {
+    var _char = phonePattern.charAt(_i);
+
+    if (isDigit(_char)) {
+      countryCode += _char;
+    } else if (countryCode) {
+      break;
+    }
   }
 
   var keyCode;
@@ -317,13 +305,13 @@ function activatePhoneField(input) {
     var deleteCode = 46;
 
     if (keyCode === deleteCode && cursorPosition < newValue.length) {
-      while (newValue[cursorPosition].match(RE)) {
+      while (!isDigit(newValue[cursorPosition])) {
         cursorPosition++;
       }
     }
 
-    if (cursorPosition <= parenthesesIndex) {
-      cursorPosition = parenthesesIndex + 1;
+    if (cursorPosition <= nonDigits.parenthesesIndex) {
+      cursorPosition = nonDigits.parenthesesIndex + 1;
     }
 
     maskedValue = newMaskedValue;
@@ -338,31 +326,44 @@ function activatePhoneField(input) {
   });
 
   function getMaskedValue(value) {
-    var res = value.replace(RE, "");
+    var res = "";
+
+    for (var _i2 = 0; _i2 < value.length; _i2++) {
+      var _char2 = value.charAt(_i2);
+
+      if (isDigit(_char2)) {
+        res += _char2;
+      }
+    }
 
     if (res.substr(0, countryCode.length) !== countryCode) {
       res = countryCode + res;
     }
 
+    var maskedPhoneLength = phonePattern.length - nonDigits.length;
     return res.substr(0, maskedPhoneLength);
   }
 
   function getFullValue(str) {
-    var arr = str.split("");
+    var res = "";
 
-    for (var i = 0; i < matches.length; i++) {
-      var _matches$i = matches[i],
-          _index = _matches$i.index,
-          _value = _matches$i.value;
-
-      if (_index > parenthesesIndex && _index >= arr.length) {
-        break;
+    for (var _i3 = 0; _i3 < str.length; _i3++) {
+      while (nonDigits[res.length]) {
+        res += nonDigits[res.length];
       }
 
-      arr.splice(_index, 0, _value);
+      res += str[_i3];
     }
 
-    return arr.join("");
+    while (res.length <= nonDigits.parenthesesIndex) {
+      res += nonDigits[res.length];
+    }
+
+    return res;
+  }
+
+  function isDigit(c) {
+    return !isNaN(parseInt(c, 10));
   }
 }
 
