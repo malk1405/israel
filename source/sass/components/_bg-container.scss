@@ -4,7 +4,7 @@
   z-index: -1000;
 }
 
-@include mq(phone) {
+@include mq(tablet) {
   .bg-container {
     background: none;
   }
