@@ -228,7 +228,7 @@ function activateInput(input) {
   var className = "input--not-touched";
   var listener = Object(_utils_setListeners__WEBPACK_IMPORTED_MODULE_0__["default"])({
     elements: [input],
-    events: ["focus", "invalid"],
+    events: ["input", "invalid"],
     fn: onEvent
   });
   input.classList.add(className);

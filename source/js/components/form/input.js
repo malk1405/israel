@@ -2,7 +2,7 @@ import setListeners from '../../utils/setListeners';
 
 function activateInput(input) {
   const className = `input--not-touched`;
-  const listener = setListeners({elements: [input], events: [`focus`, `invalid`], fn: onEvent});
+  const listener = setListeners({elements: [input], events: [`input`, `invalid`], fn: onEvent});
 
   input.classList.add(className);
   listener.add();
