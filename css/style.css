@@ -956,11 +956,12 @@ button:focus {
   position: absolute;
   top: 0; }
 
-.about__video-button .play {
-  fill: #1fc0fc; }
-
 .about__video-button:hover .play {
   fill: #63d3fd; }
+
+.about__video-button .play,
+.about__video-button:active .play {
+  fill: #1fc0fc; }
 
 .about__video-button:hover .inner {
   -webkit-filter: url("#about__filter0");
@@ -2163,9 +2164,16 @@ button:focus {
     position: absolute;
     width: 100%; }
 
-.contacts__location svg {
+.contacts__location-svg {
   -webkit-transform: translateY(3px);
           transform: translateY(3px); }
+
+.contacts__location-svg--gps {
+  fill: #1fc0fc; }
+
+.contacts__location-svg--marker {
+  fill: #484848;
+  opacity: 0.16; }
 
 .contacts__location,
 .contacts__tutor {
