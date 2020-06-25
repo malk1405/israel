@@ -83,12 +83,13 @@
   top: 0;
 }
 
-.about__video-button .play {
-  fill: $text-header-color;
-}
-
 .about__video-button:hover .play {
   fill: #63d3fd;
+}
+
+.about__video-button .play,
+.about__video-button:active .play {
+  fill: $text-header-color;
 }
 
 .about__video-button:hover .inner {

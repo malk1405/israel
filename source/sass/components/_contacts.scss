@@ -46,8 +46,17 @@
   }
 }
 
-.contacts__location svg {
+.contacts__location-svg {
   transform: translateY(3px);
+}
+
+.contacts__location-svg--gps {
+  fill: $text-header-color;
+}
+
+.contacts__location-svg--marker {
+  fill: $text-base-color;
+  opacity: 0.16;
 }
 
 .contacts__location,
