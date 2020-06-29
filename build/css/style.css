@@ -672,6 +672,9 @@ button:focus {
   line-height: 1.7;
   min-width: 320px;
   position: relative; }
+  .body--lock {
+    overflow-y: scroll;
+    position: fixed; }
 
 .body__iefix {
   height: 100vh; }

@@ -7,7 +7,6 @@ function createModal({content, focusedElement} = {}) {
     return;
   }
 
-
   const clone = template.content.cloneNode(true);
 
   const container = clone.querySelector(`.modal`);
@@ -19,7 +18,10 @@ function createModal({content, focusedElement} = {}) {
     modal.appendChild(content);
   }
 
-  document.body.appendChild(container);
+  const body = document.body;
+
+  lockBody();
+  body.appendChild(container);
 
   const listeners = [
     {elements: [document], events: [`keydown`], fn: onEscape},
@@ -38,7 +40,8 @@ function createModal({content, focusedElement} = {}) {
       el.remove();
     });
 
-    document.body.removeChild(container);
+    body.removeChild(container);
+    unlockBody();
   }
 
   function setFocus() {
@@ -54,6 +57,27 @@ function createModal({content, focusedElement} = {}) {
     if (e.keyCode === 27) {
       destroy();
     }
+  }
+
+  function lockBody() {
+    body.dataset.scrollY = getBodyScrollTop();
+    body.style.top = `-${body.dataset.scrollY}px`;
+    body.classList.add(`body--lock`);
+
+    function getBodyScrollTop() {
+      return (
+        self.pageYOffset ||
+        (document.documentElement && document.documentElement.ScrollTop) ||
+        (body && body.scrollTop)
+      );
+    }
+  }
+
+  function unlockBody() {
+    body.classList.remove(`body--lock`);
+    window.scrollTo(0, body.dataset.scrollY);
+    delete body.dataset.scrollY;
+    body.style.top = ``;
   }
 }
 

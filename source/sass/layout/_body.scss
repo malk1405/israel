@@ -27,6 +27,11 @@ button {
   line-height: 1.7;
   min-width: 320px;
   position: relative;
+
+  &--lock {
+    overflow-y: scroll;
+    position: fixed;
+  }
 }
 
 .body__iefix {
