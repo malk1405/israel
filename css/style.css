@@ -2428,12 +2428,19 @@ button:focus {
   top: 0;
   z-index: 1000; }
 
+.modal-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-height: 100vh;
+  overflow-y: scroll; }
+
 .modal__backdrop {
   background-color: #ebebeb;
   content: "";
   left: 0;
   opacity: 0.95;
-  position: absolute;
+  position: fixed;
   top: 0;
   z-index: -1; }
 
