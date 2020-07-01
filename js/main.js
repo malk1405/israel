@@ -155,6 +155,34 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./source/js/components/accepted.js":
+/*!******************************************!*\
+  !*** ./source/js/components/accepted.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function createAccepted(modal) {
+  var template = document.querySelector("#accepted-template");
+
+  if (!template) {
+    return null;
+  }
+
+  var clone = template.content.cloneNode(true);
+  var acceptedButton = clone.querySelector(".accepted__button");
+  acceptedButton.addEventListener("click", function () {
+    modal.destroy();
+  });
+  return clone.querySelector(".accepted");
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (createAccepted);
+
+/***/ }),
+
 /***/ "./source/js/components/form/form.js":
 /*!*******************************************!*\
   !*** ./source/js/components/form/form.js ***!
@@ -172,8 +200,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _phone__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./phone */ "./source/js/components/form/phone.js");
 /* harmony import */ var _input__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./input */ "./source/js/components/form/input.js");
-/* harmony import */ var _modal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../modal */ "./source/js/components/modal.js");
-
 
 
 
@@ -194,29 +220,11 @@ var activateForm = function activateForm(form) {
     var formData = {};
     process(getData);
     form.reset();
-    var modal = Object(_modal__WEBPACK_IMPORTED_MODULE_5__["default"])({
-      content: getModalContent()
-    });
 
     function getData(input) {
       if (input.name) {
         formData[input.name] = input.dataset.maskedValue || input.value;
       }
-    }
-
-    function getModalContent() {
-      var template = document.querySelector("#accepted-template");
-
-      if (!template) {
-        return null;
-      }
-
-      var clone = template.content.cloneNode(true);
-      var acceptedButton = clone.querySelector(".accepted__button");
-      acceptedButton.addEventListener("click", function () {
-        modal.destroy();
-      });
-      return clone.querySelector(".accepted");
     }
   });
 
@@ -402,12 +410,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
 /* harmony import */ var core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _form_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./form/form */ "./source/js/components/form/form.js");
+/* harmony import */ var _modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modal */ "./source/js/components/modal.js");
+/* harmony import */ var _accepted__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./accepted */ "./source/js/components/accepted.js");
+
+
 
 
 
 
 var activateForms = function activateForms() {
-  document.forms.forEach(_form_form__WEBPACK_IMPORTED_MODULE_2__["default"]);
+  document.forms.forEach(function (form) {
+    Object(_form_form__WEBPACK_IMPORTED_MODULE_2__["default"])(form);
+    form.addEventListener("submit", onSubmit);
+  });
+
+  function onSubmit() {
+    var modal = Object(_modal__WEBPACK_IMPORTED_MODULE_3__["default"])();
+    modal.setContent(Object(_accepted__WEBPACK_IMPORTED_MODULE_4__["default"])(modal));
+  }
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (activateForms);
@@ -437,14 +457,15 @@ __webpack_require__.r(__webpack_exports__);
 
 function createModal() {
   var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-      content = _ref.content,
+      inpContent = _ref.content,
       focusedElement = _ref.focusedElement;
 
   var template = document.querySelector("#modal-template");
 
   if (!template) {
     return {
-      destroy: function destroy() {}
+      destroy: noop,
+      setContent: noop
     };
   }
 
@@ -453,13 +474,10 @@ function createModal() {
   var modal = container.querySelector(".modal__body");
   var closeBtn = modal.querySelector(".modal__close-btn");
   var backdrop = container.querySelector(".modal__backdrop");
-
-  if (content) {
-    modal.appendChild(content);
-  }
-
+  var modalContent;
   var body = document.body;
   lockBody();
+  setContent(inpContent);
   body.appendChild(container);
   var listeners = [{
     elements: [document],
@@ -479,7 +497,8 @@ function createModal() {
   });
   setFocus();
   return {
-    destroy: destroy
+    destroy: destroy,
+    setContent: setContent
   };
 
   function destroy() {
@@ -488,6 +507,17 @@ function createModal() {
     });
     body.removeChild(container);
     unlockBody();
+  }
+
+  function setContent(content) {
+    if (modalContent) {
+      modal.removeChild(modalContent);
+    }
+
+    if (content) {
+      modalContent = content;
+      modal.appendChild(content);
+    }
   }
 
   function setFocus() {
@@ -521,6 +551,8 @@ function createModal() {
     delete body.dataset.scrollY;
     body.style.top = "";
   }
+
+  function noop() {}
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (createModal);
