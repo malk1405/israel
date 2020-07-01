@@ -194,7 +194,7 @@ var activateForm = function activateForm(form) {
     var formData = {};
     process(getData);
     form.reset();
-    Object(_modal__WEBPACK_IMPORTED_MODULE_5__["default"])({
+    var modal = Object(_modal__WEBPACK_IMPORTED_MODULE_5__["default"])({
       content: getModalContent()
     });
 
@@ -212,6 +212,10 @@ var activateForm = function activateForm(form) {
       }
 
       var clone = template.content.cloneNode(true);
+      var acceptedButton = clone.querySelector(".accepted__button");
+      acceptedButton.addEventListener("click", function () {
+        modal.destroy();
+      });
       return clone.querySelector(".accepted");
     }
   });
@@ -439,7 +443,9 @@ function createModal() {
   var template = document.querySelector("#modal-template");
 
   if (!template) {
-    return;
+    return {
+      destroy: function destroy() {}
+    };
   }
 
   var clone = template.content.cloneNode(true);
@@ -472,6 +478,9 @@ function createModal() {
     el.add();
   });
   setFocus();
+  return {
+    destroy: destroy
+  };
 
   function destroy() {
     listeners.forEach(function (el) {
