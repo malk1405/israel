@@ -1,6 +1,6 @@
 import setListeners from '../utils/setListeners';
 
-function createModal({content: inpContent, focusedElement} = {}) {
+function createModal({content: inpContent, focusedElement, focusAfter} = {}) {
   const template = document.querySelector(`#modal-template`);
 
   if (!template) {
@@ -42,6 +42,10 @@ function createModal({content: inpContent, focusedElement} = {}) {
 
     body.removeChild(container);
     unlockBody();
+
+    if (focusAfter) {
+      focusAfter.focus();
+    }
   }
 
   function setContent(content) {

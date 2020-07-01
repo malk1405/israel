@@ -5,11 +5,14 @@ import createAccepted from './accepted';
 const activateForms = () => {
   document.forms.forEach((form) => {
     activateForm(form);
-    form.addEventListener(`submit`, onSubmit);
+    form.addEventListener(`submit`, function () {
+      const focusAfter = form.querySelector(`button[type="submit"]`);
+      onSubmit(focusAfter);
+    });
   });
 
-  function onSubmit() {
-    const modal = createModal();
+  function onSubmit(focusAfter) {
+    const modal = createModal({focusAfter});
     modal.setContent(createAccepted(modal));
   }
 };
