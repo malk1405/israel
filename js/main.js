@@ -463,7 +463,6 @@ __webpack_require__.r(__webpack_exports__);
 function createModal() {
   var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
       inpContent = _ref.content,
-      focusedElement = _ref.focusedElement,
       focusAfter = _ref.focusAfter;
 
   var template = document.querySelector("#modal-template");
@@ -471,7 +470,8 @@ function createModal() {
   if (!template) {
     return {
       destroy: noop,
-      setContent: noop
+      setContent: noop,
+      setFocus: noop
     };
   }
 
@@ -504,7 +504,8 @@ function createModal() {
   setFocus();
   return {
     destroy: destroy,
-    setContent: setContent
+    setContent: setContent,
+    setFocus: setFocus
   };
 
   function destroy() {
@@ -530,13 +531,13 @@ function createModal() {
     }
   }
 
-  function setFocus() {
+  function setFocus(focusedElement) {
     var el = modal.querySelector(focusedElement) || closeBtn;
     el.focus();
   }
 
   function resetFocus() {
-    closeBtn.focus();
+    setFocus();
   }
 
   function onEscape(e) {
@@ -569,6 +570,51 @@ function createModal() {
 
 /***/ }),
 
+/***/ "./source/js/components/order.js":
+/*!***************************************!*\
+  !*** ./source/js/components/order.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modal */ "./source/js/components/modal.js");
+/* harmony import */ var _form_form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./form/form */ "./source/js/components/form/form.js");
+/* harmony import */ var _accepted__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./accepted */ "./source/js/components/accepted.js");
+
+
+
+
+function activateOrder() {
+  var orderButton = document.querySelector(".header__button");
+  orderButton.addEventListener("click", function order() {
+    var template = document.querySelector("#order-template");
+
+    if (!template) {
+      return;
+    }
+
+    var clone = template.content.cloneNode(true);
+    var container = clone.querySelector(".order");
+    var form = container.querySelector("form");
+    Object(_form_form__WEBPACK_IMPORTED_MODULE_1__["default"])(form);
+    form.addEventListener("submit", function () {
+      modal.setContent(Object(_accepted__WEBPACK_IMPORTED_MODULE_2__["default"])(modal));
+      modal.setFocus();
+    });
+    var modal = Object(_modal__WEBPACK_IMPORTED_MODULE_0__["default"])({
+      content: container,
+      focusAfter: orderButton
+    });
+    modal.setFocus("input");
+  });
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (activateOrder);
+
+/***/ }),
+
 /***/ "./source/js/main.js":
 /*!***************************!*\
   !*** ./source/js/main.js ***!
@@ -585,6 +631,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var template_polyfill__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! template-polyfill */ "./node_modules/template-polyfill/index.js");
 /* harmony import */ var template_polyfill__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(template_polyfill__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _components_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/forms */ "./source/js/components/forms.js");
+/* harmony import */ var _components_order__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/order */ "./source/js/components/order.js");
+
 
 
 
@@ -597,6 +645,7 @@ __webpack_require__.r(__webpack_exports__);
 })();
 
 (function activate() {
+  Object(_components_order__WEBPACK_IMPORTED_MODULE_4__["default"])();
   Object(_components_forms__WEBPACK_IMPORTED_MODULE_3__["default"])();
 })();
 
