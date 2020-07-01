@@ -890,22 +890,22 @@ c-34.123,0-61.884-27.761-61.884-61.884s27.761-61.884,61.884-61.884C247.104,74.73
         </p>
         <form>
           <div class="order__form d-flex">
-            <div class="input-container">
+            <div class="input-container order__input">
               <input type="text" id="order__form-name" class="input" placeholder="Имя" name="name" required="">
               <label for="order__form-name" class="input-label"><span class="visually-hidden">Имя</span></label>
             </div>
-            <div class="input-container">
+            <div class="input-container order__input">
               <input type="tel" id="order__form-phone" class="input" placeholder="Телефон" name="phone" pattern="(\+7 \([0-9]{3}\) [0-9]{3} [0-9]{2} [0-9]{2})" title="+7 (XXX) XXX XX XX" required="">
               <label for="order__form-phone" class="input-label"><span class="visually-hidden">Телефон</span></label>
             </div>
-            <button type="submit" class="button button--main">
+            <button type="submit" class="button button--main order__submit">
               Перезвоните мне
             </button>
             <label class="order__checkbox-label">
               <span class="order__checkbox-container">
                 <input type="checkbox" class="order__checkbox visually-hidden" required="">
                 <svg width="20" height="19" viewBox="0 0 20 19" fill="none" class="order__checkbox-svg">
-                  <rect x="1" y="4" width="14" height="14" rx="1" stroke="url(#order_grad0)" stroke-width="2"></rect>
+                  <rect x="1" y="4" width="14" height="14" rx="1" stroke="url(#order_grad0)" stroke-width="2" class="order__rect"></rect>
                   <path d="M4 8.54L8.43662 14L19 1" stroke="url(#order_grad1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="order__checked"></path>
                   <defs>
                     <linearGradient id="order_grad0" x1="4.21053" y1="3.45714" x2="13.147" y2="6.43295" gradientUnits="userSpaceOnUse">

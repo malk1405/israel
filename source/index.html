@@ -1350,7 +1350,7 @@
         </p>
         <form>
           <div class="order__form d-flex">
-            <div class="input-container">
+            <div class="input-container order__input">
               <input
                 type="text"
                 id="order__form-name"
@@ -1363,7 +1363,7 @@
                 ><span class="visually-hidden">Имя</span></label
               >
             </div>
-            <div class="input-container">
+            <div class="input-container order__input">
               <input
                 type="tel"
                 id="order__form-phone"
@@ -1378,7 +1378,7 @@
                 ><span class="visually-hidden">Телефон</span></label
               >
             </div>
-            <button type="submit" class="button button--main">
+            <button type="submit" class="button button--main order__submit">
               Перезвоните мне
             </button>
             <label class="order__checkbox-label">
@@ -1403,6 +1403,7 @@
                     rx="1"
                     stroke="url(#order_grad0)"
                     stroke-width="2"
+                    class="order__rect"
                   />
                   <path
                     d="M4 8.54L8.43662 14L19 1"

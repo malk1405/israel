@@ -1,17 +1,40 @@
 .order {
+  margin-top: 5.6rem;
+  padding-left: 4.8rem;
+  padding-right: 7.2rem;
 }
 
 .order__form {
   flex-direction: column;
+  margin-top: 3.3rem;
+}
+
+.order__submit,
+.order__checkbox-label {
+  margin-left: 6rem;
+  margin-right: 3.6rem;
+}
+
+.order__input {
+  margin-bottom: 0.8rem;
+}
+
+.order__submit {
+  margin-top: 1.6rem;
 }
 
 .order__checkbox-label {
+  margin-top: 1.5rem;
   padding-left: 2.4rem;
+  position: relative;
+
+  @include font-xs();
 }
 
 .order__checkbox-container {
-  position: absolute;
   left: 0;
+  position: absolute;
+  top: -2px;
 }
 
 .order__checkbox {
@@ -29,4 +52,8 @@
 
 .order__checkbox:checked + .order__checkbox-svg .order__checked {
   display: block;
+}
+
+.order__checkbox:focus + .order__checkbox-svg .order__rect {
+  fill: rgba($text-header-color, 0.1);
 }
