@@ -3,6 +3,7 @@ import svg4everybody from 'svg4everybody';
 import templatePolyfill from 'template-polyfill';
 
 import activateForms from './components/forms';
+import activateOrder from './components/order';
 
 (function vendors() {
   svg4everybody();
@@ -11,5 +12,6 @@ import activateForms from './components/forms';
 })();
 
 (function activate() {
+  activateOrder();
   activateForms();
 })();

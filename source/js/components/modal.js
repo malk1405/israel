@@ -1,10 +1,10 @@
 import setListeners from '../utils/setListeners';
 
-function createModal({content: inpContent, focusedElement, focusAfter} = {}) {
+function createModal({content: inpContent, focusAfter} = {}) {
   const template = document.querySelector(`#modal-template`);
 
   if (!template) {
-    return {destroy: noop, setContent: noop};
+    return {destroy: noop, setContent: noop, setFocus: noop};
   }
 
   const clone = template.content.cloneNode(true);
@@ -33,7 +33,7 @@ function createModal({content: inpContent, focusedElement, focusAfter} = {}) {
 
   setFocus();
 
-  return {destroy, setContent};
+  return {destroy, setContent, setFocus};
 
   function destroy() {
     listeners.forEach((el) => {
@@ -59,13 +59,13 @@ function createModal({content: inpContent, focusedElement, focusAfter} = {}) {
     }
   }
 
-  function setFocus() {
+  function setFocus(focusedElement) {
     const el = modal.querySelector(focusedElement) || closeBtn;
     el.focus();
   }
 
   function resetFocus() {
-    closeBtn.focus();
+    setFocus();
   }
 
   function onEscape(e) {
