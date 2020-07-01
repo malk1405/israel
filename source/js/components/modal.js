@@ -4,7 +4,7 @@ function createModal({content, focusedElement} = {}) {
   const template = document.querySelector(`#modal-template`);
 
   if (!template) {
-    return;
+    return {destroy() {}};
   }
 
   const clone = template.content.cloneNode(true);
@@ -34,6 +34,8 @@ function createModal({content, focusedElement} = {}) {
   });
 
   setFocus();
+
+  return {destroy};
 
   function destroy() {
     listeners.forEach((el) => {

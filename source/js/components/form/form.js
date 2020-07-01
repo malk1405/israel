@@ -20,7 +20,7 @@ const activateForm = (form) => {
     process(getData);
 
     form.reset();
-    createModal({content: getModalContent()});
+    const modal = createModal({content: getModalContent()});
 
     function getData(input) {
       if (input.name) {
@@ -36,6 +36,12 @@ const activateForm = (form) => {
       }
 
       const clone = template.content.cloneNode(true);
+      const acceptedButton = clone.querySelector(`.accepted__button`);
+
+      acceptedButton.addEventListener(`click`, function () {
+        modal.destroy();
+      });
+
       return clone.querySelector(`.accepted`);
     }
   });
