@@ -1,0 +1,32 @@
+.order {
+}
+
+.order__form {
+  flex-direction: column;
+}
+
+.order__checkbox-label {
+  padding-left: 2.4rem;
+}
+
+.order__checkbox-container {
+  position: absolute;
+  left: 0;
+}
+
+.order__checkbox {
+  bottom: 0;
+  left: 50%;
+}
+
+.order__checkbox-svg {
+  display: flex;
+}
+
+.order__checked {
+  display: none;
+}
+
+.order__checkbox:checked + .order__checkbox-svg .order__checked {
+  display: block;
+}
