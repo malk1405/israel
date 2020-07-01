@@ -20,12 +20,23 @@ const activateForm = (form) => {
     process(getData);
 
     form.reset();
-    createModal();
+    createModal({content: getModalContent()});
 
     function getData(input) {
       if (input.name) {
         formData[input.name] = input.dataset.maskedValue || input.value;
       }
+    }
+
+    function getModalContent() {
+      const template = document.querySelector(`#accepted-template`);
+
+      if (!template) {
+        return null;
+      }
+
+      const clone = template.content.cloneNode(true);
+      return clone.querySelector(`.accepted`);
     }
   });
 

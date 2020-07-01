@@ -14,7 +14,7 @@
     opacity: 0.4;
   }
 
-  &-bg {
+  &__bg {
     position: relative;
     height: 0;
     margin: 0 auto;
@@ -32,13 +32,13 @@
       background-repeat: no-repeat;
       display: block;
       left: 0;
-      position: absolute;
+      position: fixed;
       top: 0;
       width: 100%;
       z-index: -100000;
 
-      background-image: url("../img/temp/desktop.png") !important;
-      height: 7942px;
+      background-image: url("../img/temp/accepted-bg.jpg") !important;
+      height: 768px;
 
       @include mq(phone) {
         background-image: url("../img/temp/phone.png") !important;

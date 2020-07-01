@@ -14,19 +14,28 @@
     <link rel="preload" href="fonts/raleway-800.woff2" as="font" type="font/woff2" crossorigin="">
   </head>
   <body class="body">
-    <!-- Для отладки -->
-    <div class="body__bg"></div>
-    <!-- Для отладки. Конец -->
-
     <div class="visually-hidden"><!-- inject:svg --><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs>
-<linearGradient id="paint0_linear" x1="4.73684" y1="0.485716" x2="14.6703" y2="3.98809" gradientUnits="userSpaceOnUse">
+<linearGradient id="accepted_grad0" x1="16.8421" y1="1.82858" x2="52.588" y2="13.7318" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFC341"></stop>
+<stop offset="0.963542" stop-color="#FFD701"></stop>
+</linearGradient>
+<linearGradient id="accepted_grad1" x1="30.6316" y1="8.02857" x2="55.5095" y2="19.0743" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFC341"></stop>
+<stop offset="0.963542" stop-color="#FFD701"></stop>
+</linearGradient>
+
+<linearGradient id="close_grad0" x1="4.73684" y1="0.485716" x2="14.6703" y2="3.98809" gradientUnits="userSpaceOnUse">
 <stop offset="0" stop-color="#FFC341"></stop>
 <stop offset="0.963542" stop-color="#FFD701"></stop>
 </linearGradient>
-</defs><symbol id="arrow" viewBox="0 0 11 18">
+</defs><symbol id="accepted" viewBox="0 0 71 64">
+<rect x="3" y="3" width="58" height="58" rx="29" stroke="url(#accepted_grad0)" stroke-width="6" fill="none"></rect>
+<path d="M18 27.88L32.1972 43L66 7" stroke="url(#accepted_grad1)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+
+</symbol><symbol id="arrow" viewBox="0 0 11 18">
 <path d="M1 16.5L9 9L0.999999 1.5" stroke-width="2" fill="none"></path>
 </symbol><symbol id="close-modal" viewBox="0 0 18 17">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M7.48467 8.5L0 1.50703L1.41767 2.46254e-07L9 7.08422L16.5823 0L18 1.50703L10.5153 8.5L18 15.493L16.5823 17L9 9.91578L1.41767 17L6.13436e-07 15.493L7.48467 8.5Z" fill="url(#paint0_linear)"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M7.48467 8.5L0 1.50703L1.41767 2.46254e-07L9 7.08422L16.5823 0L18 1.50703L10.5153 8.5L18 15.493L16.5823 17L9 9.91578L1.41767 17L6.13436e-07 15.493L7.48467 8.5Z" fill="url(#close_grad0)"></path>
 
 </symbol><symbol id="fb" viewBox="6 0 12 24">
 <path d="M15.5378 5.18705H17.4V1.94345C17.0787 1.89925 15.9738 1.7998 14.687 1.7998C12.0021 1.7998 10.1629 3.48875 10.1629 6.59296V9.44981H7.20001V13.0759H10.1629V22.1998H13.7955V13.0768H16.6385L17.0898 9.45066H13.7946V6.95251C13.7955 5.90445 14.0776 5.18705 15.5378 5.18705Z"></path>
@@ -64,6 +73,9 @@ c-34.123,0-61.884-27.761-61.884-61.884s27.761-61.884,61.884-61.884C247.104,74.73
 
     <div class="iefix-minheight body__iefix"></div>
     <div class="body__wrapper">
+      <!-- Для отладки -->
+      <div class="body__bg"></div>
+      <!-- Для отладки. Конец -->
       <!-- Шапка -->
       <header class="header container header-container d-flex">
         <a class="header__logo sprite sprite--logo-header"><span class="visually-hidden">"Маса"</span><picture><img src="img/sprite/sprite@1x.png" srcset="img/sprite/sprite@2x.png 2x" alt="Лого" width="0" height="0"></picture></a>
@@ -826,15 +838,30 @@ c-34.123,0-61.884-27.761-61.884-61.884s27.761-61.884,61.884-61.884C247.104,74.73
     </div>
 
     <template id="modal-template">
-      <div class="modal" tabindex="0">
+      <section class="section modal" tabindex="0">
         <div class="modal__body">
           <button type="button" title="Закрыть" class="button modal__close-btn">
             <svg focusable="false" width="18" height="18">
               <use xlink:href="#close-modal"></use>
             </svg>
           </button>
+          <h2 class="visually-hidden">Модальное окно</h2>
         </div>
         <div class="modal__backdrop" tabindex="0"></div>
+      </section>
+    </template>
+
+    <template id="accepted-template">
+      <div class="accepted">
+        <svg focusable="false" width="70" height="64" class="accepted__icon">
+          <use xlink:href="#accepted"></use>
+        </svg>
+        <h3>Заявка принята</h3>
+        <p>
+          Мы приняли ваши данные и вскоре мы перезвоним вам для уточнения
+          деталей!
+        </p>
+        <button class="button button--main accepted__button">Понятно</button>
       </div>
     </template>
 

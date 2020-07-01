@@ -33,9 +33,15 @@
 }
 
 .modal__close-btn {
-  background-color: red;
-
   position: absolute;
   right: 32px;
   top: 32px;
+
+  svg {
+    display: flex;
+  }
+}
+
+.modal__body p {
+  @include font-sm();
 }

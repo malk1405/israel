@@ -44,14 +44,13 @@
     />
   </head>
   <body class="body">
-    <!-- Для отладки -->
-    <div class="body__bg"></div>
-    <!-- Для отладки. Конец -->
-
     <div class="visually-hidden"><!-- inject:svg --><!-- endinject --></div>
 
     <div class="iefix-minheight body__iefix"></div>
     <div class="body__wrapper">
+      <!-- Для отладки -->
+      <div class="body__bg"></div>
+      <!-- Для отладки. Конец -->
       <!-- Шапка -->
       <header class="header container header-container d-flex">
         <a class="header__logo sprite sprite--logo-header"
@@ -1290,7 +1289,7 @@
     </div>
 
     <template id="modal-template">
-      <div class="modal" tabindex="0">
+      <section class="section modal" tabindex="0">
         <div class="modal__body">
           <button
             type="button"
@@ -1302,8 +1301,23 @@
               <use xlink:href="#close-modal"></use>
             </svg>
           </button>
+          <h2 class="visually-hidden">Модальное окно</h2>
         </div>
         <div class="modal__backdrop" tabindex="0"></div>
+      </section>
+    </template>
+
+    <template id="accepted-template">
+      <div class="accepted">
+        <svg focusable="false" width="70" height="64" class="accepted__icon">
+          <use xlink:href="#accepted"></use>
+        </svg>
+        <h3>Заявка принята</h3>
+        <p>
+          Мы приняли ваши данные и вскоре мы перезвоним вам для уточнения
+          деталей!
+        </p>
+        <button class="button button--main accepted__button">Понятно</button>
       </div>
     </template>
 
