@@ -421,11 +421,16 @@ __webpack_require__.r(__webpack_exports__);
 var activateForms = function activateForms() {
   document.forms.forEach(function (form) {
     Object(_form_form__WEBPACK_IMPORTED_MODULE_2__["default"])(form);
-    form.addEventListener("submit", onSubmit);
+    form.addEventListener("submit", function () {
+      var focusAfter = form.querySelector("button[type=\"submit\"]");
+      onSubmit(focusAfter);
+    });
   });
 
-  function onSubmit() {
-    var modal = Object(_modal__WEBPACK_IMPORTED_MODULE_3__["default"])();
+  function onSubmit(focusAfter) {
+    var modal = Object(_modal__WEBPACK_IMPORTED_MODULE_3__["default"])({
+      focusAfter: focusAfter
+    });
     modal.setContent(Object(_accepted__WEBPACK_IMPORTED_MODULE_4__["default"])(modal));
   }
 };
@@ -458,7 +463,8 @@ __webpack_require__.r(__webpack_exports__);
 function createModal() {
   var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
       inpContent = _ref.content,
-      focusedElement = _ref.focusedElement;
+      focusedElement = _ref.focusedElement,
+      focusAfter = _ref.focusAfter;
 
   var template = document.querySelector("#modal-template");
 
@@ -507,6 +513,10 @@ function createModal() {
     });
     body.removeChild(container);
     unlockBody();
+
+    if (focusAfter) {
+      focusAfter.focus();
+    }
   }
 
   function setContent(content) {
