@@ -2433,7 +2433,7 @@ button:focus {
   display: -ms-flexbox;
   display: flex;
   max-height: 100vh;
-  overflow-y: scroll; }
+  overflow-y: auto; }
 
 .modal__backdrop {
   background-color: #ebebeb;
