@@ -2493,18 +2493,43 @@ button:focus {
   margin-top: 1.6rem;
   width: 26.4rem; }
 
+.order {
+  margin-top: 5.6rem;
+  padding-left: 4.8rem;
+  padding-right: 7.2rem; }
+
 .order__form {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
-          flex-direction: column; }
+          flex-direction: column;
+  margin-top: 3.3rem; }
+
+.order__submit,
+.order__checkbox-label {
+  margin-left: 6rem;
+  margin-right: 3.6rem; }
+
+.order__input {
+  margin-bottom: 0.8rem; }
+
+.order__submit {
+  margin-top: 1.6rem; }
 
 .order__checkbox-label {
-  padding-left: 2.4rem; }
+  margin-top: 1.5rem;
+  padding-left: 2.4rem;
+  position: relative;
+  font-size: 1.3rem;
+  line-height: 1.9rem; }
+  @media screen and (max-width: 767px) {
+    .order__checkbox-label {
+      line-height: 2rem; } }
 
 .order__checkbox-container {
+  left: 0;
   position: absolute;
-  left: 0; }
+  top: -2px; }
 
 .order__checkbox {
   bottom: 0;
@@ -2520,3 +2545,6 @@ button:focus {
 
 .order__checkbox:checked + .order__checkbox-svg .order__checked {
   display: block; }
+
+.order__checkbox:focus + .order__checkbox-svg .order__rect {
+  fill: rgba(31, 192, 252, 0.1); }
