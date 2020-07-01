@@ -1,10 +1,10 @@
 import setListeners from '../utils/setListeners';
 
-function createModal({content, focusedElement} = {}) {
+function createModal({content: inpContent, focusedElement} = {}) {
   const template = document.querySelector(`#modal-template`);
 
   if (!template) {
-    return {destroy() {}};
+    return {destroy: noop, setContent: noop};
   }
 
   const clone = template.content.cloneNode(true);
@@ -14,13 +14,11 @@ function createModal({content, focusedElement} = {}) {
   const closeBtn = modal.querySelector(`.modal__close-btn`);
   const backdrop = container.querySelector(`.modal__backdrop`);
 
-  if (content) {
-    modal.appendChild(content);
-  }
-
+  let modalContent;
   const body = document.body;
 
   lockBody();
+  setContent(inpContent);
   body.appendChild(container);
 
   const listeners = [
@@ -35,7 +33,7 @@ function createModal({content, focusedElement} = {}) {
 
   setFocus();
 
-  return {destroy};
+  return {destroy, setContent};
 
   function destroy() {
     listeners.forEach((el) => {
@@ -44,6 +42,17 @@ function createModal({content, focusedElement} = {}) {
 
     body.removeChild(container);
     unlockBody();
+  }
+
+  function setContent(content) {
+    if (modalContent) {
+      modal.removeChild(modalContent);
+    }
+
+    if (content) {
+      modalContent = content;
+      modal.appendChild(content);
+    }
   }
 
   function setFocus() {
@@ -81,6 +90,8 @@ function createModal({content, focusedElement} = {}) {
     delete body.dataset.scrollY;
     body.style.top = ``;
   }
+
+  function noop() {}
 }
 
 export default createModal;

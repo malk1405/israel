@@ -1,6 +1,5 @@
 import activatePhoneField from './phone';
 import activateInput from './input';
-import createModal from '../modal';
 
 const activateForm = (form) => {
   if (!form) {
@@ -20,29 +19,11 @@ const activateForm = (form) => {
     process(getData);
 
     form.reset();
-    const modal = createModal({content: getModalContent()});
 
     function getData(input) {
       if (input.name) {
         formData[input.name] = input.dataset.maskedValue || input.value;
       }
-    }
-
-    function getModalContent() {
-      const template = document.querySelector(`#accepted-template`);
-
-      if (!template) {
-        return null;
-      }
-
-      const clone = template.content.cloneNode(true);
-      const acceptedButton = clone.querySelector(`.accepted__button`);
-
-      acceptedButton.addEventListener(`click`, function () {
-        modal.destroy();
-      });
-
-      return clone.querySelector(`.accepted`);
     }
   });
 
