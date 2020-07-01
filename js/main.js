@@ -194,12 +194,25 @@ var activateForm = function activateForm(form) {
     var formData = {};
     process(getData);
     form.reset();
-    Object(_modal__WEBPACK_IMPORTED_MODULE_5__["default"])();
+    Object(_modal__WEBPACK_IMPORTED_MODULE_5__["default"])({
+      content: getModalContent()
+    });
 
     function getData(input) {
       if (input.name) {
         formData[input.name] = input.dataset.maskedValue || input.value;
       }
+    }
+
+    function getModalContent() {
+      var template = document.querySelector("#accepted-template");
+
+      if (!template) {
+        return null;
+      }
+
+      var clone = template.content.cloneNode(true);
+      return clone.querySelector(".accepted");
     }
   });
 
