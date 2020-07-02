@@ -2567,20 +2567,17 @@ button:focus {
     margin-right: auto;
     margin-top: 17rem;
     padding: 0 1.6rem;
-    max-width: 500px; } }
-
-.order h3,
-.order p {
-  margin: 0 auto;
-  max-width: 94%;
-  text-align: center; }
-
-.order h3 {
-  margin-bottom: 1.6rem; }
-
-.order__submit,
-.order__checkbox-label {
-  margin-left: auto;
-  margin-right: auto;
-  min-width: 26.4rem;
-  width: 80%; }
+    max-width: 500px; }
+  .order h3,
+  .order p {
+    margin: 0 auto;
+    max-width: 94%;
+    text-align: center; }
+  .order h3 {
+    margin-bottom: 1.6rem; }
+  .order__submit,
+  .order__checkbox-label {
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 26.4rem;
+    width: 80%; } }
