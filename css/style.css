@@ -2438,7 +2438,10 @@ button:focus {
   display: -ms-flexbox;
   display: flex;
   max-height: 100vh;
-  overflow-y: auto; }
+  overflow-y: auto;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 10px 20px -10px rgba(72, 72, 72, 0.87);
+          box-shadow: 0 10px 20px -10px rgba(72, 72, 72, 0.87); }
 
 .modal__backdrop {
   background-color: #ebebeb;
@@ -2451,7 +2454,6 @@ button:focus {
 
 .modal__body {
   background-color: white;
-  border-radius: 8px;
   min-height: 521px;
   position: relative;
   width: 480px; }
@@ -2474,8 +2476,9 @@ button:focus {
       line-height: 2.2rem; } }
 
 @media screen and (max-width: 767px) {
+  .modal-wrapper {
+    border-radius: 0; }
   .modal__body {
-    border-radius: 0;
     height: 100vh;
     width: 100vw; }
   .modal__close-btn {
