@@ -568,6 +568,9 @@ template {
 .input:focus + .input-label::after {
   background: linear-gradient(138.15deg, #ffc341 20.46%, #ffd701 65.31%); }
 
+.checkbox-label:hover {
+  cursor: pointer; }
+
 .button--main {
   background: linear-gradient(138.15deg, #ffc341 20.46%, #ffd701 65.31%);
   color: white;
