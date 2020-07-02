@@ -13,3 +13,14 @@
   margin-top: 1.6rem;
   width: 26.4rem;
 }
+
+@include mq(phone) {
+  .accepted {
+    margin-top: 20rem;
+    padding: 0 2rem;
+  }
+
+  .accepted__button {
+    margin-top: 2rem;
+  }
+}

@@ -37,12 +37,11 @@
       width: 100%;
       z-index: -100000;
 
-      background-image: url("../img/temp/accepted-bg.png") !important;
+      background-image: url("../img/temp/accepted-lg.png") !important;
       height: 768px;
 
       @include mq(phone) {
-        background-image: url("../img/temp/phone.png") !important;
-        height: 8423px;
+        background-image: url("../img/temp/accepted-sm.png") !important;
       }
     }
   }
