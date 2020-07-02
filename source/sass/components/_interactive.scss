@@ -110,6 +110,12 @@
   background: $tab-gradient;
 }
 
+.checkbox-label {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 .button--main {
   background: $button-gradient;
   color: $text-button-color;
