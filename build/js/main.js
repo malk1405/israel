@@ -615,6 +615,80 @@ function activateOrder() {
 
 /***/ }),
 
+/***/ "./source/js/components/programs.js":
+/*!******************************************!*\
+  !*** ./source/js/components/programs.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _tabs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./tabs */ "./source/js/components/tabs.js");
+
+
+function activatePrograms() {
+  var tabs = document.querySelectorAll(".programs__tab-radio");
+  var items = document.querySelectorAll(".programs__item");
+  var hiddenClass = "programs__item--hidden";
+  Object(_tabs__WEBPACK_IMPORTED_MODULE_0__["default"])({
+    tabs: tabs,
+    items: items,
+    hiddenClass: hiddenClass
+  });
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (activatePrograms);
+
+/***/ }),
+
+/***/ "./source/js/components/tabs.js":
+/*!**************************************!*\
+  !*** ./source/js/components/tabs.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var core_js_modules_es_array_for_each__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.for-each */ "./node_modules/core-js/modules/es.array.for-each.js");
+/* harmony import */ var core_js_modules_es_array_for_each__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_for_each__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
+/* harmony import */ var core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _utils_toggleClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils/toggleClass */ "./source/js/utils/toggleClass.js");
+
+
+
+
+function activateTabs(_ref) {
+  var tabs = _ref.tabs,
+      items = _ref.items,
+      hiddenClass = _ref.hiddenClass;
+  tabs.forEach(function (el) {
+    el.addEventListener("change", function (e) {
+      showElems(+e.target.dataset.index);
+    });
+  });
+  setIndices();
+  showElems(0);
+
+  function setIndices() {
+    tabs.forEach(function (el, i) {
+      el.dataset.index = i;
+    });
+  }
+
+  function showElems(index) {
+    items.forEach(function (el, i) {
+      Object(_utils_toggleClass__WEBPACK_IMPORTED_MODULE_2__["toggleClass"])(el, hiddenClass, i !== index);
+    });
+  }
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (activateTabs);
+
+/***/ }),
+
 /***/ "./source/js/main.js":
 /*!***************************!*\
   !*** ./source/js/main.js ***!
@@ -632,6 +706,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var template_polyfill__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(template_polyfill__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _components_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/forms */ "./source/js/components/forms.js");
 /* harmony import */ var _components_order__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/order */ "./source/js/components/order.js");
+/* harmony import */ var _components_programs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/programs */ "./source/js/components/programs.js");
+
 
 
 
@@ -647,6 +723,7 @@ __webpack_require__.r(__webpack_exports__);
 (function activate() {
   Object(_components_order__WEBPACK_IMPORTED_MODULE_4__["default"])();
   Object(_components_forms__WEBPACK_IMPORTED_MODULE_3__["default"])();
+  Object(_components_programs__WEBPACK_IMPORTED_MODULE_5__["default"])();
 })();
 
 /***/ }),
@@ -690,6 +767,25 @@ function setListeners(_ref) {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (setListeners);
+
+/***/ }),
+
+/***/ "./source/js/utils/toggleClass.js":
+/*!****************************************!*\
+  !*** ./source/js/utils/toggleClass.js ***!
+  \****************************************/
+/*! exports provided: toggleClass */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "toggleClass", function() { return toggleClass; });
+// аналог DOMTokenList.toggle(token, force)
+// реализовал, из-за того что полифил для IE
+// видимо не поддерживает параметр force
+var toggleClass = function toggleClass(node, className, set) {
+  node.classList[set ? "add" : "remove"](className);
+};
 
 /***/ })
 

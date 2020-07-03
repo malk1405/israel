@@ -1103,17 +1103,20 @@ button:focus {
 .programs__list {
   max-width: 550px; }
 
-.programs__list p {
+.programs__item p {
   font-size: 1.5rem;
   line-height: 2.6rem; }
   @media screen and (max-width: 767px) {
-    .programs__list p {
+    .programs__item p {
       font-size: 1.4rem;
       line-height: 2.2rem; } }
 
-.programs__list h3 {
+.programs__item h3 {
   margin-bottom: 25px;
   margin-top: 16px; }
+
+.programs__item--hidden {
+  display: none; }
 
 @media screen and (max-width: 1023px) {
   .programs {
