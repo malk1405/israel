@@ -2263,6 +2263,7 @@ button:focus {
   display: block; }
 
 .contacts__map img {
+  height: auto;
   width: 100%; }
 
 .contacts__form-text {
