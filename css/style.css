@@ -774,7 +774,7 @@ button:focus {
           align-items: center;
   border-top: 2px rgba(72, 72, 72, 0.2) solid;
   margin-top: auto;
-  padding-bottom: 2rem;
+  padding-bottom: 2.3rem;
   padding-top: 2.4rem; }
 
 .footer__logo,
@@ -2188,7 +2188,7 @@ button:focus {
   position: relative; }
 
 .contacts__tutor-info {
-  margin-bottom: 2.4rem;
+  margin-bottom: 3.2rem;
   min-height: 112px;
   padding-left: 136px; }
 
