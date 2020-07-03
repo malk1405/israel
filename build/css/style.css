@@ -2351,10 +2351,11 @@ button:focus {
             flex-direction: column; }
   .contacts__form-container form {
     margin-left: 0;
-    width: 100%;
-    max-width: 100%; }
+    max-width: 100%;
+    width: 100%; }
   .contacts__form-text {
-    max-width: 450px; }
+    margin: 0 auto;
+    max-width: 70%; }
   .contacts__form,
   .contacts__form .input-container,
   .contacts__form button {
