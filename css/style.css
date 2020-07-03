@@ -1422,9 +1422,11 @@ button:focus {
   .how {
     margin-top: 50px; }
   .how__info {
-    margin-left: 30%;
-    max-width: 800px;
+    margin: 0 auto;
+    max-width: 100%;
     width: 100%; }
+  .how__note {
+    margin-right: 0; }
   .how picture {
     display: none; } }
 
@@ -1454,7 +1456,6 @@ button:focus {
   .how__iefix {
     height: 7.2rem; }
   .how__note {
-    margin-right: 0;
     margin-top: -2.5rem;
     padding-left: 8px; }
     .how__note::after {
