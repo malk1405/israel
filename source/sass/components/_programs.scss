@@ -50,6 +50,7 @@
   position: relative;
   overflow: hidden;
   text-transform: uppercase;
+  user-select: none;
   width: 100%;
   z-index: 1;
 
@@ -60,6 +61,7 @@
     display: block;
     position: absolute;
     text-transform: capitalize;
+    user-select: none;
   }
 }
 

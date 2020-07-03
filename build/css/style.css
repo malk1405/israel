@@ -1043,6 +1043,10 @@ button:focus {
   position: relative;
   overflow: hidden;
   text-transform: uppercase;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   width: 100%;
   z-index: 1; }
   .programs__tab-label::before {
@@ -1050,7 +1054,11 @@ button:focus {
     color: rgba(72, 72, 72, 0.87);
     display: block;
     position: absolute;
-    text-transform: capitalize; }
+    text-transform: capitalize;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none; }
 
 .programs__tab-radio:checked + .programs__tab-label {
   background: linear-gradient(138.15deg, #ffc341 20.46%, #ffd701 65.31%); }
