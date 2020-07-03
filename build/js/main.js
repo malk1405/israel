@@ -183,6 +183,41 @@ function createAccepted(modal) {
 
 /***/ }),
 
+/***/ "./source/js/components/form/faq.js":
+/*!******************************************!*\
+  !*** ./source/js/components/form/faq.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var core_js_modules_es_array_for_each__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.for-each */ "./node_modules/core-js/modules/es.array.for-each.js");
+/* harmony import */ var core_js_modules_es_array_for_each__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_for_each__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
+/* harmony import */ var core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+function activateFaq() {
+  var items = document.querySelectorAll(".faq__item");
+  items.forEach(function (item) {
+    var button = item.querySelector("button");
+
+    if (!button) {
+      return;
+    }
+
+    button.addEventListener("click", function () {
+      item.classList.toggle("faq__item--open");
+    });
+  });
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (activateFaq);
+
+/***/ }),
+
 /***/ "./source/js/components/form/form.js":
 /*!*******************************************!*\
   !*** ./source/js/components/form/form.js ***!
@@ -707,6 +742,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/forms */ "./source/js/components/forms.js");
 /* harmony import */ var _components_order__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/order */ "./source/js/components/order.js");
 /* harmony import */ var _components_programs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/programs */ "./source/js/components/programs.js");
+/* harmony import */ var _components_form_faq__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/form/faq */ "./source/js/components/form/faq.js");
+
 
 
 
@@ -724,6 +761,7 @@ __webpack_require__.r(__webpack_exports__);
   Object(_components_order__WEBPACK_IMPORTED_MODULE_4__["default"])();
   Object(_components_forms__WEBPACK_IMPORTED_MODULE_3__["default"])();
   Object(_components_programs__WEBPACK_IMPORTED_MODULE_5__["default"])();
+  Object(_components_form_faq__WEBPACK_IMPORTED_MODULE_6__["default"])();
 })();
 
 /***/ }),
