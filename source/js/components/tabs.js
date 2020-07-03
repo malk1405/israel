@@ -1,6 +1,9 @@
 import {toggleClass} from '../utils/toggleClass';
 
-function activateTabs({tabs, items, hiddenClass}) {
+function activateTabs({tabsClass, itemsClass}) {
+  const tabs = document.querySelectorAll(`.${tabsClass}`);
+  const items = document.querySelectorAll(`.${itemsClass}`);
+
   tabs.forEach((el) => {
     el.addEventListener(`change`, (e) => {
       showElems(+e.target.dataset.index);
@@ -18,7 +21,7 @@ function activateTabs({tabs, items, hiddenClass}) {
 
   function showElems(index) {
     items.forEach((el, i) => {
-      toggleClass(el, hiddenClass, i !== index);
+      toggleClass(el, `${itemsClass}--hidden`, i !== index);
     });
   }
 }

@@ -487,14 +487,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function activateLife() {
-  var tabs = document.querySelectorAll(".life__gallery-radio");
-  console.log(tabs);
-  var items = document.querySelectorAll(".life__picture");
-  var hiddenClass = "life__picture--hidden";
   Object(_tabs__WEBPACK_IMPORTED_MODULE_0__["default"])({
-    tabs: tabs,
-    items: items,
-    hiddenClass: hiddenClass
+    tabsClass: "life__gallery-radio",
+    itemsClass: "life__picture"
   });
 }
 
@@ -719,13 +714,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function activatePrograms() {
-  var tabs = document.querySelectorAll(".programs__tab-radio");
-  var items = document.querySelectorAll(".programs__item");
-  var hiddenClass = "programs__item--hidden";
   Object(_tabs__WEBPACK_IMPORTED_MODULE_0__["default"])({
-    tabs: tabs,
-    items: items,
-    hiddenClass: hiddenClass
+    tabsClass: "programs__tab-radio",
+    itemsClass: "programs__item"
   });
 }
 
@@ -752,9 +743,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function activateTabs(_ref) {
-  var tabs = _ref.tabs,
-      items = _ref.items,
-      hiddenClass = _ref.hiddenClass;
+  var tabsClass = _ref.tabsClass,
+      itemsClass = _ref.itemsClass;
+  var tabs = document.querySelectorAll(".".concat(tabsClass));
+  var items = document.querySelectorAll(".".concat(itemsClass));
   tabs.forEach(function (el) {
     el.addEventListener("change", function (e) {
       showElems(+e.target.dataset.index);
@@ -771,7 +763,7 @@ function activateTabs(_ref) {
 
   function showElems(index) {
     items.forEach(function (el, i) {
-      Object(_utils_toggleClass__WEBPACK_IMPORTED_MODULE_2__["toggleClass"])(el, hiddenClass, i !== index);
+      Object(_utils_toggleClass__WEBPACK_IMPORTED_MODULE_2__["toggleClass"])(el, "".concat(itemsClass, "--hidden"), i !== index);
     });
   }
 }
