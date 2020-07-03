@@ -18,6 +18,7 @@ const activateForm = (form) => {
     const formData = {};
     process(getData);
 
+    localStorage.setItem(`user`, JSON.stringify(formData));
     form.reset();
 
     function getData(input) {
