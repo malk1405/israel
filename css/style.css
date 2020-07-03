@@ -1858,15 +1858,6 @@ button:focus {
   overflow: hidden;
   position: absolute; }
 
-.faq__picture-container {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  min-height: 100%; }
-
 .faq__picture-container picture {
   display: block;
   margin-left: 51px;
