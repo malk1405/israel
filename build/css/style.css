@@ -1614,13 +1614,12 @@ button:focus {
     margin-top: 2.3rem;
     min-width: 100%; }
   .life__picture {
-    display: none;
     height: auto;
     margin: 0 auto;
     max-width: 400px;
     width: 100%; }
-    .life__picture--active {
-      display: block; }
+    .life__picture--hidden {
+      display: none; }
   .life__picture img {
     position: static;
     -webkit-transform: none;

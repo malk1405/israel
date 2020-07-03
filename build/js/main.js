@@ -474,6 +474,34 @@ var activateForms = function activateForms() {
 
 /***/ }),
 
+/***/ "./source/js/components/life.js":
+/*!**************************************!*\
+  !*** ./source/js/components/life.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _tabs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./tabs */ "./source/js/components/tabs.js");
+
+
+function activateLife() {
+  var tabs = document.querySelectorAll(".life__gallery-radio");
+  console.log(tabs);
+  var items = document.querySelectorAll(".life__picture");
+  var hiddenClass = "life__picture--hidden";
+  Object(_tabs__WEBPACK_IMPORTED_MODULE_0__["default"])({
+    tabs: tabs,
+    items: items,
+    hiddenClass: hiddenClass
+  });
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (activateLife);
+
+/***/ }),
+
 /***/ "./source/js/components/modal.js":
 /*!***************************************!*\
   !*** ./source/js/components/modal.js ***!
@@ -743,6 +771,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_order__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/order */ "./source/js/components/order.js");
 /* harmony import */ var _components_programs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/programs */ "./source/js/components/programs.js");
 /* harmony import */ var _components_form_faq__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/form/faq */ "./source/js/components/form/faq.js");
+/* harmony import */ var _components_life__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/life */ "./source/js/components/life.js");
+
 
 
 
@@ -761,6 +791,7 @@ __webpack_require__.r(__webpack_exports__);
   Object(_components_order__WEBPACK_IMPORTED_MODULE_4__["default"])();
   Object(_components_forms__WEBPACK_IMPORTED_MODULE_3__["default"])();
   Object(_components_programs__WEBPACK_IMPORTED_MODULE_5__["default"])();
+  Object(_components_life__WEBPACK_IMPORTED_MODULE_7__["default"])();
   Object(_components_form_faq__WEBPACK_IMPORTED_MODULE_6__["default"])();
 })();
 

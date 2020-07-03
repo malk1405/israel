@@ -171,14 +171,13 @@
   }
 
   .life__picture {
-    display: none;
     height: auto;
     margin: 0 auto;
     max-width: 400px;
     width: 100%;
 
-    &--active {
-      display: block;
+    &--hidden {
+      display: none;
     }
   }
 
