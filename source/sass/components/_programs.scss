@@ -66,6 +66,10 @@
 .programs__tab-radio:checked + .programs__tab-label {
   background: $tab-gradient;
 
+  &:hover {
+    background: $button-gradient-hover;
+  }
+
   &::before {
     color: white;
     background: transparent;
@@ -110,13 +114,6 @@
     -webkit-text-fill-color: transparent;
     color: $gradient-color-start;
   }
-}
-
-.programs__tab-label.programs__tab-label:hover::before {
-  font-size: inherit;
-  font-weight: inherit;
-  letter-spacing: inherit;
-  text-transform: capitalize;
 }
 
 .programs__list {
