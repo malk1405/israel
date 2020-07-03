@@ -254,6 +254,7 @@ var activateForm = function activateForm(form) {
     process(_input__WEBPACK_IMPORTED_MODULE_4__["default"]);
     var formData = {};
     process(getData);
+    localStorage.setItem("user", JSON.stringify(formData));
     form.reset();
 
     function getData(input) {
